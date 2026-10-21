@@ -1,0 +1,1603 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dapur Lebaran - Sistem Operasi Produksi Kue Idul Fitri</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary": "#ffffff",
+            "outline-variant": "#bec9c1",
+            "secondary-fixed": "#ffdea7",
+            "surface": "#fff8f5",
+            "on-secondary-fixed": "#271900",
+            "on-primary": "#ffffff",
+            "inverse-surface": "#3e2d21",
+            "secondary-container": "#fec65a",
+            "on-secondary-fixed-variant": "#5e4200",
+            "on-surface-variant": "#3f4943",
+            "inverse-on-surface": "#ffede3",
+            "tertiary": "#8a2908",
+            "on-primary-fixed": "#002114",
+            "primary-fixed-dim": "#8ad6b0",
+            "on-error": "#ffffff",
+            "on-tertiary-fixed": "#3b0a00",
+            "on-surface": "#27180d",
+            "inverse-primary": "#8ad6b0",
+            "surface-bright": "#fff8f5",
+            "surface-variant": "#faddcb",
+            "on-background": "#27180d",
+            "tertiary-fixed-dim": "#ffb5a0",
+            "secondary-fixed-dim": "#f5be53",
+            "surface-container-highest": "#faddcb",
+            "error": "#ba1a1a",
+            "tertiary-fixed": "#ffdbd1",
+            "tertiary-container": "#aa401f",
+            "error-container": "#ffdad6",
+            "on-error-container": "#93000a",
+            "on-secondary-container": "#745200",
+            "surface-dim": "#f1d4c2",
+            "surface-container": "#ffeadd",
+            "primary-container": "#1f6f50",
+            "on-tertiary": "#ffffff",
+            "outline": "#6f7a73",
+            "secondary": "#7c5800",
+            "on-primary-fixed-variant": "#005137",
+            "background": "#fff8f5",
+            "primary-fixed": "#a5f3cc",
+            "primary": "#00563a",
+            "surface-container-low": "#fff1e9",
+            "surface-container-high": "#ffe3d1",
+            "surface-tint": "#196b4c",
+            "on-tertiary-fixed-variant": "#842505",
+            "on-tertiary-container": "#ffd6cb",
+            "on-primary-container": "#a1efc8",
+            "surface-container-lowest": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "1rem",
+            "margin": "1rem",
+            "margin-desktop": "2rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2rem",
+            "gutter-desktop": "1.5rem",
+            "space-md": "1rem",
+            "space-xs": "0.25rem"
+          },
+          "fontFamily": {
+            "headline-lg-mobile": ["Epilogue"],
+            "headline-xl": ["Epilogue"],
+            "body-sm": ["Inter"],
+            "body-lg-semibold": ["Inter"],
+            "body-md": ["Inter"],
+            "label-sm": ["Inter"],
+            "headline-md": ["Epilogue"],
+            "body-lg-medium": ["Inter"],
+            "headline-lg": ["Epilogue"],
+            "label-md": ["Inter"],
+            "headline-sm": ["Epilogue"],
+            "body-md-medium": ["Inter"],
+            "headline-xl-mobile": ["Epilogue"],
+            "body-lg": ["Inter"],
+            "poppins": ["Poppins", "sans-serif"]
+          },
+          "fontSize": {
+            "headline-lg-mobile": ["22px", {"lineHeight": "30px", "fontWeight": "600"}],
+            "headline-xl": ["36px", {"lineHeight": "44px", "fontWeight": "600"}],
+            "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+            "body-lg-semibold": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+            "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+            "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.5px", "fontWeight": "600"}],
+            "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+            "body-lg-medium": ["16px", {"lineHeight": "24px", "fontWeight": "500"}],
+            "headline-lg": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+            "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+            "headline-sm": ["18px", {"lineHeight": "26px", "fontWeight": "600"}],
+            "body-md-medium": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+            "headline-xl-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+            "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    /* Direct brand tokens as mandated */
+    :root {
+      --brand-primary: #1F6F50;
+      --brand-primary-active: #17583F;
+      --brand-gold: #C8962E;
+      --brand-bg: #FBF6EC;
+      --brand-surface: #FFFFFF;
+      --brand-border: #E8DFCC;
+      --brand-text: #3B2A1E;
+      --brand-subtext: #7A6A5C;
+      --brand-terracotta: #C2512F;
+      --status-paid: #2E8B57;
+      --status-dp: #D99A00;
+      --status-unpaid: #B93A2E;
+    }
+    body {
+      background-color: var(--brand-bg);
+      color: var(--brand-text);
+      font-family: 'Inter', sans-serif;
+    }
+    h1, h2, h3, .font-heading {
+      font-family: 'Poppins', 'Epilogue', sans-serif;
+      font-weight: 600;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    /* Touch target ergonomics */
+    .touch-target {
+      min-width: 44px;
+      min-height: 44px;
+    }
+    /* Ambient warm shadow rules */
+    .shadow-warm-sm {
+      box-shadow: 0 2px 8px -2px rgba(59, 42, 30, 0.05);
+    }
+    .shadow-warm-md {
+      box-shadow: 0 6px 16px -4px rgba(59, 42, 30, 0.08);
+    }
+    .shadow-warm-fab {
+      box-shadow: 0 8px 20px -2px rgba(200, 150, 46, 0.38);
+    }
+  </style>
+</head>
+<body class="bg-[#FBF6EC] text-[#3B2A1E] min-h-screen flex flex-col antialiased selection:bg-[#1F6F50] selection:text-white pb-24 md:pb-8">
+<!-- TOP APP BAR (Shared Component JSON anchor) -->
+<header class="bg-surface-container-lowest shadow-sm sticky top-0 z-40 w-full border-b border-[#E8DFCC]/50">
+<div class="flex justify-between items-center w-full px-4 md:px-8 max-w-7xl mx-auto h-16">
+<!-- Logo & System Subtext -->
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-[#1F6F50] text-white flex items-center justify-center shadow-warm-sm flex-shrink-0">
+<span class="material-symbols-outlined text-2xl" data-icon="bakery_dining">bakery_dining</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="text-headline-sm font-headline-sm font-semibold text-[#1F6F50] tracking-tight">Dapur Lebaran</span>
+<span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-[#1F6F50]/10 text-[#1F6F50]">v2.4 Prod</span>
+</div>
+<p class="text-xs text-[#7A6A5C] hidden sm:block">Sistem Operasi Produksi Kue Idul Fitri 1447H</p>
+</div>
+</div>
+<!-- Quick Operational Controls: Role Switcher & System Telemetry -->
+<div class="flex items-center gap-3 md:gap-5">
+<!-- Live System Status (Supabase & PWA) -->
+<div class="hidden lg:flex items-center gap-3 border-r border-[#E8DFCC] pr-4 text-xs font-medium text-[#7A6A5C]">
+<div class="flex items-center gap-1.5" title="Supabase RLS Active &amp; Enforced">
+<span class="w-2 h-2 rounded-full bg-[#2E8B57] animate-pulse"></span>
+<span class="font-mono text-[11px] font-semibold text-[#2E8B57]">RLS ON</span>
+</div>
+<div class="flex items-center gap-1.5" title="Local PWA Cache Synchronized">
+<span class="material-symbols-outlined text-sm text-[#1F6F50]" data-icon="cloud_done">cloud_done</span>
+<span>Tersinkron</span>
+</div>
+</div>
+<!-- Role Switcher Realistis -->
+<div class="flex items-center bg-[#FBF6EC] border border-[#E8DFCC] rounded-xl p-1 shadow-inner">
+<button class="px-3 py-1.5 text-xs font-semibold rounded-lg transition-all duration-150 flex items-center gap-1.5 bg-[#1F6F50] text-white shadow-sm" id="role-owner-btn" onclick="setRole('owner')">
+<span class="material-symbols-outlined text-sm" data-icon="admin_panel_settings">admin_panel_settings</span>
+<span class="hidden sm:inline">Owner (Penuh)</span>
+<span class="sm:hidden">Owner</span>
+</button>
+<button class="px-3 py-1.5 text-xs font-medium rounded-lg transition-all duration-150 flex items-center gap-1.5 text-[#7A6A5C] hover:text-[#3B2A1E]" id="role-staff-btn" onclick="setRole('staff')">
+<span class="material-symbols-outlined text-sm" data-icon="badge">badge</span>
+<span class="hidden sm:inline">Staff (Dapur)</span>
+<span class="sm:hidden">Staff</span>
+</button>
+</div>
+<!-- Trailing Icons -->
+<div class="flex items-center gap-1">
+<button class="w-10 h-10 rounded-xl hover:bg-surface-container-low transition-colors duration-150 flex items-center justify-center text-[#7A6A5C] relative" title="Pemberitahuan">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-[#C2512F]"></span>
+</button>
+<button class="w-10 h-10 rounded-xl hover:bg-surface-container-low transition-colors duration-150 flex items-center justify-center text-[#7A6A5C]" onclick="syncData()" title="Sinkronisasi Data">
+<span class="material-symbols-outlined" data-icon="sync" id="sync-icon">sync</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<!-- MAIN APP CONTAINER WITH RESPONSIVE LAYOUT -->
+<div class="max-w-7xl mx-auto w-full flex-1 flex px-4 md:px-8 py-6 gap-8">
+<!-- DESKTOP SIDE NAVBAR (Shared Component JSON Blueprint) -->
+<aside class="hidden md:flex flex-col justify-between h-[calc(100vh-6rem)] w-64 p-4 sticky top-20 bg-surface-container-lowest rounded-2xl border border-[#E8DFCC] shadow-warm-sm flex-shrink-0">
+<div class="space-y-6">
+<!-- Sidebar Profile Card -->
+<div class="flex items-center gap-3 px-2 pb-4 border-b border-[#E8DFCC]">
+<div class="w-11 h-11 rounded-full bg-[#1F6F50]/15 text-[#1F6F50] flex items-center justify-center font-bold text-lg font-heading">
+            NL
+          </div>
+<div class="overflow-hidden">
+<p class="text-sm font-semibold text-[#3B2A1E] truncate">Ibu Nur Laila</p>
+<p class="text-[11px] font-medium text-[#1F6F50]" id="role-badge-sidebar">Owner Toko • Nastar Gold</p>
+</div>
+</div>
+<!-- Navigation Tabs -->
+<nav class="space-y-1">
+<button class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-primary font-semibold bg-[#1F6F50]/10 transition-colors" id="nav-beranda" onclick="switchTab('beranda')">
+<span class="material-symbols-outlined text-xl" data-icon="dashboard">dashboard</span>
+<span class="text-label-md font-label-md">Beranda</span>
+</button>
+<button class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-[#7A6A5C] hover:bg-surface-container-low hover:text-[#3B2A1E] transition-colors" id="nav-penjualan" onclick="switchTab('penjualan')">
+<span class="material-symbols-outlined text-xl" data-icon="receipt_long">receipt_long</span>
+<span class="text-label-md font-label-md">Penjualan</span>
+</button>
+<button class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-[#7A6A5C] hover:bg-surface-container-low hover:text-[#3B2A1E] transition-colors" id="nav-pelanggan" onclick="switchTab('pelanggan')">
+<span class="material-symbols-outlined text-xl" data-icon="group">group</span>
+<span class="text-label-md font-label-md">Pelanggan</span>
+</button>
+<button class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-[#7A6A5C] hover:bg-surface-container-low hover:text-[#3B2A1E] transition-colors" id="nav-bahan" onclick="switchTab('bahan')">
+<span class="material-symbols-outlined text-xl" data-icon="inventory_2">inventory_2</span>
+<span class="text-label-md font-label-md">Bahan</span>
+</button>
+<button class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-[#7A6A5C] hover:bg-surface-container-low hover:text-[#3B2A1E] transition-colors" id="nav-resep" onclick="switchTab('resep')">
+<span class="material-symbols-outlined text-xl" data-icon="menu_book">menu_book</span>
+<span class="text-label-md font-label-md">Resep</span>
+</button>
+<button class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-[#7A6A5C] hover:bg-surface-container-low hover:text-[#3B2A1E] transition-colors" id="nav-ringkasan" onclick="switchTab('ringkasan')">
+<span class="material-symbols-outlined text-xl" data-icon="monitoring">monitoring</span>
+<span class="text-label-md font-label-md">Ringkasan</span>
+</button>
+<button class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-[#7A6A5C] hover:bg-surface-container-low hover:text-[#3B2A1E] transition-colors" id="nav-karyawan" onclick="switchTab('karyawan')">
+<span class="material-symbols-outlined text-xl" data-icon="badge">badge</span>
+<span class="text-label-md font-label-md">Karyawan</span>
+</button>
+</nav>
+</div>
+<!-- Sidebar CTA & Footer -->
+<div class="space-y-3 pt-4 border-t border-[#E8DFCC]">
+<button class="w-full h-12 rounded-xl bg-[#C8962E] hover:bg-[#b08428] text-white font-semibold text-sm flex items-center justify-center gap-2 shadow-warm-fab active:scale-95 transition-all" onclick="openModalPenjualan()">
+<span class="material-symbols-outlined text-lg" data-icon="add_circle">add_circle</span>
+<span>+ Penjualan</span>
+</button>
+<div class="flex items-center justify-between text-xs text-[#7A6A5C] px-1 pt-1">
+<button class="hover:text-[#3B2A1E] flex items-center gap-1">
+<span class="material-symbols-outlined text-base" data-icon="settings">settings</span>
+<span>Pengaturan</span>
+</button>
+<button class="hover:text-[#B93A2E] flex items-center gap-1">
+<span class="material-symbols-outlined text-base" data-icon="logout">logout</span>
+<span>Keluar</span>
+</button>
+</div>
+</div>
+</aside>
+<!-- MAIN CONTENT VIEWPORT -->
+<main class="flex-1 min-w-0">
+<!-- ========================================== -->
+<!-- TAB 1: BERANDA / DASHBOARD OPERASIONAL -->
+<!-- ========================================== -->
+<section class="space-y-6" id="tab-beranda">
+<!-- Welcome Hero Banner with Season Progress -->
+<div class="bg-gradient-to-r from-[#1F6F50] to-[#17583F] rounded-2xl p-6 text-white shadow-warm-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-4 relative overflow-hidden">
+<div class="relative z-10">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 text-xs font-medium mb-3 backdrop-blur-sm">
+<span class="material-symbols-outlined text-sm text-[#FFDEA7]" data-icon="event_upcoming">event_upcoming</span>
+<span>H-14 Idul Fitri 1447H • Batch Produksi #18</span>
+</div>
+<h1 class="text-2xl md:text-3xl font-bold tracking-tight">Operasional Dapur Hari Ini</h1>
+<p class="text-sm text-[#A5F3CC] mt-1 max-w-xl">Semua pesanan batch 1 siap dipanggang. Perhatikan ketersediaan butter Wijsman sebelum jam 14:00 WIB.</p>
+</div>
+<div class="flex items-center gap-3 relative z-10 w-full md:w-auto">
+<button class="flex-1 md:flex-none h-12 px-5 rounded-xl bg-[#C8962E] hover:bg-[#b58525] text-white font-semibold text-sm flex items-center justify-center gap-2 shadow-warm-fab active:scale-95 transition-transform" onclick="openModalPenjualan()">
+<span class="material-symbols-outlined" data-icon="add_shopping_cart">add_shopping_cart</span>
+<span>+ Catat Penjualan</span>
+</button>
+</div>
+<!-- Decorative subtle circle overlay -->
+<div class="absolute -right-8 -bottom-12 w-48 h-48 rounded-full bg-white/5 pointer-events-none"></div>
+</div>
+<!-- 4 BENTO METRIC CARDS -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Metrik 1: Omzet Hari Ini (Owner View Restricted) -->
+<div class="bg-white p-5 rounded-2xl border border-[#E8DFCC] shadow-warm-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-[#7A6A5C] mb-2">
+<span class="text-xs font-semibold uppercase tracking-wider">Omzet Hari Ini</span>
+<span class="material-symbols-outlined text-[#1F6F50] text-xl" data-icon="payments">payments</span>
+</div>
+<div>
+<div class="flex items-baseline gap-1.5">
+<span class="text-2xl font-bold text-[#1F6F50] font-heading" id="metric-omzet">Rp 4.850.000</span>
+<span class="text-lg font-bold text-[#7A6A5C] font-mono hidden" id="metric-omzet-staff">[Disembunyikan]</span>
+</div>
+<p class="text-xs text-[#2E8B57] font-medium mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+<span>+18% vs kemarin (7 pesanan)</span>
+</p>
+</div>
+<div class="mt-3 pt-3 border-t border-[#E8DFCC]/60 text-[11px] text-[#7A6A5C]">
+<span>Diperbarui otomatis via webhook QRIS</span>
+</div>
+</div>
+<!-- Metrik 2: Total Pesanan Lebaran -->
+<div class="bg-white p-5 rounded-2xl border border-[#E8DFCC] shadow-warm-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-[#7A6A5C] mb-2">
+<span class="text-xs font-semibold uppercase tracking-wider">Total Pesanan Lebaran</span>
+<span class="material-symbols-outlined text-[#C8962E] text-xl" data-icon="cookie">cookie</span>
+</div>
+<div>
+<span class="text-2xl font-bold text-[#3B2A1E] font-heading">142 Toples</span>
+<div class="flex items-center gap-1.5 mt-2 text-[11px] font-semibold">
+<span class="px-2 py-0.5 rounded-full bg-[#EAF5EE] text-[#2E8B57]">89 Lunas</span>
+<span class="px-2 py-0.5 rounded-full bg-[#FDF6E2] text-[#9E7000]">38 DP</span>
+<span class="px-2 py-0.5 rounded-full bg-[#FBEBE9] text-[#B93A2E]">15 Belum</span>
+</div>
+</div>
+<div class="mt-3 pt-3 border-t border-[#E8DFCC]/60 text-[11px] text-[#7A6A5C] flex justify-between">
+<span>Kapasitas oven: 200 toples</span>
+<span class="font-semibold text-[#1F6F50]">71% terisi</span>
+</div>
+</div>
+<!-- Metrik 3: Bahan Menipis (Alert) -->
+<div class="bg-white p-5 rounded-2xl border border-[#E8DFCC] shadow-warm-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-[#7A6A5C] mb-2">
+<span class="text-xs font-semibold uppercase tracking-wider">Bahan Menipis Segera</span>
+<span class="material-symbols-outlined text-[#B93A2E] text-xl" data-icon="warning">warning</span>
+</div>
+<div>
+<div class="flex items-baseline gap-2">
+<span class="text-2xl font-bold text-[#B93A2E] font-heading">2 Bahan</span>
+<span class="text-xs text-[#B93A2E] font-semibold bg-[#FBEBE9] px-2 py-0.5 rounded-full">Kritis!</span>
+</div>
+<p class="text-xs text-[#7A6A5C] mt-2 truncate">
+                • Butter Wijsman (3.5 kg)<br/>• Keju Edam Tua (2.1 kg)
+              </p>
+</div>
+<div class="mt-3 pt-3 border-t border-[#E8DFCC]/60">
+<button class="text-xs font-semibold text-[#1F6F50] hover:underline flex items-center gap-1" onclick="switchTab('bahan')">
+<span>Catat Restock Sekarang</span>
+<span class="material-symbols-outlined text-xs" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Metrik 4: Target Produksi Mingguan -->
+<div class="bg-white p-5 rounded-2xl border border-[#E8DFCC] shadow-warm-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-[#7A6A5C] mb-2">
+<span class="text-xs font-semibold uppercase tracking-wider">Target Produksi Mingguan</span>
+<span class="material-symbols-outlined text-[#1F6F50] text-xl" data-icon="flag">flag</span>
+</div>
+<div>
+<div class="flex justify-between items-baseline mb-1.5">
+<span class="text-2xl font-bold text-[#3B2A1E] font-heading">78%</span>
+<span class="text-xs font-medium text-[#7A6A5C]">156 / 200 Toples</span>
+</div>
+<div class="w-full bg-[#E8DFCC]/50 h-2.5 rounded-full overflow-hidden">
+<div class="bg-[#1F6F50] h-full rounded-full transition-all duration-500" style="width: 78%"></div>
+</div>
+</div>
+<div class="mt-3 pt-3 border-t border-[#E8DFCC]/60 text-[11px] text-[#7A6A5C]">
+<span>Target selesai sebelum H-7 Lebaran</span>
+</div>
+</div>
+</div>
+<!-- OPERATIONAL GRID: 2 COLUMNS (Siap Kirim & Penagihan Prioritas) -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<!-- Card 1: Antrean Pesanan Siap Kirim Hari Ini -->
+<div class="bg-white rounded-2xl border border-[#E8DFCC] shadow-warm-sm p-5 space-y-4">
+<div class="flex items-center justify-between border-b border-[#E8DFCC] pb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#1F6F50]" data-icon="local_shipping">local_shipping</span>
+<h3 class="font-heading text-base font-semibold text-[#3B2A1E]">Antrean Siap Kirim Hari Ini</h3>
+</div>
+<span class="text-xs font-bold text-[#1F6F50] bg-[#EAF5EE] px-2.5 py-1 rounded-full">3 Pengiriman</span>
+</div>
+<!-- List items -->
+<div class="space-y-3">
+<div class="p-3.5 rounded-xl border border-[#E8DFCC] hover:border-[#1F6F50] transition-colors bg-[#FBF6EC]/30 flex items-center justify-between">
+<div>
+<div class="flex items-center gap-2">
+<span class="font-semibold text-sm text-[#3B2A1E]">Bu Siti Rahayu</span>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#EAF5EE] text-[#2E8B57] border border-[#B8E2C8]">Lunas</span>
+</div>
+<p class="text-xs text-[#7A6A5C] mt-1">3x Nastar Wijsman, 2x Kastengel Keju</p>
+<p class="text-[11px] text-[#7A6A5C] flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-xs" data-icon="schedule">schedule</span>
+<span>Jadwal Kurir: 13.00 WIB (Gosend Instant)</span>
+</p>
+</div>
+<div class="text-right">
+<span class="text-sm font-bold text-[#1F6F50] block">Rp 625.000</span>
+<button class="mt-2 text-xs px-3 py-1.5 rounded-lg bg-[#1F6F50] text-white hover:bg-[#17583F] font-medium transition-colors">
+                    Cetak Resi
+                  </button>
+</div>
+</div>
+<div class="p-3.5 rounded-xl border border-[#E8DFCC] hover:border-[#1F6F50] transition-colors bg-[#FBF6EC]/30 flex items-center justify-between">
+<div>
+<div class="flex items-center gap-2">
+<span class="font-semibold text-sm text-[#3B2A1E]">dr. Maya Anggraini</span>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#EAF5EE] text-[#2E8B57] border border-[#B8E2C8]">Lunas</span>
+</div>
+<p class="text-xs text-[#7A6A5C] mt-1">4x Hamper Eksklusif Duo (Nastar + Kastengel)</p>
+<p class="text-[11px] text-[#7A6A5C] flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-xs" data-icon="pin_drop">pin_drop</span>
+<span>Ambil di Dapur (15.30 WIB)</span>
+</p>
+</div>
+<div class="text-right">
+<span class="text-sm font-bold text-[#1F6F50] block">Rp 1.100.000</span>
+<button class="mt-2 text-xs px-3 py-1.5 rounded-lg bg-[#EAF5EE] text-[#1F6F50] hover:bg-[#1F6F50] hover:text-white font-medium transition-colors">
+                    Tandai Siap
+                  </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2: Pesanan Belum Lunas & Follow-up Cepat -->
+<div class="bg-white rounded-2xl border border-[#E8DFCC] shadow-warm-sm p-5 space-y-4">
+<div class="flex items-center justify-between border-b border-[#E8DFCC] pb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#B93A2E]" data-icon="pending_actions">pending_actions</span>
+<h3 class="font-heading text-base font-semibold text-[#3B2A1E]">Penagihan DP &amp; Belum Lunas</h3>
+</div>
+<span class="text-xs font-bold text-[#B93A2E] bg-[#FBEBE9] px-2.5 py-1 rounded-full">Perlu Diingatkan</span>
+</div>
+<!-- List items with WhatsApp deep link -->
+<div class="space-y-3">
+<div class="p-3.5 rounded-xl border border-[#F4DB96] bg-[#FDF6E2]/30 flex items-center justify-between">
+<div>
+<div class="flex items-center gap-2">
+<span class="font-semibold text-sm text-[#3B2A1E]">Pak Hendra Gunawan</span>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#FDF6E2] text-[#9E7000] border border-[#F4DB96]">DP Rp 200.000</span>
+</div>
+<p class="text-xs text-[#7A6A5C] mt-1">5x Putri Salju Mete (Total: Rp 575.000)</p>
+<p class="text-xs font-semibold text-[#C2512F] mt-0.5">Sisa Pelunasan: Rp 375.000</p>
+</div>
+<div>
+<a class="px-3 py-2 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs font-semibold flex items-center gap-1.5 shadow-sm" href="https://wa.me/6281234567890?text=Halo%20Pak%20Hendra,%20pesanan%20kue%20Lebaran%20Anda%20sedang%20disiapkan%20Dapur%20Lebaran.%20Berikut%20pengingat%20pelunasan%20sisa%20Rp%20375.000%20terima%20kasih." target="_blank">
+<span class="material-symbols-outlined text-sm" data-icon="chat">chat</span>
+<span>Chat WA</span>
+</a>
+</div>
+</div>
+<div class="p-3.5 rounded-xl border border-[#F1BFBA] bg-[#FBEBE9]/40 flex items-center justify-between">
+<div>
+<div class="flex items-center gap-2">
+<span class="font-semibold text-sm text-[#3B2A1E]">Ibu Ratna Kartika</span>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#FBEBE9] text-[#B93A2E] border border-[#F1BFBA]">Belum Lunas</span>
+</div>
+<p class="text-xs text-[#7A6A5C] mt-1">2x Lidah Kucing Premium</p>
+<p class="text-xs font-semibold text-[#B93A2E] mt-0.5">Tagihan: Rp 190.000</p>
+</div>
+<div>
+<a class="px-3 py-2 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs font-semibold flex items-center gap-1.5 shadow-sm" href="https://wa.me/6281987654321?text=Halo%20Ibu%20Ratna,%20dari%20Dapur%20Lebaran.%20Untuk%20mengamankan%20slot%20oven%20Lidah%20Kucing,%20silakan%20melakukan%20DP/pelunasan%20sebesar%20Rp%20190.000%20ya%20bu." target="_blank">
+<span class="material-symbols-outlined text-sm" data-icon="chat">chat</span>
+<span>Chat WA</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- TAB 2: MODUL PENJUALAN (Input Cepat < 30s) -->
+<!-- ========================================== -->
+<section class="space-y-6 hidden" id="tab-penjualan">
+<!-- Header & Action Row -->
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+<div>
+<h2 class="font-heading text-2xl font-bold text-[#3B2A1E]">Daftar Penjualan &amp; Pesanan</h2>
+<p class="text-sm text-[#7A6A5C]">Target pencatatan kasir dan dapur &lt; 30 detik per pesanan.</p>
+</div>
+<div class="flex items-center gap-3 w-full sm:w-auto">
+<div class="relative flex-1 sm:w-64">
+<input class="w-full h-11 pl-10 pr-3 rounded-xl border border-[#E8DFCC] text-sm focus:border-[#1F6F50] focus:ring-1 focus:ring-[#1F6F50] bg-white" placeholder="Cari nama atau invoice..." type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-3 text-[#7A6A5C] text-lg" data-icon="search">search</span>
+</div>
+<button class="h-11 px-4 rounded-xl bg-[#C8962E] hover:bg-[#b58525] text-white font-semibold text-sm flex items-center gap-1.5 shadow-warm-fab whitespace-nowrap" onclick="openModalPenjualan()">
+<span class="material-symbols-outlined text-lg" data-icon="add">add</span>
+<span>+ Pesanan Baru</span>
+</button>
+</div>
+</div>
+<!-- Sales Filter Pills -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 text-xs">
+<button class="px-3 py-1.5 rounded-lg bg-[#1F6F50] text-white font-medium whitespace-nowrap">Semua Pesanan (142)</button>
+<button class="px-3 py-1.5 rounded-lg bg-white border border-[#E8DFCC] text-[#7A6A5C] hover:bg-[#FBF6EC] font-medium whitespace-nowrap">Lunas (89)</button>
+<button class="px-3 py-1.5 rounded-lg bg-white border border-[#E8DFCC] text-[#7A6A5C] hover:bg-[#FBF6EC] font-medium whitespace-nowrap">DP Terbayar (38)</button>
+<button class="px-3 py-1.5 rounded-lg bg-white border border-[#E8DFCC] text-[#7A6A5C] hover:bg-[#FBF6EC] font-medium whitespace-nowrap">Belum Lunas (15)</button>
+<button class="px-3 py-1.5 rounded-lg bg-white border border-[#E8DFCC] text-[#7A6A5C] hover:bg-[#FBF6EC] font-medium whitespace-nowrap">Siap Diambil (12)</button>
+</div>
+<!-- Sales Table (Desktop) / Cards (Mobile) -->
+<div class="bg-white rounded-2xl border border-[#E8DFCC] shadow-warm-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left text-sm">
+<thead class="bg-[#FBF6EC] text-[#7A6A5C] text-xs font-semibold uppercase tracking-wider border-b border-[#E8DFCC]">
+<tr>
+<th class="py-3.5 px-4">Invoice / Tgl</th>
+<th class="py-3.5 px-4">Pelanggan</th>
+<th class="py-3.5 px-4">Rincian Kue</th>
+<th class="py-3.5 px-4">Status Bayar</th>
+<th class="py-3.5 px-4">Total</th>
+<th class="py-3.5 px-4 text-center">Aksi Cepat</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#E8DFCC]">
+<!-- Row 1: Bu Siti Rahayu -->
+<tr class="hover:bg-[#FBF6EC]/40 transition-colors">
+<td class="py-4 px-4 whitespace-nowrap">
+<span class="font-mono text-xs font-semibold text-[#1F6F50]">#INV-20261021-01</span>
+<p class="text-xs text-[#7A6A5C]">21 Okt 2026 • 09:15</p>
+</td>
+<td class="py-4 px-4">
+<span class="font-semibold text-[#3B2A1E]">Bu Siti Rahayu</span>
+<p class="text-xs text-[#7A6A5C]">0812-4455-8899</p>
+</td>
+<td class="py-4 px-4">
+<div class="flex flex-col gap-0.5">
+<span class="text-xs text-[#3B2A1E] font-medium">• 3x Nastar Wisman</span>
+<span class="text-xs text-[#3B2A1E] font-medium">• 2x Kastengel Keju</span>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-[#EAF5EE] text-[#2E8B57] border border-[#B8E2C8]">
+                      LUNAS
+                    </span>
+</td>
+<td class="py-4 px-4 whitespace-nowrap font-bold text-[#1F6F50]">
+                    Rp 625.000
+                  </td>
+<td class="py-4 px-4 text-center whitespace-nowrap">
+<div class="flex items-center justify-center gap-1.5">
+<button class="p-2 rounded-lg hover:bg-surface-container-low text-[#1F6F50]" title="Cetak Nota">
+<span class="material-symbols-outlined text-lg" data-icon="receipt">receipt</span>
+</button>
+<button class="p-2 rounded-lg hover:bg-surface-container-low text-[#7A6A5C]" title="Detail Pesanan">
+<span class="material-symbols-outlined text-lg" data-icon="visibility">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Pak Hendra Gunawan -->
+<tr class="hover:bg-[#FBF6EC]/40 transition-colors">
+<td class="py-4 px-4 whitespace-nowrap">
+<span class="font-mono text-xs font-semibold text-[#1F6F50]">#INV-20261021-02</span>
+<p class="text-xs text-[#7A6A5C]">21 Okt 2026 • 10:40</p>
+</td>
+<td class="py-4 px-4">
+<span class="font-semibold text-[#3B2A1E]">Pak Hendra Gunawan</span>
+<p class="text-xs text-[#7A6A5C]">0812-3456-7890</p>
+</td>
+<td class="py-4 px-4">
+<span class="text-xs text-[#3B2A1E] font-medium">• 5x Putri Salju Mete</span>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<div>
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-[#FDF6E2] text-[#9E7000] border border-[#F4DB96]">
+                        DP Rp 200.000
+                      </span>
+<p class="text-[11px] text-[#C2512F] font-medium mt-0.5">Sisa: Rp 375.000</p>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap font-bold text-[#3B2A1E]">
+                    Rp 575.000
+                  </td>
+<td class="py-4 px-4 text-center whitespace-nowrap">
+<div class="flex items-center justify-center gap-1.5">
+<a class="p-2 rounded-lg bg-[#25D366]/15 hover:bg-[#25D366]/30 text-[#1F6F50]" href="https://wa.me/6281234567890" target="_blank" title="Kirim Tagihan WA">
+<span class="material-symbols-outlined text-lg" data-icon="send">send</span>
+</a>
+<button class="p-2 rounded-lg hover:bg-surface-container-low text-[#7A6A5C]" title="Detail">
+<span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Ibu Ratna Kartika -->
+<tr class="hover:bg-[#FBF6EC]/40 transition-colors">
+<td class="py-4 px-4 whitespace-nowrap">
+<span class="font-mono text-xs font-semibold text-[#1F6F50]">#INV-20261021-03</span>
+<p class="text-xs text-[#7A6A5C]">21 Okt 2026 • 11:20</p>
+</td>
+<td class="py-4 px-4">
+<span class="font-semibold text-[#3B2A1E]">Ibu Ratna Kartika</span>
+<p class="text-xs text-[#7A6A5C]">0819-8765-4321</p>
+</td>
+<td class="py-4 px-4">
+<span class="text-xs text-[#3B2A1E] font-medium">• 2x Lidah Kucing Premium</span>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-[#FBEBE9] text-[#B93A2E] border border-[#F1BFBA]">
+                      BELUM LUNAS
+                    </span>
+</td>
+<td class="py-4 px-4 whitespace-nowrap font-bold text-[#B93A2E]">
+                    Rp 190.000
+                  </td>
+<td class="py-4 px-4 text-center whitespace-nowrap">
+<div class="flex items-center justify-center gap-1.5">
+<a class="px-2.5 py-1.5 rounded-lg bg-[#25D366] text-white text-xs font-medium flex items-center gap-1" href="https://wa.me/6281987654321" target="_blank">
+<span class="material-symbols-outlined text-sm" data-icon="chat">chat</span>
+<span>wa.me</span>
+</a>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- TAB 3: MODUL BAHAN BAKU & STOK -->
+<!-- ========================================== -->
+<section class="space-y-6 hidden" id="tab-bahan">
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+<div>
+<h2 class="font-heading text-2xl font-bold text-[#3B2A1E]">Inventaris Bahan Baku Dapur</h2>
+<p class="text-sm text-[#7A6A5C]">Monitoring stok real-time, takaran otomatis berkurang saat batch selesai.</p>
+</div>
+<button class="h-11 px-4 rounded-xl bg-[#1F6F50] hover:bg-[#17583F] text-white font-semibold text-sm flex items-center gap-2 shadow-sm" onclick="openModalBahan()">
+<span class="material-symbols-outlined text-lg" data-icon="add_circle">add_circle</span>
+<span>+ Catat Belanja Bahan</span>
+</button>
+</div>
+<!-- Stok Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+<!-- Card 1: Butter Wijsman (MERAH - Kritis) -->
+<div class="bg-white rounded-2xl border-2 border-[#F1BFBA] p-5 shadow-warm-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex justify-between items-start">
+<div>
+<span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-[#FBEBE9] text-[#B93A2E]">STATUS: KRITIS</span>
+<h3 class="font-heading text-lg font-bold text-[#3B2A1E] mt-2">Butter Wijsman Canned</h3>
+<p class="text-xs text-[#7A6A5C]">Bahan Kunci: Nastar &amp; Kastengel</p>
+</div>
+<div class="w-10 h-10 rounded-xl bg-[#FBEBE9] text-[#B93A2E] flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="error">error</span>
+</div>
+</div>
+<div class="my-4">
+<div class="flex justify-between items-baseline mb-1">
+<span class="text-2xl font-bold text-[#B93A2E] font-heading">3.5 kg</span>
+<span class="text-xs text-[#7A6A5C]">Min. Aman: 10.0 kg</span>
+</div>
+<div class="w-full bg-[#E8DFCC]/50 h-2.5 rounded-full overflow-hidden">
+<div class="bg-[#B93A2E] h-full rounded-full" style="width: 35%"></div>
+</div>
+<p class="text-[11px] text-[#B93A2E] font-medium mt-1.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="priority_high">priority_high</span>
+<span>Hanya cukup untuk 2 batch adonan lagi!</span>
+</p>
+</div>
+<div class="pt-3 border-t border-[#E8DFCC] flex justify-between items-center text-xs">
+<div>
+<span class="text-[#7A6A5C] block">Harga Beli Terakhir:</span>
+<span class="font-bold text-[#3B2A1E] cost-owner">Rp 315.000 / kg</span>
+<span class="font-bold text-[#7A6A5C] cost-staff hidden">[Privat Owner]</span>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-[#B93A2E] text-white hover:bg-[#962e24] font-medium" onclick="tambahStok('Butter Wijsman')">
+                Restock Cepat
+              </button>
+</div>
+</div>
+<!-- Card 2: Keju Edam Tua (KUNING - Waspada) -->
+<div class="bg-white rounded-2xl border-2 border-[#F4DB96] p-5 shadow-warm-sm flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-[#FDF6E2] text-[#9E7000]">STATUS: WASPADA</span>
+<h3 class="font-heading text-lg font-bold text-[#3B2A1E] mt-2">Keju Edam Tua (Ayam Mas)</h3>
+<p class="text-xs text-[#7A6A5C]">Bahan Kunci: Kastengel Super Gurih</p>
+</div>
+<div class="w-10 h-10 rounded-xl bg-[#FDF6E2] text-[#9E7000] flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="warning">warning</span>
+</div>
+</div>
+<div class="my-4">
+<div class="flex justify-between items-baseline mb-1">
+<span class="text-2xl font-bold text-[#9E7000] font-heading">2.1 kg</span>
+<span class="text-xs text-[#7A6A5C]">Min. Aman: 5.0 kg</span>
+</div>
+<div class="w-full bg-[#E8DFCC]/50 h-2.5 rounded-full overflow-hidden">
+<div class="bg-[#D99A00] h-full rounded-full" style="width: 42%"></div>
+</div>
+<p class="text-[11px] text-[#9E7000] font-medium mt-1.5">
+                Cukup untuk produksi Kastengel s/d besok sore.
+              </p>
+</div>
+<div class="pt-3 border-t border-[#E8DFCC] flex justify-between items-center text-xs">
+<div>
+<span class="text-[#7A6A5C] block">Harga Beli Terakhir:</span>
+<span class="font-bold text-[#3B2A1E] cost-owner">Rp 245.000 / kg</span>
+<span class="font-bold text-[#7A6A5C] cost-staff hidden">[Privat Owner]</span>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-[#D99A00] text-white hover:bg-[#b07d00] font-medium" onclick="tambahStok('Keju Edam Tua')">
+                Restock Cepat
+              </button>
+</div>
+</div>
+<!-- Card 3: Tepung Kunci Biru (HIJAU - Aman) -->
+<div class="bg-white rounded-2xl border border-[#E8DFCC] p-5 shadow-warm-sm flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-[#EAF5EE] text-[#2E8B57]">STATUS: AMAN</span>
+<h3 class="font-heading text-lg font-bold text-[#3B2A1E] mt-2">Tepung Terigu Kunci Biru</h3>
+<p class="text-xs text-[#7A6A5C]">Bahan Dasar Semua Kue Kering</p>
+</div>
+<div class="w-10 h-10 rounded-xl bg-[#EAF5EE] text-[#2E8B57] flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span>
+</div>
+</div>
+<div class="my-4">
+<div class="flex justify-between items-baseline mb-1">
+<span class="text-2xl font-bold text-[#1F6F50] font-heading">45.0 kg</span>
+<span class="text-xs text-[#7A6A5C]">Min. Aman: 20.0 kg</span>
+</div>
+<div class="w-full bg-[#E8DFCC]/50 h-2.5 rounded-full overflow-hidden">
+<div class="bg-[#1F6F50] h-full rounded-full" style="width: 90%"></div>
+</div>
+<p class="text-[11px] text-[#2E8B57] font-medium mt-1.5">
+                Stok melimpah untuk 300 toples lagi.
+              </p>
+</div>
+<div class="pt-3 border-t border-[#E8DFCC] flex justify-between items-center text-xs">
+<div>
+<span class="text-[#7A6A5C] block">Harga Beli Terakhir:</span>
+<span class="font-bold text-[#3B2A1E] cost-owner">Rp 13.500 / kg</span>
+<span class="font-bold text-[#7A6A5C] cost-staff hidden">[Privat Owner]</span>
+</div>
+<span class="text-[#2E8B57] font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="done">done</span> Cukup
+              </span>
+</div>
+</div>
+<!-- Card 4: Kuning Telur Omega (HIJAU - Aman) -->
+<div class="bg-white rounded-2xl border border-[#E8DFCC] p-5 shadow-warm-sm flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-[#EAF5EE] text-[#2E8B57]">STATUS: AMAN</span>
+<h3 class="font-heading text-lg font-bold text-[#3B2A1E] mt-2">Kuning Telur Omega Segar</h3>
+<p class="text-xs text-[#7A6A5C]">Olesan Nastar Mengkilap &amp; Adonan</p>
+</div>
+<div class="w-10 h-10 rounded-xl bg-[#EAF5EE] text-[#2E8B57] flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="egg">egg</span>
+</div>
+</div>
+<div class="my-4">
+<div class="flex justify-between items-baseline mb-1">
+<span class="text-2xl font-bold text-[#1F6F50] font-heading">120 butir</span>
+<span class="text-xs text-[#7A6A5C]">Min. Aman: 50 butir</span>
+</div>
+<div class="w-full bg-[#E8DFCC]/50 h-2.5 rounded-full overflow-hidden">
+<div class="bg-[#1F6F50] h-full rounded-full" style="width: 80%"></div>
+</div>
+<p class="text-[11px] text-[#2E8B57] font-medium mt-1.5">Pengiriman baru tadi pagi dari peternak.</p>
+</div>
+<div class="pt-3 border-t border-[#E8DFCC] flex justify-between items-center text-xs">
+<div>
+<span class="text-[#7A6A5C] block">Harga Beli:</span>
+<span class="font-bold text-[#3B2A1E] cost-owner">Rp 2.200 / butir</span>
+<span class="font-bold text-[#7A6A5C] cost-staff hidden">[Privat Owner]</span>
+</div>
+<span class="text-[#2E8B57] font-semibold">Segar</span>
+</div>
+</div>
+<!-- Card 5: Gula Halus Clarias (HIJAU - Aman) -->
+<div class="bg-white rounded-2xl border border-[#E8DFCC] p-5 shadow-warm-sm flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-[#EAF5EE] text-[#2E8B57]">STATUS: AMAN</span>
+<h3 class="font-heading text-lg font-bold text-[#3B2A1E] mt-2">Gula Halus Clarias Premium</h3>
+<p class="text-xs text-[#7A6A5C]">Baluran Putri Salju &amp; Adonan</p>
+</div>
+<div class="w-10 h-10 rounded-xl bg-[#EAF5EE] text-[#2E8B57] flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span>
+</div>
+</div>
+<div class="my-4">
+<div class="flex justify-between items-baseline mb-1">
+<span class="text-2xl font-bold text-[#1F6F50] font-heading">18.0 kg</span>
+<span class="text-xs text-[#7A6A5C]">Min. Aman: 10.0 kg</span>
+</div>
+<div class="w-full bg-[#E8DFCC]/50 h-2.5 rounded-full overflow-hidden">
+<div class="bg-[#1F6F50] h-full rounded-full" style="width: 75%"></div>
+</div>
+<p class="text-[11px] text-[#2E8B57] font-medium mt-1.5">Kondisi kering bebas gumpalan.</p>
+</div>
+<div class="pt-3 border-t border-[#E8DFCC] flex justify-between items-center text-xs">
+<div>
+<span class="text-[#7A6A5C] block">Harga Beli:</span>
+<span class="font-bold text-[#3B2A1E] cost-owner">Rp 17.000 / kg</span>
+<span class="font-bold text-[#7A6A5C] cost-staff hidden">[Privat Owner]</span>
+</div>
+<span class="text-[#2E8B57] font-semibold">Tersedia</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- TAB 4: MODUL RESEP DENGAN PENGALI ADONAN -->
+<!-- ========================================== -->
+<section class="space-y-6 hidden" id="tab-resep">
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+<div>
+<h2 class="font-heading text-2xl font-bold text-[#3B2A1E]">Koleksi Resep &amp; Kalkulator Batch</h2>
+<p class="text-sm text-[#7A6A5C]">Gunakan pengali takaran otomatis untuk batch oven besar tanpa salah timbang.</p>
+</div>
+<button class="h-11 px-4 rounded-xl bg-[#1F6F50] hover:bg-[#17583F] text-white font-semibold text-sm flex items-center gap-2 shadow-warm-sm" onclick="toggleCookMode()">
+<span class="material-symbols-outlined text-lg" data-icon="fullscreen">fullscreen</span>
+<span>Mode Dapur Layar Penuh</span>
+</button>
+</div>
+<!-- Recipe Selector Tabs -->
+<div class="flex gap-3 border-b border-[#E8DFCC] pb-3">
+<button class="px-4 py-2 rounded-xl text-sm font-bold bg-[#1F6F50] text-white shadow-sm flex items-center gap-2" id="recipe-tab-nastar" onclick="selectRecipe('nastar')">
+<span class="material-symbols-outlined text-lg" data-icon="lunch_dining">lunch_dining</span>
+<span>Nastar Klasik Butter Wijsman</span>
+</button>
+<button class="px-4 py-2 rounded-xl text-sm font-semibold bg-white border border-[#E8DFCC] text-[#7A6A5C] hover:text-[#3B2A1E] flex items-center gap-2" id="recipe-tab-kastengel" onclick="selectRecipe('kastengel')">
+<span class="material-symbols-outlined text-lg" data-icon="bakery_dining">bakery_dining</span>
+<span>Kastengel Keju Edam Crispy</span>
+</button>
+</div>
+<!-- ACTIVE RECIPE CARD & BATCH MULTIPLIER -->
+<div class="bg-white rounded-2xl border border-[#E8DFCC] shadow-warm-sm p-6 space-y-6">
+<!-- Recipe Header & Multiplier Control -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-6 border-b border-[#E8DFCC]">
+<div>
+<span class="text-xs font-bold uppercase tracking-wider text-[#C8962E] bg-[#FDF6E2] px-2.5 py-1 rounded-full">Resep Rahasia Warisan #1</span>
+<h3 class="font-heading text-2xl font-bold text-[#3B2A1E] mt-2" id="current-recipe-title">Nastar Klasik Butter Wijsman (Lumer di Mulut)</h3>
+<p class="text-sm text-[#7A6A5C] mt-1">Menggunakan 70% pure Wijsman butter dan selai nanas panggang karamelisasi lambat.</p>
+</div>
+<!-- Interactive Batch Multiplier Pills -->
+<div class="bg-[#FBF6EC] p-1.5 rounded-2xl border border-[#E8DFCC] flex items-center gap-1.5 self-start lg:self-center">
+<span class="text-xs font-semibold text-[#7A6A5C] px-2">Batch:</span>
+<button class="px-3 py-1.5 rounded-xl text-xs font-bold bg-[#1F6F50] text-white transition-all shadow-sm" id="mul-1" onclick="setMultiplier(1)">1x (4 toples)</button>
+<button class="px-3 py-1.5 rounded-xl text-xs font-semibold text-[#7A6A5C] hover:text-[#3B2A1E] transition-all" id="mul-2" onclick="setMultiplier(2)">2x (8 toples)</button>
+<button class="px-3 py-1.5 rounded-xl text-xs font-semibold text-[#7A6A5C] hover:text-[#3B2A1E] transition-all" id="mul-3" onclick="setMultiplier(3)">3x (12 toples)</button>
+<button class="px-3 py-1.5 rounded-xl text-xs font-semibold text-[#7A6A5C] hover:text-[#3B2A1E] transition-all" id="mul-5" onclick="setMultiplier(5)">5x (20 toples)</button>
+</div>
+</div>
+<!-- Ingredients Calculated Table -->
+<div>
+<div class="flex justify-between items-center mb-3">
+<h4 class="font-heading text-base font-semibold text-[#3B2A1E] flex items-center gap-2">
+<span class="material-symbols-outlined text-[#1F6F50]" data-icon="scale">scale</span>
+<span>Takaran Bahan Terkalkulasi (Otomatis Disesuaikan)</span>
+</h4>
+<span class="text-xs font-bold text-[#1F6F50] bg-[#EAF5EE] px-2.5 py-1 rounded-full" id="multiplier-badge">Kapasitas: 4 Toples 500g</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3" id="ingredient-list">
+<!-- Rendered dynamically via JS -->
+</div>
+</div>
+<!-- Baking Instructions Steps -->
+<div class="pt-4 border-t border-[#E8DFCC]">
+<h4 class="font-heading text-base font-semibold text-[#3B2A1E] mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-[#1F6F50]" data-icon="cooking">cooking</span>
+<span>Prosedur Dapur &amp; Standar Higienitas</span>
+</h4>
+<div class="space-y-2.5 text-sm text-[#3B2A1E]">
+<div class="flex items-start gap-3 p-3 rounded-xl bg-[#FBF6EC]/50 border border-[#E8DFCC]">
+<input class="mt-1 w-5 h-5 rounded-md text-[#1F6F50] focus:ring-[#1F6F50] border-[#E8DFCC]" type="checkbox"/>
+<div>
+<span class="font-semibold text-xs text-[#1F6F50] uppercase tracking-wider block">Langkah 1: Kocok Butter</span>
+<p class="text-xs text-[#7A6A5C] mt-0.5">Kocok butter Wijsman dan gula halus maksimal 2 menit dengan kecepatan rendah. Jangan overmix agar nastar tidak melebar.</p>
+</div>
+</div>
+<div class="flex items-start gap-3 p-3 rounded-xl bg-[#FBF6EC]/50 border border-[#E8DFCC]">
+<input class="mt-1 w-5 h-5 rounded-md text-[#1F6F50] focus:ring-[#1F6F50] border-[#E8DFCC]" type="checkbox"/>
+<div>
+<span class="font-semibold text-xs text-[#1F6F50] uppercase tracking-wider block">Langkah 2: Timbang Kulit &amp; Isian</span>
+<p class="text-xs text-[#7A6A5C] mt-0.5">Kulit adonan 7 gram, isian selai nanas 4 gram. Bulatkan rapat tanpa rongga udara.</p>
+</div>
+</div>
+<div class="flex items-start gap-3 p-3 rounded-xl bg-[#FBF6EC]/50 border border-[#E8DFCC]">
+<input class="mt-1 w-5 h-5 rounded-md text-[#1F6F50] focus:ring-[#1F6F50] border-[#E8DFCC]" type="checkbox"/>
+<div>
+<span class="font-semibold text-xs text-[#1F6F50] uppercase tracking-wider block">Langkah 3: Pemanggangan Dua Tahap</span>
+<p class="text-xs text-[#7A6A5C] mt-0.5">Panggang suhu 140°C selama 25 menit. Dinginkan sempurna, baru oles kuning telur omega 2 lapis, panggang lagi 10 menit.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- TAB 5: MODUL RINGKASAN & KARYAWAN (Owner) -->
+<!-- ========================================== -->
+<section class="space-y-6 hidden" id="tab-ringkasan">
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+<div>
+<h2 class="font-heading text-2xl font-bold text-[#3B2A1E]">Analitik Bisnis &amp; Penjualan Musiman</h2>
+<p class="text-sm text-[#7A6A5C]">Pantau perputaran omzet, margin bersih, dan kue best-seller Idul Fitri.</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xs font-semibold px-3 py-1.5 rounded-xl bg-white border border-[#E8DFCC] text-[#7A6A5C]">Periode: Musim Lebaran 1447H</span>
+</div>
+</div>
+<!-- Top 3 Summary Stat Bento -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="bg-white p-5 rounded-2xl border border-[#E8DFCC] shadow-warm-sm">
+<span class="text-xs font-semibold text-[#7A6A5C] uppercase tracking-wider">Total Omzet Season Ini</span>
+<div class="mt-2">
+<span class="text-2xl font-bold text-[#1F6F50] font-heading cost-owner">Rp 38.650.000</span>
+<span class="text-xl font-bold text-[#7A6A5C] font-mono cost-staff hidden">[Akses Terkunci]</span>
+</div>
+<p class="text-xs text-[#2E8B57] font-medium mt-1">Estimasi Margin: 42% (Nett)</p>
+</div>
+<div class="bg-white p-5 rounded-2xl border border-[#E8DFCC] shadow-warm-sm">
+<span class="text-xs font-semibold text-[#7A6A5C] uppercase tracking-wider">Total Toples Terjual</span>
+<div class="mt-2">
+<span class="text-2xl font-bold text-[#3B2A1E] font-heading">785 Toples</span>
+</div>
+<p class="text-xs text-[#7A6A5C] mt-1">Dari target 1.000 toples tahun ini</p>
+</div>
+<div class="bg-white p-5 rounded-2xl border border-[#E8DFCC] shadow-warm-sm">
+<span class="text-xs font-semibold text-[#7A6A5C] uppercase tracking-wider">Piutang Belum Terbayar</span>
+<div class="mt-2">
+<span class="text-2xl font-bold text-[#B93A2E] font-heading cost-owner">Rp 4.210.000</span>
+<span class="text-xl font-bold text-[#7A6A5C] font-mono cost-staff hidden">[Akses Terkunci]</span>
+</div>
+<p class="text-xs text-[#B93A2E] font-medium mt-1">15 pesanan menunggu pelunasan</p>
+</div>
+</div>
+<!-- Top 5 Best Seller Cookies Table -->
+<div class="bg-white rounded-2xl border border-[#E8DFCC] shadow-warm-sm p-6 space-y-4">
+<div class="flex items-center justify-between border-b border-[#E8DFCC] pb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#C8962E]" data-icon="stars">stars</span>
+<h3 class="font-heading text-lg font-bold text-[#3B2A1E]">Top 5 Kue Paling Laris (Best Seller)</h3>
+</div>
+<span class="text-xs text-[#7A6A5C]">Berdasarkan volume toples dipesan</span>
+</div>
+<div class="space-y-3">
+<!-- Item 1 -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-[#FBF6EC]/50 border border-[#E8DFCC]">
+<div class="flex items-center gap-3">
+<span class="w-7 h-7 rounded-full bg-[#C8962E] text-white flex items-center justify-center font-bold text-xs">1</span>
+<div>
+<h4 class="font-semibold text-sm text-[#3B2A1E]">Nastar Butter Wijsman</h4>
+<p class="text-xs text-[#7A6A5C]">Harga: Rp 125.000 / toples</p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-bold text-sm text-[#1F6F50]">320 Toples</span>
+<span class="text-xs text-[#7A6A5C] block cost-owner">Rp 40.000.000</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-[#FBF6EC]/50 border border-[#E8DFCC]">
+<div class="flex items-center gap-3">
+<span class="w-7 h-7 rounded-full bg-[#1F6F50] text-white flex items-center justify-center font-bold text-xs">2</span>
+<div>
+<h4 class="font-semibold text-sm text-[#3B2A1E]">Kastengel Keju Edam</h4>
+<p class="text-xs text-[#7A6A5C]">Harga: Rp 125.000 / toples</p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-bold text-sm text-[#1F6F50]">245 Toples</span>
+<span class="text-xs text-[#7A6A5C] block cost-owner">Rp 30.625.000</span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-[#FBF6EC]/50 border border-[#E8DFCC]">
+<div class="flex items-center gap-3">
+<span class="w-7 h-7 rounded-full bg-[#7A6A5C] text-white flex items-center justify-center font-bold text-xs">3</span>
+<div>
+<h4 class="font-semibold text-sm text-[#3B2A1E]">Putri Salju Mete Salju</h4>
+<p class="text-xs text-[#7A6A5C]">Harga: Rp 115.000 / toples</p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-bold text-sm text-[#1F6F50]">180 Toples</span>
+<span class="text-xs text-[#7A6A5C] block cost-owner">Rp 20.700.000</span>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-[#FBF6EC]/50 border border-[#E8DFCC]">
+<div class="flex items-center gap-3">
+<span class="w-7 h-7 rounded-full bg-[#E8DFCC] text-[#7A6A5C] flex items-center justify-center font-bold text-xs">4</span>
+<div>
+<h4 class="font-semibold text-sm text-[#3B2A1E]">Lidah Kucing Cheese Special</h4>
+<p class="text-xs text-[#7A6A5C]">Harga: Rp 95.000 / toples</p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-bold text-sm text-[#1F6F50]">95 Toples</span>
+<span class="text-xs text-[#7A6A5C] block cost-owner">Rp 9.025.000</span>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-[#FBF6EC]/50 border border-[#E8DFCC]">
+<div class="flex items-center gap-3">
+<span class="w-7 h-7 rounded-full bg-[#E8DFCC] text-[#7A6A5C] flex items-center justify-center font-bold text-xs">5</span>
+<div>
+<h4 class="font-semibold text-sm text-[#3B2A1E]">Sagu Keju Pandan Suji</h4>
+<p class="text-xs text-[#7A6A5C]">Harga: Rp 90.000 / toples</p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-bold text-sm text-[#1F6F50]">72 Toples</span>
+<span class="text-xs text-[#7A6A5C] block cost-owner">Rp 6.480.000</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- TAB 6: MANAJEMEN KARYAWAN & SUPABASE RLS -->
+<!-- ========================================== -->
+<section class="space-y-6 hidden" id="tab-karyawan">
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+<div>
+<h2 class="font-heading text-2xl font-bold text-[#3B2A1E]">Manajemen Akses &amp; Staf Dapur</h2>
+<p class="text-sm text-[#7A6A5C]">Kelola hak akses kasir dan koki melalui kebijakan Row Level Security (RLS).</p>
+</div>
+<button class="h-11 px-4 rounded-xl bg-[#1F6F50] hover:bg-[#17583F] text-white font-semibold text-sm flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-lg" data-icon="person_add">person_add</span>
+<span>+ Tambah Anggota Staf</span>
+</button>
+</div>
+<!-- Security / RLS Badge Notice -->
+<div class="p-4 rounded-2xl bg-[#EAF5EE] border border-[#B8E2C8] flex items-start gap-3">
+<span class="material-symbols-outlined text-[#2E8B57] text-2xl mt-0.5" data-icon="verified_user">verified_user</span>
+<div>
+<h4 class="font-heading font-semibold text-sm text-[#2E8B57]">Supabase RLS Enforced (Data Omzet Terproteksi)</h4>
+<p class="text-xs text-[#3B2A1E] mt-0.5">Staff dapur hanya dapat melihat resep, status order, dan nama pelanggan. Angka harga beli bahan baku &amp; total omzet harian otomatis ditolak di tingkat query database.</p>
+</div>
+</div>
+<!-- Staff List Table -->
+<div class="bg-white rounded-2xl border border-[#E8DFCC] shadow-warm-sm overflow-hidden">
+<table class="w-full text-left text-sm">
+<thead class="bg-[#FBF6EC] text-[#7A6A5C] text-xs font-semibold uppercase tracking-wider border-b border-[#E8DFCC]">
+<tr>
+<th class="py-3 px-4">Nama Staf</th>
+<th class="py-3 px-4">Role Akses</th>
+<th class="py-3 px-4">Status Akun</th>
+<th class="py-3 px-4">Terakhir Aktif</th>
+<th class="py-3 px-4 text-right">Aksi</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#E8DFCC]">
+<tr>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-[#1F6F50] text-white flex items-center justify-center font-bold text-xs">
+                      NL
+                    </div>
+<div>
+<span class="font-semibold text-[#3B2A1E]">Ibu Nur Laila</span>
+<p class="text-xs text-[#7A6A5C]">owner@dapurlebaran.id</p>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="px-2.5 py-1 rounded-full text-xs font-bold bg-[#1F6F50]/15 text-[#1F6F50]">Owner (Full Access)</span>
+</td>
+<td class="py-4 px-4">
+<span class="text-xs font-semibold text-[#2E8B57] flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-[#2E8B57]"></span> Aktif
+                  </span>
+</td>
+<td class="py-4 px-4 text-xs text-[#7A6A5C]">Baru Saja</td>
+<td class="py-4 px-4 text-right">
+<span class="text-xs text-[#7A6A5C] italic">Akun Utama</span>
+</td>
+</tr>
+<tr>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-[#C8962E] text-white flex items-center justify-center font-bold text-xs">
+                      DS
+                    </div>
+<div>
+<span class="font-semibold text-[#3B2A1E]">Dewi Sartika</span>
+<p class="text-xs text-[#7A6A5C]">dewi.kasir@dapurlebaran.id</p>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-[#FDF6E2] text-[#9E7000]">Staff Kasir / Order</span>
+</td>
+<td class="py-4 px-4">
+<span class="text-xs font-semibold text-[#2E8B57] flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-[#2E8B57]"></span> Aktif
+                  </span>
+</td>
+<td class="py-4 px-4 text-xs text-[#7A6A5C]">10 menit lalu</td>
+<td class="py-4 px-4 text-right">
+<button class="text-xs font-semibold text-[#1F6F50] hover:underline">Reset Sandi</button>
+</td>
+</tr>
+<tr>
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-[#7A6A5C] text-white flex items-center justify-center font-bold text-xs">
+                      BP
+                    </div>
+<div>
+<span class="font-semibold text-[#3B2A1E]">Budi Prakoso</span>
+<p class="text-xs text-[#7A6A5C]">budi.baker@dapurlebaran.id</p>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-[#FBF6EC] text-[#7A6A5C] border border-[#E8DFCC]">Staff Baker (Dapur)</span>
+</td>
+<td class="py-4 px-4">
+<span class="text-xs font-semibold text-[#2E8B57] flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-[#2E8B57]"></span> Aktif
+                  </span>
+</td>
+<td class="py-4 px-4 text-xs text-[#7A6A5C]">1 jam lalu</td>
+<td class="py-4 px-4 text-right">
+<button class="text-xs font-semibold text-[#1F6F50] hover:underline">Reset Sandi</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- TAB: PELANGGAN (Daftar Cepat) -->
+<section class="space-y-6 hidden" id="tab-pelanggan">
+<div class="flex justify-between items-center">
+<div>
+<h2 class="font-heading text-2xl font-bold text-[#3B2A1E]">Buku Kontak Pelanggan</h2>
+<p class="text-sm text-[#7A6A5C]">Riwayat pemesanan pelanggan setia tiap momen Idul Fitri.</p>
+</div>
+<button class="h-11 px-4 rounded-xl bg-[#1F6F50] text-white font-semibold text-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-lg" data-icon="person_add">person_add</span>
+<span>+ Pelanggan Baru</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="bg-white p-5 rounded-2xl border border-[#E8DFCC] shadow-warm-sm">
+<div class="flex items-center gap-3 mb-3">
+<div class="w-10 h-10 rounded-full bg-[#1F6F50]/10 text-[#1F6F50] flex items-center justify-center font-bold">SR</div>
+<div>
+<h4 class="font-bold text-sm text-[#3B2A1E]">Bu Siti Rahayu</h4>
+<p class="text-xs text-[#7A6A5C]">0812-4455-8899</p>
+</div>
+</div>
+<div class="text-xs text-[#7A6A5C] space-y-1 border-t border-[#E8DFCC] pt-3">
+<p>Total Pesanan: <span class="font-semibold text-[#3B2A1E]">3 Kali (12 Toples)</span></p>
+<p>Status: <span class="text-[#2E8B57] font-semibold">Pelanggan VIP</span></p>
+</div>
+</div>
+<div class="bg-white p-5 rounded-2xl border border-[#E8DFCC] shadow-warm-sm">
+<div class="flex items-center gap-3 mb-3">
+<div class="w-10 h-10 rounded-full bg-[#C8962E]/10 text-[#C8962E] flex items-center justify-center font-bold">HG</div>
+<div>
+<h4 class="font-bold text-sm text-[#3B2A1E]">Pak Hendra Gunawan</h4>
+<p class="text-xs text-[#7A6A5C]">0812-3456-7890</p>
+</div>
+</div>
+<div class="text-xs text-[#7A6A5C] space-y-1 border-t border-[#E8DFCC] pt-3">
+<p>Total Pesanan: <span class="font-semibold text-[#3B2A1E]">1 Kali (5 Toples)</span></p>
+<p>Status: <span class="text-[#9E7000] font-semibold">Ada Tagihan DP</span></p>
+</div>
+</div>
+<div class="bg-white p-5 rounded-2xl border border-[#E8DFCC] shadow-warm-sm">
+<div class="flex items-center gap-3 mb-3">
+<div class="w-10 h-10 rounded-full bg-[#7A6A5C]/10 text-[#7A6A5C] flex items-center justify-center font-bold">RK</div>
+<div>
+<h4 class="font-bold text-sm text-[#3B2A1E]">Ibu Ratna Kartika</h4>
+<p class="text-xs text-[#7A6A5C]">0819-8765-4321</p>
+</div>
+</div>
+<div class="text-xs text-[#7A6A5C] space-y-1 border-t border-[#E8DFCC] pt-3">
+<p>Total Pesanan: <span class="font-semibold text-[#3B2A1E]">1 Kali (2 Toples)</span></p>
+<p>Status: <span class="text-[#B93A2E] font-semibold">Belum Lunas</span></p>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- FLOATING ACTION BUTTON (FAB) FOR MOBILE & QUICK ACTION (< 30 Detik) -->
+<div class="fixed bottom-20 right-4 md:bottom-8 md:right-8 z-40">
+<button class="h-14 px-5 rounded-full bg-[#C8962E] hover:bg-[#b58525] text-white font-semibold text-sm flex items-center gap-2 shadow-warm-fab active:scale-95 transition-transform" onclick="openModalPenjualan()" title="Catat Penjualan Baru Cepat">
+<span class="material-symbols-outlined text-2xl" data-icon="add">add</span>
+<span class="font-semibold tracking-wide">+ Penjualan</span>
+</button>
+</div>
+<!-- BOTTOM NAVBAR FOR MOBILE (Shared Component JSON Blueprint) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 md:hidden bg-surface-container-lowest border-t border-[#E8DFCC] shadow-md">
+<button class="flex flex-col items-center justify-center text-[#1F6F50] font-semibold" id="m-nav-beranda" onclick="switchTab('beranda')">
+<span class="material-symbols-outlined text-2xl" data-icon="dashboard">dashboard</span>
+<span class="text-[11px] mt-0.5">Beranda</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#7A6A5C]" id="m-nav-penjualan" onclick="switchTab('penjualan')">
+<span class="material-symbols-outlined text-2xl" data-icon="receipt_long">receipt_long</span>
+<span class="text-[11px] mt-0.5">Penjualan</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#7A6A5C]" id="m-nav-pelanggan" onclick="switchTab('pelanggan')">
+<span class="material-symbols-outlined text-2xl" data-icon="group">group</span>
+<span class="text-[11px] mt-0.5">Pelanggan</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#7A6A5C]" id="m-nav-bahan" onclick="switchTab('bahan')">
+<span class="material-symbols-outlined text-2xl" data-icon="inventory_2">inventory_2</span>
+<span class="text-[11px] mt-0.5">Bahan</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#7A6A5C]" id="m-nav-ringkasan" onclick="switchTab('ringkasan')">
+<span class="material-symbols-outlined text-2xl" data-icon="monitoring">monitoring</span>
+<span class="text-[11px] mt-0.5">Ringkasan</span>
+</button>
+</nav>
+<!-- ======================================================== -->
+<!-- MODAL CEPAT: INPUT PENJUALAN KUE (< 30 Detik Flow)      -->
+<!-- ======================================================== -->
+<div class="fixed inset-0 z-50 bg-black/50 backdrop-blur-xs flex items-center justify-center p-4 hidden" id="modal-penjualan">
+<div class="bg-white w-full max-w-xl rounded-2xl border border-[#E8DFCC] shadow-warm-md overflow-hidden flex flex-col max-h-[921px]">
+<!-- Modal Header -->
+<div class="p-5 border-b border-[#E8DFCC] flex items-center justify-between bg-[#FBF6EC]/50">
+<div>
+<h3 class="font-heading text-lg font-bold text-[#3B2A1E]">Catat Pesanan Kue Baru</h3>
+<p class="text-xs text-[#7A6A5C]">Input cepat kasir &amp; order booking Idul Fitri</p>
+</div>
+<button class="w-8 h-8 rounded-lg hover:bg-black/5 flex items-center justify-center text-[#7A6A5C]" onclick="closeModalPenjualan()">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<!-- Modal Body (Form) -->
+<div class="p-5 overflow-y-auto space-y-4 flex-1">
+<!-- Pelanggan Picker -->
+<div>
+<label class="block text-xs font-semibold uppercase tracking-wider text-[#3B2A1E] mb-1.5">Nama Pelanggan</label>
+<div class="flex gap-2">
+<select class="flex-1 h-12 rounded-xl border border-[#E8DFCC] bg-white text-sm px-3 focus:border-[#1F6F50] focus:ring-1 focus:ring-[#1F6F50]" id="input-customer">
+<option value="Bu Siti Rahayu">Bu Siti Rahayu (0812-4455-8899)</option>
+<option value="Pak Hendra Gunawan">Pak Hendra Gunawan (0812-3456-7890)</option>
+<option value="Ibu Ratna Kartika">Ibu Ratna Kartika (0819-8765-4321)</option>
+<option value="dr. Maya Anggraini">dr. Maya Anggraini (0813-1122-3344)</option>
+</select>
+<button class="px-3 rounded-xl border border-[#E8DFCC] bg-[#FBF6EC] hover:bg-white text-xs font-semibold text-[#1F6F50] whitespace-nowrap" type="button">
+              + Baru
+            </button>
+</div>
+</div>
+<!-- Dynamic Cookie Item Rows -->
+<div>
+<div class="flex justify-between items-center mb-1.5">
+<label class="block text-xs font-semibold uppercase tracking-wider text-[#3B2A1E]">Daftar Toples Kue</label>
+<button class="text-xs font-semibold text-[#1F6F50] hover:underline flex items-center gap-1" onclick="addCookieRow()" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+<span>Tambah Kue</span>
+</button>
+</div>
+<div class="space-y-2" id="cookie-rows-container">
+<!-- Row 1 -->
+<div class="flex items-center gap-2 cookie-row">
+<select class="cookie-select flex-1 h-11 rounded-xl border border-[#E8DFCC] text-xs px-2.5 bg-white" onchange="calculateTotal()">
+<option data-name="Nastar Wisman" value="125000">Nastar Wisman (Rp 125.000)</option>
+<option data-name="Kastengel Keju" value="125000">Kastengel Keju (Rp 125.000)</option>
+<option data-name="Putri Salju Mete" value="115000">Putri Salju Mete (Rp 115.000)</option>
+<option data-name="Lidah Kucing" value="95000">Lidah Kucing (Rp 95.000)</option>
+<option data-name="Sagu Keju" value="90000">Sagu Keju (Rp 90.000)</option>
+</select>
+<input class="cookie-qty w-16 h-11 rounded-xl border border-[#E8DFCC] text-center text-sm font-semibold" min="1" onchange="calculateTotal()" oninput="calculateTotal()" type="number" value="2"/>
+<span class="cookie-subtotal text-xs font-bold text-[#1F6F50] w-24 text-right">Rp 250.000</span>
+<button class="w-8 h-8 rounded-lg hover:bg-red-50 text-[#B93A2E] flex items-center justify-center" onclick="removeCookieRow(this)" type="button">
+<span class="material-symbols-outlined text-base" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Status Pembayaran -->
+<div class="pt-2 border-t border-[#E8DFCC]">
+<label class="block text-xs font-semibold uppercase tracking-wider text-[#3B2A1E] mb-2">Status Pembayaran</label>
+<div class="grid grid-cols-3 gap-2">
+<label class="flex items-center justify-center gap-2 p-2.5 rounded-xl border border-[#E8DFCC] cursor-pointer hover:bg-[#FBF6EC] has-[:checked]:border-[#2E8B57] has-[:checked]:bg-[#EAF5EE]">
+<input checked="" class="text-[#2E8B57] focus:ring-[#2E8B57]" name="payment_status" onchange="toggleDpInput()" type="radio" value="lunas"/>
+<span class="text-xs font-bold text-[#2E8B57]">Lunas</span>
+</label>
+<label class="flex items-center justify-center gap-2 p-2.5 rounded-xl border border-[#E8DFCC] cursor-pointer hover:bg-[#FBF6EC] has-[:checked]:border-[#D99A00] has-[:checked]:bg-[#FDF6E2]">
+<input class="text-[#D99A00] focus:ring-[#D99A00]" name="payment_status" onchange="toggleDpInput()" type="radio" value="dp"/>
+<span class="text-xs font-bold text-[#D99A00]">DP</span>
+</label>
+<label class="flex items-center justify-center gap-2 p-2.5 rounded-xl border border-[#E8DFCC] cursor-pointer hover:bg-[#FBF6EC] has-[:checked]:border-[#B93A2E] has-[:checked]:bg-[#FBEBE9]">
+<input class="text-[#B93A2E] focus:ring-[#B93A2E]" name="payment_status" onchange="toggleDpInput()" type="radio" value="belum"/>
+<span class="text-xs font-bold text-[#B93A2E]">Belum Lunas</span>
+</label>
+</div>
+<!-- DP Value Input (hidden by default) -->
+<div class="mt-3 hidden" id="dp-input-wrapper">
+<label class="block text-xs font-semibold text-[#7A6A5C] mb-1">Nominal DP Diterima:</label>
+<div class="relative">
+<span class="absolute left-3 top-3.5 text-xs font-bold text-[#7A6A5C]">Rp</span>
+<input class="w-full h-11 pl-10 pr-3 rounded-xl border border-[#E8DFCC] text-sm" id="input-dp-val" type="number" value="100000"/>
+</div>
+</div>
+</div>
+<!-- Total Calculation -->
+<div class="p-3.5 rounded-xl bg-[#FBF6EC] border border-[#E8DFCC] flex justify-between items-center">
+<span class="text-xs font-bold uppercase tracking-wider text-[#7A6A5C]">Total Tagihan Pesanan</span>
+<span class="font-heading text-xl font-bold text-[#1F6F50]" id="modal-grand-total">Rp 250.000</span>
+</div>
+</div>
+<!-- Modal Footer (Sticky) -->
+<div class="p-4 border-t border-[#E8DFCC] bg-white flex justify-end gap-3">
+<button class="h-12 px-5 rounded-xl border border-[#E8DFCC] text-[#3B2A1E] font-medium text-sm hover:bg-[#FBF6EC]" onclick="closeModalPenjualan()" type="button">
+          Batal
+        </button>
+<button class="h-12 px-6 rounded-xl bg-[#1F6F50] hover:bg-[#17583F] text-white font-semibold text-sm flex items-center gap-2 shadow-sm" onclick="simpanPesanan()" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="check">check</span>
+<span>Simpan Pesanan (&lt;30s)</span>
+</button>
+</div>
+</div>
+</div>
+<!-- INTERACTIVE INLINE JAVASCRIPT FOR LOGIC, ROLE SWITCHER & RECIPE MULTIPLIER -->
+<script>
+    // Tab Navigation State
+    const tabs = ['beranda', 'penjualan', 'pelanggan', 'bahan', 'resep', 'ringkasan', 'karyawan'];
+    
+    function switchTab(target) {
+      tabs.forEach(t => {
+        const sec = document.getElementById(`tab-${t}`);
+        const navD = document.getElementById(`nav-${t}`);
+        const navM = document.getElementById(`m-nav-${t}`);
+        
+        if (sec) sec.classList.add('hidden');
+        if (navD) {
+          navD.className = "w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-[#7A6A5C] hover:bg-surface-container-low hover:text-[#3B2A1E] transition-colors";
+        }
+        if (navM) {
+          navM.className = "flex flex-col items-center justify-center text-[#7A6A5C]";
+        }
+      });
+
+      const activeSec = document.getElementById(`tab-${target}`);
+      const activeNavD = document.getElementById(`nav-${target}`);
+      const activeNavM = document.getElementById(`m-nav-${target}`);
+
+      if (activeSec) activeSec.classList.remove('hidden');
+      if (activeNavD) {
+        activeNavD.className = "w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-[#1F6F50] font-semibold bg-[#1F6F50]/10 transition-colors";
+      }
+      if (activeNavM) {
+        activeNavM.className = "flex flex-col items-center justify-center text-[#1F6F50] font-semibold";
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Role Switcher Simulation (Owner vs Staff Kitchen)
+    let currentRole = 'owner';
+    function setRole(role) {
+      currentRole = role;
+      const ownerBtn = document.getElementById('role-owner-btn');
+      const staffBtn = document.getElementById('role-staff-btn');
+      const sidebarBadge = document.getElementById('role-badge-sidebar');
+      const metricOmzet = document.getElementById('metric-omzet');
+      const metricOmzetStaff = document.getElementById('metric-omzet-staff');
+      const costOwnerEls = document.querySelectorAll('.cost-owner');
+      const costStaffEls = document.querySelectorAll('.cost-staff');
+
+      if (role === 'owner') {
+        ownerBtn.className = "px-3 py-1.5 text-xs font-semibold rounded-lg transition-all duration-150 flex items-center gap-1.5 bg-[#1F6F50] text-white shadow-sm";
+        staffBtn.className = "px-3 py-1.5 text-xs font-medium rounded-lg transition-all duration-150 flex items-center gap-1.5 text-[#7A6A5C] hover:text-[#3B2A1E]";
+        sidebarBadge.textContent = "Owner Toko • Nastar Gold";
+        metricOmzet.classList.remove('hidden');
+        metricOmzetStaff.classList.add('hidden');
+        costOwnerEls.forEach(el => el.classList.remove('hidden'));
+        costStaffEls.forEach(el => el.classList.add('hidden'));
+      } else {
+        staffBtn.className = "px-3 py-1.5 text-xs font-semibold rounded-lg transition-all duration-150 flex items-center gap-1.5 bg-[#1F6F50] text-white shadow-sm";
+        ownerBtn.className = "px-3 py-1.5 text-xs font-medium rounded-lg transition-all duration-150 flex items-center gap-1.5 text-[#7A6A5C] hover:text-[#3B2A1E]";
+        sidebarBadge.textContent = "Staf Operasional Dapur";
+        metricOmzet.classList.add('hidden');
+        metricOmzetStaff.classList.remove('hidden');
+        costOwnerEls.forEach(el => el.classList.add('hidden'));
+        costStaffEls.forEach(el => el.classList.remove('hidden'));
+      }
+    }
+
+    // Recipe Ingredients Data & Multiplier Logic
+    const recipes = {
+      nastar: {
+        title: "Nastar Klasik Butter Wijsman (Lumer di Mulut)",
+        desc: "Menggunakan 70% pure Wijsman butter dan selai nanas panggang karamelisasi lambat.",
+        baseBatchJars: 4,
+        ingredients: [
+          { name: "Butter Wijsman Murni", baseAmount: 250, unit: "gram", note: "Suhu ruang dingin" },
+          { name: "Margarin Blueband Master", baseAmount: 100, unit: "gram", note: "Untuk kokohkan bentuk" },
+          { name: "Gula Halus Clarias", baseAmount: 80, unit: "gram", note: "Diayak halus" },
+          { name: "Kuning Telur Omega", baseAmount: 3, unit: "butir", note: "Hanya kuning telur" },
+          { name: "Tepung Kunci Biru (Sangrai)", baseAmount: 450, unit: "gram", note: "Protein rendah disangrai" },
+          { name: "Susu Bubuk Full Cream", baseAmount: 50, unit: "gram", note: "Merek Dancow/NZ" },
+          { name: "Selai Nanas Homemade", baseAmount: 400, unit: "gram", note: "Sudah dipulung @ 4gr" }
+        ]
+      },
+      kastengel: {
+        title: "Kastengel Keju Edam Crispy (Gurih Renyah)",
+        desc: "Dominan Keju Edam tua impor Ayam Mas dengan taburan cheddar renyah panggang.",
+        baseBatchJars: 4,
+        ingredients: [
+          { name: "Butter Wijsman", baseAmount: 200, unit: "gram", note: "Harum gurih" },
+          { name: "Margarin Khusus Pastry", baseAmount: 100, unit: "gram", note: "Tekstur renyah" },
+          { name: "Keju Edam Tua (Parut Halus)", baseAmount: 200, unit: "gram", note: "Keringkan di kulkas" },
+          { name: "Tepung Kunci Biru", baseAmount: 350, unit: "gram", note: "Diayak bersih" },
+          { name: "Tepung Maizena", baseAmount: 50, unit: "gram", note: "Perenyah adonan" },
+          { name: "Kuning Telur Olesan", baseAmount: 2, unit: "butir", note: "Campur minyak 1/2 sdt" },
+          { name: "Keju Cheddar Parut Taburan", baseAmount: 120, unit: "gram", note: "Taburan atas" }
+        ]
+      }
+    };
+
+    let activeRecipeKey = 'nastar';
+    let currentMultiplier = 1;
+
+    function renderRecipeIngredients() {
+      const recipe = recipes[activeRecipeKey];
+      const container = document.getElementById('ingredient-list');
+      const badge = document.getElementById('multiplier-badge');
+      const title = document.getElementById('current-recipe-title');
+
+      if (title) title.textContent = recipe.title;
+      if (badge) badge.textContent = `Kapasitas: ${recipe.baseBatchJars * currentMultiplier} Toples 500g`;
+
+      container.innerHTML = '';
+      recipe.ingredients.forEach(item => {
+        const total = item.baseAmount * currentMultiplier;
+        const card = document.createElement('div');
+        card.className = "flex items-center justify-between p-3 rounded-xl border border-[#E8DFCC] bg-[#FBF6EC]/30";
+        card.innerHTML = `
+          <div>
+            <span class="font-semibold text-sm text-[#3B2A1E] block">${item.name}</span>
+            <span class="text-xs text-[#7A6A5C]">${item.note}</span>
+          </div>
+          <div class="text-right">
+            <span class="font-mono text-base font-bold text-[#1F6F50]">${total} ${item.unit}</span>
+            <span class="text-[10px] text-[#7A6A5C] block">(${item.baseAmount} x ${currentMultiplier})</span>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function setMultiplier(val) {
+      currentMultiplier = val;
+      [1, 2, 3, 5].forEach(v => {
+        const b = document.getElementById(`mul-${v}`);
+        if (b) {
+          if (v === val) {
+            b.className = "px-3 py-1.5 rounded-xl text-xs font-bold bg-[#1F6F50] text-white transition-all shadow-sm";
+          } else {
+            b.className = "px-3 py-1.5 rounded-xl text-xs font-semibold text-[#7A6A5C] hover:text-[#3B2A1E] transition-all";
+          }
+        }
+      });
+      renderRecipeIngredients();
+    }
+
+    function selectRecipe(key) {
+      activeRecipeKey = key;
+      const tabN = document.getElementById('recipe-tab-nastar');
+      const tabK = document.getElementById('recipe-tab-kastengel');
+
+      if (key === 'nastar') {
+        tabN.className = "px-4 py-2 rounded-xl text-sm font-bold bg-[#1F6F50] text-white shadow-sm flex items-center gap-2";
+        tabK.className = "px-4 py-2 rounded-xl text-sm font-semibold bg-white border border-[#E8DFCC] text-[#7A6A5C] hover:text-[#3B2A1E] flex items-center gap-2";
+      } else {
+        tabK.className = "px-4 py-2 rounded-xl text-sm font-bold bg-[#1F6F50] text-white shadow-sm flex items-center gap-2";
+        tabN.className = "px-4 py-2 rounded-xl text-sm font-semibold bg-white border border-[#E8DFCC] text-[#7A6A5C] hover:text-[#3B2A1E] flex items-center gap-2";
+      }
+      renderRecipeIngredients();
+    }
+
+    // Modal Fast Sales Handlers
+    function openModalPenjualan() {
+      document.getElementById('modal-penjualan').classList.remove('hidden');
+      calculateTotal();
+    }
+
+    function closeModalPenjualan() {
+      document.getElementById('modal-penjualan').classList.add('hidden');
+    }
+
+    function toggleDpInput() {
+      const isDp = document.querySelector('input[name="payment_status"]:checked').value === 'dp';
+      const dpWrap = document.getElementById('dp-input-wrapper');
+      if (isDp) {
+        dpWrap.classList.remove('hidden');
+      } else {
+        dpWrap.classList.add('hidden');
+      }
+    }
+
+    function calculateTotal() {
+      const rows = document.querySelectorAll('.cookie-row');
+      let grandTotal = 0;
+      rows.forEach(r => {
+        const select = r.querySelector('.cookie-select');
+        const qty = parseInt(r.querySelector('.cookie-qty').value) || 0;
+        const price = parseInt(select.value) || 0;
+        const subtotal = price * qty;
+        grandTotal += subtotal;
+        r.querySelector('.cookie-subtotal').textContent = `Rp ${subtotal.toLocaleString('id-ID')}`;
+      });
+      document.getElementById('modal-grand-total').textContent = `Rp ${grandTotal.toLocaleString('id-ID')}`;
+    }
+
+    function addCookieRow() {
+      const container = document.getElementById('cookie-rows-container');
+      const row = document.createElement('div');
+      row.className = "flex items-center gap-2 cookie-row";
+      row.innerHTML = `
+        <select onchange="calculateTotal()" class="cookie-select flex-1 h-11 rounded-xl border border-[#E8DFCC] text-xs px-2.5 bg-white">
+          <option value="125000" data-name="Nastar Wisman">Nastar Wisman (Rp 125.000)</option>
+          <option value="125000" data-name="Kastengel Keju">Kastengel Keju (Rp 125.000)</option>
+          <option value="115000" data-name="Putri Salju Mete">Putri Salju Mete (Rp 115.000)</option>
+          <option value="95000" data-name="Lidah Kucing">Lidah Kucing (Rp 95.000)</option>
+          <option value="90000" data-name="Sagu Keju">Sagu Keju (Rp 90.000)</option>
+        </select>
+        <input type="number" onchange="calculateTotal()" oninput="calculateTotal()" value="1" min="1" class="cookie-qty w-16 h-11 rounded-xl border border-[#E8DFCC] text-center text-sm font-semibold">
+        <span class="cookie-subtotal text-xs font-bold text-[#1F6F50] w-24 text-right">Rp 125.000</span>
+        <button type="button" onclick="removeCookieRow(this)" class="w-8 h-8 rounded-lg hover:bg-red-50 text-[#B93A2E] flex items-center justify-center">
+          <span class="material-symbols-outlined text-base" data-icon="delete">delete</span>
+        </button>
+      `;
+      container.appendChild(row);
+      calculateTotal();
+    }
+
+    function removeCookieRow(btn) {
+      const rows = document.querySelectorAll('.cookie-row');
+      if (rows.length > 1) {
+        btn.closest('.cookie-row').remove();
+        calculateTotal();
+      } else {
+        alert("Minimal sertakan satu toples pesanan.");
+      }
+    }
+
+    function simpanPesanan() {
+      const cust = document.getElementById('input-customer').value;
+      alert(`Pesanan untuk ${cust} berhasil disimpan dalam 18 detik! Data siap di-sync ke Supabase.`);
+      closeModalPenjualan();
+    }
+
+    function syncData() {
+      const icon = document.getElementById('sync-icon');
+      icon.classList.add('animate-spin');
+      setTimeout(() => {
+        icon.classList.remove('animate-spin');
+        alert("Sinkronisasi PWA Offline Cache & Supabase RLS selesai. Semua data mutakhir!");
+      }, 700);
+    }
+
+    function openModalBahan() {
+      alert("Membuka form belanja bahan: Stok bertambah & harga beli tercatat otomatis.");
+    }
+
+    function tambahStok(nama) {
+      alert(`Catat pembelian cepat untuk ${nama}. Stok akan langsung ditambahkan.`);
+    }
+
+    function toggleCookMode() {
+      alert("Mode Dapur Layar Penuh diaktifkan: font diperbesar untuk memudahkan baker di depan oven.");
+    }
+
+    // Initialize initial recipe display
+    renderRecipeIngredients();
+  </script>
+</body></html>

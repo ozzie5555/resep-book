@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dapur Lebaran - Manajemen Bahan Baku &amp; Stok</title>
+<!-- Google Fonts: Inter & Epilogue -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with custom theme config -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-variant": "#faddcb",
+            "on-tertiary": "#ffffff",
+            "surface-container": "#ffeadd",
+            "inverse-on-surface": "#ffede3",
+            "tertiary": "#8a2908",
+            "surface-dim": "#f1d4c2",
+            "on-primary-fixed": "#002114",
+            "secondary-fixed": "#ffdea7",
+            "on-secondary": "#ffffff",
+            "on-secondary-fixed": "#271900",
+            "on-secondary-container": "#745200",
+            "background": "#fff8f5",
+            "surface": "#fff8f5",
+            "on-surface-variant": "#3f4943",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#a1efc8",
+            "primary-fixed": "#a5f3cc",
+            "primary": "#00563a",
+            "on-error-container": "#93000a",
+            "surface-tint": "#196b4c",
+            "on-background": "#27180d",
+            "on-error": "#ffffff",
+            "secondary": "#7c5800",
+            "secondary-fixed-dim": "#f5be53",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-container": "#ffd6cb",
+            "on-tertiary-fixed-variant": "#842505",
+            "inverse-primary": "#8ad6b0",
+            "primary-container": "#1f6f50",
+            "surface-container-highest": "#faddcb",
+            "tertiary-fixed-dim": "#ffb5a0",
+            "on-tertiary-fixed": "#3b0a00",
+            "outline-variant": "#bec9c1",
+            "secondary-container": "#fec65a",
+            "on-primary-fixed-variant": "#005137",
+            "outline": "#6f7a73",
+            "error": "#ba1a1a",
+            "tertiary-container": "#aa401f",
+            "inverse-surface": "#3e2d21",
+            "surface-container-low": "#fff1e9",
+            "surface-bright": "#fff8f5",
+            "primary-fixed-dim": "#8ad6b0",
+            "error-container": "#ffdad6",
+            "on-surface": "#27180d",
+            "on-secondary-fixed-variant": "#5e4200",
+            "tertiary-fixed": "#ffdbd1",
+            "surface-container-high": "#ffe3d1"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "fontFamily": {
+            "headline-xl": ["Epilogue", "sans-serif"],
+            "headline-lg": ["Epilogue", "sans-serif"],
+            "headline-md": ["Epilogue", "sans-serif"],
+            "headline-sm": ["Epilogue", "sans-serif"],
+            "body-lg": ["Inter", "sans-serif"],
+            "body-md": ["Inter", "sans-serif"],
+            "body-sm": ["Inter", "sans-serif"],
+            "label-md": ["Inter", "sans-serif"],
+            "label-sm": ["Inter", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill-icon {
+      font-variation-settings: 'FILL' 1;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen font-body-md text-sm selection:bg-primary selection:text-on-primary flex">
+<!-- SideNavBar Desktop -->
+<aside class="hidden md:flex flex-col justify-between h-screen w-64 fixed left-0 top-0 bg-surface-container-lowest z-30 p-4 border-r border-[#E8DFCC] shrink-0">
+<!-- Brand & Top Navigation -->
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-3 px-2 py-1">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary shadow-sm shrink-0">
+<span class="material-symbols-outlined text-2xl" data-icon="cookie">cookie</span>
+</div>
+<div>
+<h1 class="font-headline-sm font-bold text-lg text-primary tracking-tight leading-tight">Dapur Lebaran</h1>
+<p class="text-xs text-on-surface-variant font-medium">Manajemen Produksi &amp; Pesanan</p>
+</div>
+</div>
+<!-- Action Primary CTA Button -->
+<button class="w-full h-11 bg-primary text-on-primary font-semibold text-sm rounded-xl hover:bg-primary-container active:scale-98 transition-all flex items-center justify-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-lg" data-icon="add">add</span>
+<span>+ Penjualan</span>
+</button>
+<!-- Main Nav Links -->
+<nav class="flex flex-col gap-1.5">
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors font-medium" href="#beranda">
+<span class="material-symbols-outlined text-xl" data-icon="dashboard">dashboard</span>
+<span>Beranda</span>
+</a>
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors font-medium" href="#penjualan">
+<span class="material-symbols-outlined text-xl" data-icon="receipt_long">receipt_long</span>
+<span>Penjualan</span>
+</a>
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors font-medium" href="#pelanggan">
+<span class="material-symbols-outlined text-xl" data-icon="group">group</span>
+<span>Pelanggan</span>
+</a>
+<!-- ACTIVE: Bahan -->
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-primary bg-surface-container font-semibold transition-colors" href="#bahan">
+<span class="material-symbols-outlined text-xl fill-icon text-primary" data-icon="inventory_2" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<span>Bahan</span>
+</a>
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors font-medium" href="#resep">
+<span class="material-symbols-outlined text-xl" data-icon="menu_book">menu_book</span>
+<span>Resep</span>
+</a>
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors font-medium" href="#ringkasan">
+<span class="material-symbols-outlined text-xl" data-icon="monitoring">monitoring</span>
+<span>Ringkasan</span>
+</a>
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors font-medium" href="#karyawan">
+<span class="material-symbols-outlined text-xl" data-icon="badge">badge</span>
+<span>Karyawan</span>
+</a>
+</nav>
+</div>
+<!-- Navigation Footer Links -->
+<div class="flex flex-col gap-1.5 pt-4 border-t border-[#E8DFCC]">
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors font-medium" href="#pengaturan">
+<span class="material-symbols-outlined text-xl" data-icon="settings">settings</span>
+<span>Pengaturan</span>
+</a>
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-tertiary hover:bg-[#FBEBE9] transition-colors font-medium" href="#keluar">
+<span class="material-symbols-outlined text-xl" data-icon="logout">logout</span>
+<span>Keluar</span>
+</a>
+</div>
+</aside>
+<!-- Right Master Content Column with proper margin and fluid boundaries -->
+<div class="flex-1 md:ml-64 flex flex-col min-w-0 w-full overflow-x-hidden">
+<!-- TopAppBar Header Component -->
+<header class="bg-surface-container-lowest sticky top-0 z-20 border-b border-[#E8DFCC] shadow-[0_1px_3px_rgba(0,0,0,0.03)]">
+<div class="flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16 w-full">
+<!-- Left: Search Bar & Mobile Brand -->
+<div class="flex items-center gap-4 flex-1 max-w-lg">
+<div class="md:hidden flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-primary text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-xl" data-icon="cookie">cookie</span>
+</div>
+<span class="font-headline-sm font-bold text-primary">Dapur Lebaran</span>
+</div>
+<!-- Desktop Search Bar -->
+<div class="hidden sm:flex items-center relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3.5 text-outline text-lg pointer-events-none" data-icon="search">search</span>
+<input class="w-full h-10 pl-10 pr-4 bg-background border border-[#E8DFCC] rounded-xl text-sm font-medium text-on-surface placeholder-on-surface-variant/70 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="Cari bahan baku, rempah, kaleng..." type="text"/>
+</div>
+</div>
+<!-- Right: Actions, RLS Toggle, Profile -->
+<div class="flex items-center gap-3 shrink-0">
+<!-- RLS Role Toggle Badge -->
+<div class="flex items-center bg-surface-container rounded-full p-1 pl-3 pr-1 border border-[#E8DFCC]">
+<div class="flex items-center gap-1.5 mr-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-xs text-primary font-semibold whitespace-nowrap" id="role-status-text">Owner: Harga Beli Terbuka</span>
+</div>
+<button class="h-7 px-2.5 rounded-full bg-surface-container-lowest text-on-surface font-semibold text-xs flex items-center gap-1 border border-[#E8DFCC] hover:bg-surface-container-low transition-all active:scale-95 shadow-xs" id="role-toggle-btn" onclick="toggleRole()" title="Klik untuk beralih mode tampilan peran">
+<span class="material-symbols-outlined text-sm" data-icon="swap_horiz">swap_horiz</span>
+<span id="role-button-label">Mode Staff</span>
+</button>
+</div>
+<!-- Quick Action Icon -->
+<button class="relative w-9 h-9 rounded-xl hover:bg-surface-container-low flex items-center justify-center text-on-surface-variant active:scale-95 transition-all" title="Sinkronisasi Data">
+<span class="material-symbols-outlined text-xl" data-icon="sync">sync</span>
+</button>
+<button class="relative w-9 h-9 rounded-xl hover:bg-surface-container-low flex items-center justify-center text-on-surface-variant active:scale-95 transition-all" title="Pemberitahuan">
+<span class="material-symbols-outlined text-xl" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-tertiary"></span>
+</button>
+<!-- User Avatar Profile -->
+<div class="flex items-center gap-2 pl-2 border-l border-[#E8DFCC]">
+<div class="w-9 h-9 rounded-full bg-secondary-fixed text-on-secondary-container flex items-center justify-center font-bold text-xs border border-secondary shadow-xs">
+              DL
+            </div>
+<div class="hidden lg:block text-left">
+<p class="text-xs font-bold text-on-surface leading-tight">Bu Anisa</p>
+<p class="text-[10px] text-on-surface-variant font-medium">Head Baker &amp; Owner</p>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Workspace Container -->
+<main class="w-full px-4 sm:px-6 lg:px-8 py-6 max-w-7xl mx-auto flex-1 pb-24 md:pb-12">
+<!-- Header Section: Title & Action CTA Buttons -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6">
+<div>
+<div class="flex flex-wrap items-center gap-2 mb-1.5">
+<span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-primary-fixed text-on-primary-fixed border border-[#8ad6b0]/40">Produksi Musim Lebaran 1447 H</span>
+<span class="text-xs text-on-surface-variant font-medium">• Terakhir dicek: 12 Menit lalu</span>
+</div>
+<h2 class="text-2xl sm:text-3xl font-headline-lg font-bold text-on-surface tracking-tight">Inventaris &amp; Bahan Baku</h2>
+<p class="text-sm text-on-surface-variant mt-1">Pantau sisa stok tepung, butter kaleng, keju edam, dan rempah untuk memenuhi target 1.200 toples kue kering.</p>
+</div>
+<!-- Quick Top Action Buttons -->
+<div class="flex flex-wrap items-center gap-3 shrink-0">
+<button class="h-11 px-4 rounded-xl bg-surface-container-lowest border border-[#E8DFCC] text-on-surface font-semibold text-sm hover:bg-surface-container-low transition-all duration-150 active:scale-95 flex items-center gap-2 shadow-xs" onclick="openModal('modal-opname')">
+<span class="material-symbols-outlined text-lg text-on-surface-variant" data-icon="tune">tune</span>
+<span>Penyesuaian Stok (Opname)</span>
+</button>
+<button class="h-11 px-5 rounded-xl bg-primary text-on-primary font-semibold text-sm hover:bg-primary-container transition-all duration-150 active:scale-95 flex items-center gap-2 shadow-sm" onclick="openModal('modal-restock')">
+<span class="material-symbols-outlined text-lg" data-icon="add_shopping_cart">add_shopping_cart</span>
+<span>+ Catat Belanja Bahan</span>
+</button>
+</div>
+</div>
+<!-- Bento Grid Metric Cards (4 Kolom Lengkap & Responsif, Bebas Terpotong) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 mb-6 w-full">
+<!-- Kartu 1: Total Bahan Aktif -->
+<div class="bg-surface-container-lowest border border-[#E8DFCC] rounded-2xl p-5 shadow-xs flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div>
+<p class="text-xs font-semibold text-on-surface-variant uppercase tracking-wider">Total Bahan Aktif</p>
+<div class="flex items-baseline gap-1.5 mt-1.5">
+<span class="text-3xl font-headline-xl font-bold text-on-surface">24</span>
+<span class="text-sm font-medium text-on-surface-variant">Item Terdaftar</span>
+</div>
+</div>
+<div class="w-11 h-11 rounded-xl bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-2xl" data-icon="category">category</span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-[#F0E8D8] flex items-center justify-between text-xs text-on-surface-variant">
+<span class="font-medium">Formula: 12 Resep Lebaran</span>
+<span class="text-primary font-bold bg-[#EAF5EE] px-2 py-0.5 rounded-full">100% Tercatat</span>
+</div>
+</div>
+<!-- Kartu 2: Kritis & Menipis -->
+<div class="bg-surface-container-lowest border border-[#F1BFBA] rounded-2xl p-5 shadow-xs flex flex-col justify-between bg-gradient-to-br from-white via-white to-[#FFF5F4] hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-error animate-ping"></span>
+<p class="text-xs font-bold text-tertiary uppercase tracking-wider">Kritis &amp; Menipis</p>
+</div>
+<div class="flex items-baseline gap-1.5 mt-1.5">
+<span class="text-3xl font-headline-xl font-bold text-tertiary">2</span>
+<span class="text-sm font-medium text-on-surface-variant">Bahan Prioritas</span>
+</div>
+</div>
+<div class="w-11 h-11 rounded-xl bg-error-container text-on-error-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-2xl" data-icon="warning">warning</span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-[#F1BFBA]/60 flex items-center justify-between text-xs">
+<span class="text-tertiary font-medium truncate max-w-[140px]" title="Butter Wijsman &amp; Keju Edam">Butter Wijsman &amp; Keju Edam</span>
+<button class="text-tertiary font-bold hover:underline shrink-0" onclick="filterKritis()">Beli Segera →</button>
+</div>
+</div>
+<!-- Kartu 3: Stok Waspada -->
+<div class="bg-surface-container-lowest border border-[#F4DB96] rounded-2xl p-5 shadow-xs flex flex-col justify-between bg-gradient-to-br from-white via-white to-[#FFFBF0] hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<p class="text-xs font-bold text-on-secondary-container uppercase tracking-wider">Stok Waspada</p>
+</div>
+<div class="flex items-baseline gap-1.5 mt-1.5">
+<span class="text-3xl font-headline-xl font-bold text-on-secondary-container">3</span>
+<span class="text-sm font-medium text-on-surface-variant">Bahan Menipis</span>
+</div>
+</div>
+<div class="w-11 h-11 rounded-xl bg-secondary-fixed text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-2xl" data-icon="hourglass_top">hourglass_top</span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-[#F4DB96]/60 flex items-center justify-between text-xs text-on-secondary-container">
+<span class="font-medium truncate max-w-[140px]" title="Gula Halus &amp; Telur Ayam">Gula Halus &amp; Telur Ayam</span>
+<span class="font-bold bg-[#FDF6E2] px-2 py-0.5 rounded-full shrink-0">Cukup 2 Hari</span>
+</div>
+</div>
+<!-- Kartu 4: Total Nilai Aset Stok (Owner Only RLS Protected - Sekarang pas & tidak terpotong) -->
+<div class="bg-surface-container-lowest border border-[#E8DFCC] rounded-2xl p-5 shadow-xs flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<p class="text-xs font-semibold text-on-surface-variant uppercase tracking-wider">Total Nilai Aset Stok</p>
+<span class="material-symbols-outlined text-xs text-outline" data-icon="lock" title="Dilindungi RLS - Hanya Owner">lock</span>
+</div>
+<div class="mt-1.5" id="metric-asset-container">
+<h3 class="text-2xl sm:text-3xl font-headline-xl font-bold text-primary truncate" id="metric-asset-value">Rp 8.450.000</h3>
+<div class="hidden py-1" id="metric-asset-masked">
+<span class="px-2.5 py-1 bg-surface-container text-outline text-xs font-semibold rounded-md">Terkunci (Akses Staff)</span>
+</div>
+</div>
+</div>
+<div class="w-11 h-11 rounded-xl bg-[#EAF5EE] flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-2xl" data-icon="payments">payments</span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-[#F0E8D8] flex items-center justify-between text-xs text-on-surface-variant">
+<span class="truncate">Modal Belanja Lebaran</span>
+<span class="text-primary font-semibold flex items-center gap-0.5 shrink-0">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle">check_circle</span> Mode Owner Terbuka
+            </span>
+</div>
+</div>
+</div>
+<!-- Filter Bar & Table Card Wrapper -->
+<div class="bg-surface-container-lowest border border-[#E8DFCC] rounded-2xl shadow-xs overflow-hidden mb-6">
+<!-- Table Control Toolbar -->
+<div class="p-4 sm:p-5 border-b border-[#E8DFCC] flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white">
+<!-- Filter Tabs -->
+<div class="flex flex-wrap items-center gap-2">
+<button class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-primary text-on-primary transition-all shadow-xs" id="filter-all-btn" onclick="filterStatus('all')">
+              Semua Bahan (24)
+            </button>
+<button class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#FBEBE9] text-[#B93A2E] border border-[#F1BFBA] hover:bg-[#F9DDD9] transition-all flex items-center gap-1.5" id="filter-critical-btn" onclick="filterStatus('critical')">
+<span class="w-2 h-2 rounded-full bg-[#B93A2E]"></span> Kritis (2)
+            </button>
+<button class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#FDF6E2] text-[#9E7000] border border-[#F4DB96] hover:bg-[#F9EDC7] transition-all flex items-center gap-1.5" id="filter-warning-btn" onclick="filterStatus('warning')">
+<span class="w-2 h-2 rounded-full bg-[#9E7000]"></span> Waspada (3)
+            </button>
+<button class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#EAF5EE] text-[#2E8B57] border border-[#B8E2C8] hover:bg-[#DDF0E4] transition-all flex items-center gap-1.5" id="filter-safe-btn" onclick="filterStatus('safe')">
+<span class="w-2 h-2 rounded-full bg-[#2E8B57]"></span> Aman (19)
+            </button>
+</div>
+<!-- Search & Filter Controls -->
+<div class="flex items-center gap-3">
+<div class="relative w-full sm:w-64">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-base" data-icon="search">search</span>
+<input class="w-full h-9 pl-9 pr-3 rounded-xl border border-[#E8DFCC] text-xs font-medium focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary bg-background" id="search-input" onkeyup="searchTable()" placeholder="Cari dalam daftar..." type="text"/>
+</div>
+<button class="h-9 px-3 rounded-xl border border-[#E8DFCC] hover:bg-surface-container-low text-on-surface-variant flex items-center gap-1.5 text-xs font-semibold whitespace-nowrap">
+<span class="material-symbols-outlined text-base" data-icon="filter_list">filter_list</span>
+<span>Filter Kategori</span>
+</button>
+</div>
+</div>
+<!-- Responsive Table Container without horizontal clipping -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left border-collapse min-w-[900px]" id="ingredients-table">
+<thead>
+<tr class="bg-surface text-on-surface-variant border-b border-[#E8DFCC] text-xs font-bold uppercase tracking-wider">
+<th class="py-3.5 px-6">Nama Bahan &amp; Kategori</th>
+<th class="py-3.5 px-4 w-44">Status &amp; Rasio Stok</th>
+<th class="py-3.5 px-4">Sisa Stok</th>
+<th class="py-3.5 px-4">Batas Min.</th>
+<th class="py-3.5 px-4 price-column">
+<div class="flex items-center gap-1">
+<span>Harga Beli (RLS)</span>
+<span class="material-symbols-outlined text-xs text-outline" data-icon="shield">shield</span>
+</div>
+</th>
+<th class="py-3.5 px-4">Estimasi Cukup</th>
+<th class="py-3.5 px-6 text-right">Aksi Cepat</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#E8DFCC] text-sm">
+<!-- Baris 1: Butter Wijsman (Kritis) -->
+<tr class="hover:bg-surface-container-low/40 transition-colors ingredient-row" data-name="butter wijsman kaleng harum mentega" data-status="critical">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-[#FBEBE9] border border-[#F1BFBA] text-[#B93A2E] flex items-center justify-center font-bold shrink-0">
+<span class="material-symbols-outlined text-xl" data-icon="oil_barrel">oil_barrel</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Butter Wijsman Kaleng</h4>
+<p class="text-xs text-on-surface-variant">Lemak &amp; Mentega • Supplier: TBK Harum</p>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="w-36">
+<div class="flex items-center justify-between mb-1.5 text-xs">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-semibold bg-[#FBEBE9] text-[#B93A2E] border border-[#F1BFBA]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#B93A2E] mr-1"></span> Kritis
+                      </span>
+<span class="font-bold text-[#B93A2E]">42%</span>
+</div>
+<div class="w-full bg-[#E8DFCC] rounded-full h-2 overflow-hidden">
+<div class="bg-[#B93A2E] h-2 rounded-full" style="width: 42%"></div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<span class="font-bold text-base text-tertiary">4.2 kg</span>
+</td>
+<td class="py-4 px-4 text-on-surface-variant whitespace-nowrap">10.0 kg</td>
+<td class="py-4 px-4 price-column whitespace-nowrap">
+<div class="price-val">
+<span class="font-bold text-on-surface">Rp 310.000</span>
+<span class="text-xs text-on-surface-variant block">/ kg</span>
+</div>
+<div class="price-masked hidden">
+<span class="text-xs text-outline italic">••••••••</span>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-base text-secondary" data-icon="bakery_dining">bakery_dining</span>
+<span class="font-medium text-xs">± 28 Toples Nastar</span>
+</div>
+</td>
+<td class="py-4 px-6 text-right whitespace-nowrap">
+<div class="flex items-center justify-end gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-primary text-on-primary text-xs font-semibold hover:bg-primary-container active:scale-95 transition-all shadow-xs" onclick="quickRestock('Butter Wijsman Kaleng')">
+                      + Belanja
+                    </button>
+<button class="p-1.5 rounded-lg border border-[#E8DFCC] text-on-surface-variant hover:bg-surface-container active:scale-95 transition-all" onclick="quickAdjust('Butter Wijsman Kaleng', '4.2')" title="Koreksi Opname">
+<span class="material-symbols-outlined text-base" data-icon="tune">tune</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Baris 2: Keju Edam Tua (Kritis) -->
+<tr class="hover:bg-surface-container-low/40 transition-colors ingredient-row" data-name="keju edam tua ayam emas dairy" data-status="critical">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-[#FBEBE9] border border-[#F1BFBA] text-[#B93A2E] flex items-center justify-center font-bold shrink-0">
+<span class="material-symbols-outlined text-xl" data-icon="lunch_dining">lunch_dining</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Keju Edam Tua (Ayam Emas)</h4>
+<p class="text-xs text-on-surface-variant">Keju &amp; Dairy • Supplier: Distributor Sukses</p>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="w-36">
+<div class="flex items-center justify-between mb-1.5 text-xs">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-semibold bg-[#FBEBE9] text-[#B93A2E] border border-[#F1BFBA]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#B93A2E] mr-1"></span> Kritis
+                      </span>
+<span class="font-bold text-[#B93A2E]">35%</span>
+</div>
+<div class="w-full bg-[#E8DFCC] rounded-full h-2 overflow-hidden">
+<div class="bg-[#B93A2E] h-2 rounded-full" style="width: 35%"></div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<span class="font-bold text-base text-tertiary">2.8 kg</span>
+</td>
+<td class="py-4 px-4 text-on-surface-variant whitespace-nowrap">8.0 kg</td>
+<td class="py-4 px-4 price-column whitespace-nowrap">
+<div class="price-val">
+<span class="font-bold text-on-surface">Rp 260.000</span>
+<span class="text-xs text-on-surface-variant block">/ kg</span>
+</div>
+<div class="price-masked hidden">
+<span class="text-xs text-outline italic">••••••••</span>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-base text-secondary" data-icon="bakery_dining">bakery_dining</span>
+<span class="font-medium text-xs">± 18 Toples Kastengel</span>
+</div>
+</td>
+<td class="py-4 px-6 text-right whitespace-nowrap">
+<div class="flex items-center justify-end gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-primary text-on-primary text-xs font-semibold hover:bg-primary-container active:scale-95 transition-all shadow-xs" onclick="quickRestock('Keju Edam Tua (Ayam Emas)')">
+                      + Belanja
+                    </button>
+<button class="p-1.5 rounded-lg border border-[#E8DFCC] text-on-surface-variant hover:bg-surface-container active:scale-95 transition-all" onclick="quickAdjust('Keju Edam Tua (Ayam Emas)', '2.8')" title="Koreksi Opname">
+<span class="material-symbols-outlined text-base" data-icon="tune">tune</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Baris 3: Tepung Terigu Rendah (Aman) -->
+<tr class="hover:bg-surface-container-low/40 transition-colors ingredient-row" data-name="tepung terigu protein rendah kunci biru gandum" data-status="safe">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-[#EAF5EE] border border-[#B8E2C8] text-[#2E8B57] flex items-center justify-center font-bold shrink-0">
+<span class="material-symbols-outlined text-xl" data-icon="grain">grain</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Tepung Terigu Rendah (Kunci Biru)</h4>
+<p class="text-xs text-on-surface-variant">Gandum &amp; Tepung • Sak 25kg</p>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="w-36">
+<div class="flex items-center justify-between mb-1.5 text-xs">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-semibold bg-[#EAF5EE] text-[#2E8B57] border border-[#B8E2C8]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#2E8B57] mr-1"></span> Aman
+                      </span>
+<span class="font-bold text-[#2E8B57]">225%</span>
+</div>
+<div class="w-full bg-[#E8DFCC] rounded-full h-2 overflow-hidden">
+<div class="bg-[#2E8B57] h-2 rounded-full" style="width: 100%"></div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<span class="font-bold text-base text-primary">45.0 kg</span>
+</td>
+<td class="py-4 px-4 text-on-surface-variant whitespace-nowrap">20.0 kg</td>
+<td class="py-4 px-4 price-column whitespace-nowrap">
+<div class="price-val">
+<span class="font-bold text-on-surface">Rp 14.500</span>
+<span class="text-xs text-on-surface-variant block">/ kg</span>
+</div>
+<div class="price-masked hidden">
+<span class="text-xs text-outline italic">••••••••</span>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-base text-secondary" data-icon="bakery_dining">bakery_dining</span>
+<span class="font-medium text-xs">± 320 Toples Campur</span>
+</div>
+</td>
+<td class="py-4 px-6 text-right whitespace-nowrap">
+<div class="flex items-center justify-end gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface border border-[#E8DFCC] text-on-surface text-xs font-semibold hover:bg-surface-container active:scale-95 transition-all shadow-xs" onclick="quickRestock('Tepung Terigu Rendah (Kunci Biru)')">
+                      + Tambah
+                    </button>
+<button class="p-1.5 rounded-lg border border-[#E8DFCC] text-on-surface-variant hover:bg-surface-container active:scale-95 transition-all" onclick="quickAdjust('Tepung Terigu Rendah (Kunci Biru)', '45.0')" title="Koreksi Opname">
+<span class="material-symbols-outlined text-base" data-icon="tune">tune</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Baris 4: Gula Halus Super (Waspada) -->
+<tr class="hover:bg-surface-container-low/40 transition-colors ingredient-row" data-name="gula halus super pemanis" data-status="warning">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-[#FDF6E2] border border-[#F4DB96] text-[#9E7000] flex items-center justify-center font-bold shrink-0">
+<span class="material-symbols-outlined text-xl" data-icon="cookie">cookie</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Gula Halus Super</h4>
+<p class="text-xs text-on-surface-variant">Pemanis &amp; Gula • Zak 10kg</p>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="w-36">
+<div class="flex items-center justify-between mb-1.5 text-xs">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-semibold bg-[#FDF6E2] text-[#9E7000] border border-[#F4DB96]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#9E7000] mr-1"></span> Waspada
+                      </span>
+<span class="font-bold text-[#9E7000]">120%</span>
+</div>
+<div class="w-full bg-[#E8DFCC] rounded-full h-2 overflow-hidden">
+<div class="bg-[#9E7000] h-2 rounded-full" style="width: 75%"></div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<span class="font-bold text-base text-[#9E7000]">18.0 kg</span>
+</td>
+<td class="py-4 px-4 text-on-surface-variant whitespace-nowrap">15.0 kg</td>
+<td class="py-4 px-4 price-column whitespace-nowrap">
+<div class="price-val">
+<span class="font-bold text-on-surface">Rp 18.000</span>
+<span class="text-xs text-on-surface-variant block">/ kg</span>
+</div>
+<div class="price-masked hidden">
+<span class="text-xs text-outline italic">••••••••</span>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-base text-secondary" data-icon="bakery_dining">bakery_dining</span>
+<span class="font-medium text-xs">± 140 Toples Salju</span>
+</div>
+</td>
+<td class="py-4 px-6 text-right whitespace-nowrap">
+<div class="flex items-center justify-end gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface border border-[#E8DFCC] text-on-surface text-xs font-semibold hover:bg-surface-container active:scale-95 transition-all shadow-xs" onclick="quickRestock('Gula Halus Super')">
+                      + Tambah
+                    </button>
+<button class="p-1.5 rounded-lg border border-[#E8DFCC] text-on-surface-variant hover:bg-surface-container active:scale-95 transition-all" onclick="quickAdjust('Gula Halus Super', '18.0')" title="Koreksi Opname">
+<span class="material-symbols-outlined text-base" data-icon="tune">tune</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Baris 5: Cengkeh Pilihan (Aman) -->
+<tr class="hover:bg-surface-container-low/40 transition-colors ingredient-row" data-name="cengkeh pilihan grade a rempah kering nastar" data-status="safe">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-[#EAF5EE] border border-[#B8E2C8] text-[#2E8B57] flex items-center justify-center font-bold shrink-0">
+<span class="material-symbols-outlined text-xl" data-icon="spa">spa</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Cengkeh Pilihan (Grade A)</h4>
+<p class="text-xs text-on-surface-variant">Rempah Kering • Taburan Nastar Klasik</p>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="w-36">
+<div class="flex items-center justify-between mb-1.5 text-xs">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-semibold bg-[#EAF5EE] text-[#2E8B57] border border-[#B8E2C8]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#2E8B57] mr-1"></span> Aman
+                      </span>
+<span class="font-bold text-[#2E8B57]">300%</span>
+</div>
+<div class="w-full bg-[#E8DFCC] rounded-full h-2 overflow-hidden">
+<div class="bg-[#2E8B57] h-2 rounded-full" style="width: 100%"></div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<span class="font-bold text-base text-primary">1.5 kg</span>
+</td>
+<td class="py-4 px-4 text-on-surface-variant whitespace-nowrap">0.5 kg (500g)</td>
+<td class="py-4 px-4 price-column whitespace-nowrap">
+<div class="price-val">
+<span class="font-bold text-on-surface">Rp 120.000</span>
+<span class="text-xs text-on-surface-variant block">/ kg</span>
+</div>
+<div class="price-masked hidden">
+<span class="text-xs text-outline italic">••••••••</span>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-base text-secondary" data-icon="bakery_dining">bakery_dining</span>
+<span class="font-medium text-xs">± 450 Toples Nastar</span>
+</div>
+</td>
+<td class="py-4 px-6 text-right whitespace-nowrap">
+<div class="flex items-center justify-end gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface border border-[#E8DFCC] text-on-surface text-xs font-semibold hover:bg-surface-container active:scale-95 transition-all shadow-xs" onclick="quickRestock('Cengkeh Pilihan (Grade A)')">
+                      + Tambah
+                    </button>
+<button class="p-1.5 rounded-lg border border-[#E8DFCC] text-on-surface-variant hover:bg-surface-container active:scale-95 transition-all" onclick="quickAdjust('Cengkeh Pilihan (Grade A)', '1.5')" title="Koreksi Opname">
+<span class="material-symbols-outlined text-base" data-icon="tune">tune</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Baris 6: Telur Ayam Negeri Segar (Waspada) -->
+<tr class="hover:bg-surface-container-low/40 transition-colors ingredient-row" data-name="telur ayam negeri segar peternakan barokah" data-status="warning">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-[#FDF6E2] border border-[#F4DB96] text-[#9E7000] flex items-center justify-center font-bold shrink-0">
+<span class="material-symbols-outlined text-xl" data-icon="egg">egg</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Telur Ayam Negeri Segar</h4>
+<p class="text-xs text-on-surface-variant">Telur &amp; Unggas • Peternakan Barokah</p>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<div class="w-36">
+<div class="flex items-center justify-between mb-1.5 text-xs">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-semibold bg-[#FDF6E2] text-[#9E7000] border border-[#F4DB96]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#9E7000] mr-1"></span> Waspada
+                      </span>
+<span class="font-bold text-[#9E7000]">120%</span>
+</div>
+<div class="w-full bg-[#E8DFCC] rounded-full h-2 overflow-hidden">
+<div class="bg-[#9E7000] h-2 rounded-full" style="width: 60%"></div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<span class="font-bold text-base text-[#9E7000]">12.0 kg</span>
+</td>
+<td class="py-4 px-4 text-on-surface-variant whitespace-nowrap">10.0 kg</td>
+<td class="py-4 px-4 price-column whitespace-nowrap">
+<div class="price-val">
+<span class="font-bold text-on-surface">Rp 28.000</span>
+<span class="text-xs text-on-surface-variant block">/ kg</span>
+</div>
+<div class="price-masked hidden">
+<span class="text-xs text-outline italic">••••••••</span>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-base text-secondary" data-icon="bakery_dining">bakery_dining</span>
+<span class="font-medium text-xs">± 55 Batch Adonan</span>
+</div>
+</td>
+<td class="py-4 px-6 text-right whitespace-nowrap">
+<div class="flex items-center justify-end gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface border border-[#E8DFCC] text-on-surface text-xs font-semibold hover:bg-surface-container active:scale-95 transition-all shadow-xs" onclick="quickRestock('Telur Ayam Negeri Segar')">
+                      + Tambah
+                    </button>
+<button class="p-1.5 rounded-lg border border-[#E8DFCC] text-on-surface-variant hover:bg-surface-container active:scale-95 transition-all" onclick="quickAdjust('Telur Ayam Negeri Segar', '12.0')" title="Koreksi Opname">
+<span class="material-symbols-outlined text-base" data-icon="tune">tune</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination Footer (Lengkap & Rapi) -->
+<div class="px-6 py-4 border-t border-[#E8DFCC] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-medium text-on-surface-variant bg-surface">
+<p>Menampilkan <span class="font-bold text-on-surface">1 - 6</span> dari <span class="font-bold text-on-surface">24</span> item bahan aktif</p>
+<div class="flex items-center gap-1.5">
+<button class="px-3 h-8 rounded-lg border border-[#E8DFCC] bg-surface-container-lowest flex items-center gap-1 hover:bg-surface-container-low disabled:opacity-40 font-semibold" disabled="">
+<span class="material-symbols-outlined text-sm" data-icon="chevron_left">chevron_left</span>
+<span>Sebelumnya</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-primary text-on-primary font-bold text-xs flex items-center justify-center shadow-xs">1</button>
+<button class="w-8 h-8 rounded-lg border border-[#E8DFCC] bg-surface-container-lowest font-medium text-xs flex items-center justify-center hover:bg-surface-container-low">2</button>
+<button class="w-8 h-8 rounded-lg border border-[#E8DFCC] bg-surface-container-lowest font-medium text-xs flex items-center justify-center hover:bg-surface-container-low">3</button>
+<button class="w-8 h-8 rounded-lg border border-[#E8DFCC] bg-surface-container-lowest font-medium text-xs flex items-center justify-center hover:bg-surface-container-low">4</button>
+<button class="px-3 h-8 rounded-lg border border-[#E8DFCC] bg-surface-container-lowest flex items-center gap-1 hover:bg-surface-container-low font-semibold">
+<span>Selanjutnya</span>
+<span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Batch Kitchen Prep Helper Card (Tertata rapi di dalam layout dengan margin bottom aman) -->
+<div class="bg-surface-container-lowest border border-[#E8DFCC] rounded-2xl p-5 sm:p-6 shadow-xs flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
+<div class="flex items-start sm:items-center gap-4">
+<div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-secondary-fixed text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-2xl sm:text-3xl" data-icon="skillet">skillet</span>
+</div>
+<div>
+<h4 class="font-headline-sm font-bold text-base sm:text-lg text-on-surface">Jadwal Panggang Hari Ini: Batch Nastar Premium #14</h4>
+<p class="text-xs sm:text-sm text-on-surface-variant mt-0.5">Membutuhkan 6.0 kg Butter Wijsman. Kekurangan stok butter saat ini: <strong class="text-tertiary font-bold">1.8 kg</strong>. Harap lakukan konfirmasi belanja segera sebelum jam 13.00 WIB.</p>
+</div>
+</div>
+<div class="flex items-center gap-3 w-full md:w-auto justify-end shrink-0">
+<button class="w-full md:w-auto h-11 px-5 rounded-xl bg-primary text-on-primary font-semibold text-xs sm:text-sm hover:bg-primary-container transition-all active:scale-95 whitespace-nowrap shadow-xs" onclick="quickRestock('Butter Wijsman Kaleng')">
+            Pesan ke Toko Harum
+          </button>
+</div>
+</div>
+</main>
+</div>
+<!-- Modal: + Catat Belanja Bahan (Stok Otomatis Bertambah) -->
+<div class="fixed inset-0 bg-[#27180d]/40 backdrop-blur-xs z-50 hidden flex items-center justify-center p-4" id="modal-restock">
+<div class="bg-surface-container-lowest rounded-2xl border border-[#E8DFCC] max-w-lg w-full p-6 shadow-2xl animate-in fade-in duration-200">
+<div class="flex items-center justify-between pb-4 border-b border-[#E8DFCC]">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-xl bg-primary text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-xl" data-icon="add_shopping_cart">add_shopping_cart</span>
+</div>
+<div>
+<h3 class="font-headline-sm font-bold text-base text-on-surface">Catat Belanja Bahan Baku</h3>
+<p class="text-xs text-on-surface-variant font-medium">Stok inventaris akan bertambah otomatis secara real-time</p>
+</div>
+</div>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container flex items-center justify-center text-outline" onclick="closeModal('modal-restock')">
+<span class="material-symbols-outlined text-lg" data-icon="close">close</span>
+</button>
+</div>
+<form class="mt-4 space-y-4" id="form-restock" onsubmit="handleRestockSubmit(event)">
+<div>
+<label class="block text-xs font-bold text-on-surface mb-1.5 uppercase tracking-wider">Pilih Bahan Baku</label>
+<select class="w-full h-11 rounded-xl border border-[#E8DFCC] bg-white px-3 text-sm font-medium text-on-surface focus:ring-2 focus:ring-primary focus:border-transparent" id="restock-item-select">
+<option value="Butter Wijsman Kaleng">Butter Wijsman Kaleng (Sisa: 4.2 kg)</option>
+<option value="Keju Edam Tua (Ayam Emas)">Keju Edam Tua (Ayam Emas) (Sisa: 2.8 kg)</option>
+<option value="Tepung Terigu Rendah (Kunci Biru)">Tepung Terigu Rendah (Kunci Biru) (Sisa: 45 kg)</option>
+<option value="Gula Halus Super">Gula Halus Super (Sisa: 18 kg)</option>
+<option value="Cengkeh Pilihan (Grade A)">Cengkeh Pilihan (Grade A) (Sisa: 1.5 kg)</option>
+<option value="Telur Ayam Negeri Segar">Telur Ayam Negeri Segar (Sisa: 12 kg)</option>
+</select>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div>
+<label class="block text-xs font-bold text-on-surface mb-1.5 uppercase tracking-wider">Jumlah Tambahan</label>
+<input class="w-full h-11 rounded-xl border border-[#E8DFCC] bg-white px-3 text-sm font-medium text-on-surface focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Contoh: 10.0" required="" step="0.1" type="number"/>
+</div>
+<div>
+<label class="block text-xs font-bold text-on-surface mb-1.5 uppercase tracking-wider">Tanggal Pembelian</label>
+<input class="w-full h-11 rounded-xl border border-[#E8DFCC] bg-white px-3 text-sm font-medium text-on-surface focus:ring-2 focus:ring-primary focus:border-transparent" type="date" value="2026-10-21"/>
+</div>
+</div>
+<div id="restock-price-section">
+<label class="block text-xs font-bold text-on-surface mb-1.5 uppercase tracking-wider">Harga Beli Satuan (Akses Owner)</label>
+<div class="relative">
+<span class="absolute left-3.5 top-3 text-sm text-on-surface-variant font-bold">Rp</span>
+<input class="w-full h-11 pl-11 pr-3 rounded-xl border border-[#E8DFCC] bg-white text-sm font-bold text-on-surface focus:ring-2 focus:ring-primary focus:border-transparent" id="restock-price-input" type="text" value="310.000"/>
+</div>
+<p class="text-[11px] text-on-surface-variant mt-1 font-medium">Dicatat otomatis ke Buku Pengeluaran Operasional</p>
+</div>
+<div>
+<label class="block text-xs font-bold text-on-surface mb-1.5 uppercase tracking-wider">Nama Toko / Supplier</label>
+<input class="w-full h-11 rounded-xl border border-[#E8DFCC] bg-white px-3 text-sm font-medium text-on-surface focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Misal: Toko Bahan Kue Harum Pasar Baru" type="text" value="Toko Bahan Kue Harum"/>
+</div>
+<div class="pt-4 flex items-center justify-end gap-3 border-t border-[#E8DFCC]">
+<button class="h-11 px-4 rounded-xl border border-[#E8DFCC] text-on-surface font-semibold text-sm hover:bg-surface-container transition-all" onclick="closeModal('modal-restock')" type="button">Batal</button>
+<button class="h-11 px-5 rounded-xl bg-primary text-on-primary font-semibold text-sm hover:bg-primary-container transition-all flex items-center gap-1.5 shadow-sm" type="submit">
+<span class="material-symbols-outlined text-lg" data-icon="check_circle">check_circle</span>
+<span>Simpan &amp; Tambah Stok</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+<!-- Modal: Penyesuaian Stok Manual (Opname) -->
+<div class="fixed inset-0 bg-[#27180d]/40 backdrop-blur-xs z-50 hidden flex items-center justify-center p-4" id="modal-opname">
+<div class="bg-surface-container-lowest rounded-2xl border border-[#E8DFCC] max-w-lg w-full p-6 shadow-2xl animate-in fade-in duration-200">
+<div class="flex items-center justify-between pb-4 border-b border-[#E8DFCC]">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-xl bg-secondary text-on-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-xl" data-icon="tune">tune</span>
+</div>
+<div>
+<h3 class="font-headline-sm font-bold text-base text-on-surface">Penyesuaian Manual (Stock Opname)</h3>
+<p class="text-xs text-on-surface-variant font-medium">Koreksi fisik timbangan bahan dapur aktual</p>
+</div>
+</div>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container flex items-center justify-center text-outline" onclick="closeModal('modal-opname')">
+<span class="material-symbols-outlined text-lg" data-icon="close">close</span>
+</button>
+</div>
+<form class="mt-4 space-y-4" id="form-opname" onsubmit="handleOpnameSubmit(event)">
+<div>
+<label class="block text-xs font-bold text-on-surface mb-1.5 uppercase tracking-wider">Nama Bahan Yang Disesuaikan</label>
+<input class="w-full h-11 rounded-xl border border-[#E8DFCC] bg-surface-container-low px-3 text-sm font-bold text-on-surface focus:outline-none" id="opname-item-name" readonly="" type="text" value="Butter Wijsman Kaleng"/>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div>
+<label class="block text-xs font-bold text-on-surface mb-1.5 uppercase tracking-wider">Stok Sistem</label>
+<input class="w-full h-11 rounded-xl border border-[#E8DFCC] bg-surface-container-low px-3 text-sm font-bold text-outline" id="opname-system-qty" readonly="" type="text" value="4.2 kg"/>
+</div>
+<div>
+<label class="block text-xs font-bold text-on-surface mb-1.5 uppercase tracking-wider">Hasil Timbang Fisik</label>
+<input class="w-full h-11 rounded-xl border border-[#E8DFCC] bg-white px-3 text-sm font-bold text-on-surface focus:ring-2 focus:ring-primary focus:border-transparent" id="opname-actual-qty" required="" step="0.05" type="number" value="4.0"/>
+</div>
+</div>
+<div>
+<label class="block text-xs font-bold text-on-surface mb-1.5 uppercase tracking-wider">Alasan Penyesuaian</label>
+<select class="w-full h-11 rounded-xl border border-[#E8DFCC] bg-white px-3 text-sm font-medium text-on-surface focus:ring-2 focus:ring-primary focus:border-transparent">
+<option>Selisih Timbangan / Susut Alami</option>
+<option>Tumpah / Rusak di Dapur Panggang</option>
+<option>Dipakai Untuk Uji Sampel Nastar</option>
+<option>Koreksi Salah Input Nota Sebelumnya</option>
+</select>
+</div>
+<div>
+<label class="block text-xs font-bold text-on-surface mb-1.5 uppercase tracking-wider">Catatan Tambahan</label>
+<input class="w-full h-11 rounded-xl border border-[#E8DFCC] bg-white px-3 text-sm font-medium text-on-surface focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Misal: Kaleng bocor sedikit saat pembukaan" type="text"/>
+</div>
+<div class="pt-4 flex items-center justify-end gap-3 border-t border-[#E8DFCC]">
+<button class="h-11 px-4 rounded-xl border border-[#E8DFCC] text-on-surface font-semibold text-sm hover:bg-surface-container transition-all" onclick="closeModal('modal-opname')" type="button">Batal</button>
+<button class="h-11 px-5 rounded-xl bg-secondary text-on-secondary font-semibold text-sm hover:bg-on-secondary-container transition-all flex items-center gap-1.5 shadow-sm" type="submit">
+<span class="material-symbols-outlined text-lg" data-icon="save">save</span>
+<span>Konfirmasi Koreksi</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+<!-- BottomNavBar Component (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 md:hidden bg-surface-container-lowest shadow-lg border-t border-[#E8DFCC]">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-95" href="#beranda">
+<span class="material-symbols-outlined text-2xl" data-icon="dashboard">dashboard</span>
+<span class="text-[10px] font-semibold mt-0.5">Beranda</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-95" href="#penjualan">
+<span class="material-symbols-outlined text-2xl" data-icon="receipt_long">receipt_long</span>
+<span class="text-[10px] font-semibold mt-0.5">Penjualan</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-95" href="#pelanggan">
+<span class="material-symbols-outlined text-2xl" data-icon="group">group</span>
+<span class="text-[10px] font-semibold mt-0.5">Pelanggan</span>
+</a>
+<!-- ACTIVE: Bahan -->
+<a class="flex flex-col items-center justify-center text-primary font-bold transition-colors active:scale-95" href="#bahan">
+<span class="material-symbols-outlined text-2xl fill-icon" data-icon="inventory_2" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<span class="text-[10px] font-bold mt-0.5">Bahan</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-95" href="#ringkasan">
+<span class="material-symbols-outlined text-2xl" data-icon="monitoring">monitoring</span>
+<span class="text-[10px] font-semibold mt-0.5">Ringkasan</span>
+</a>
+</nav>
+<!-- Interactive JavaScript -->
+<script>
+    // Role-Level Security (RLS) State Simulation
+    let isOwnerMode = true;
+
+    function toggleRole() {
+      isOwnerMode = !isOwnerMode;
+      const statusBadge = document.getElementById('role-status-text');
+      const toggleBtnText = document.getElementById('role-button-label');
+      const priceVals = document.querySelectorAll('.price-val');
+      const priceMasked = document.querySelectorAll('.price-masked');
+      const assetValue = document.getElementById('metric-asset-value');
+      const assetMasked = document.getElementById('metric-asset-masked');
+      const restockPriceSection = document.getElementById('restock-price-section');
+
+      if (isOwnerMode) {
+        statusBadge.textContent = 'Owner: Harga Beli Terbuka';
+        statusBadge.className = 'text-xs text-primary font-semibold whitespace-nowrap';
+        toggleBtnText.textContent = 'Mode Staff';
+        
+        priceVals.forEach(el => el.classList.remove('hidden'));
+        priceMasked.forEach(el => el.classList.add('hidden'));
+        
+        assetValue.classList.remove('hidden');
+        assetMasked.classList.add('hidden');
+        
+        if (restockPriceSection) restockPriceSection.classList.remove('hidden');
+      } else {
+        statusBadge.textContent = 'Staff: Stok Saja (RLS Terkunci)';
+        statusBadge.className = 'text-xs text-secondary font-semibold whitespace-nowrap';
+        toggleBtnText.textContent = 'Mode Owner';
+
+        priceVals.forEach(el => el.classList.add('hidden'));
+        priceMasked.forEach(el => el.classList.remove('hidden'));
+
+        assetValue.classList.add('hidden');
+        assetMasked.classList.remove('hidden');
+
+        if (restockPriceSection) restockPriceSection.classList.add('hidden');
+      }
+    }
+
+    // Modal Controls
+    function openModal(id) {
+      document.getElementById(id).classList.remove('hidden');
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).classList.add('hidden');
+    }
+
+    // Quick Action Helpers
+    function quickRestock(ingredientName) {
+      const select = document.getElementById('restock-item-select');
+      for (let i = 0; i < select.options.length; i++) {
+        if (select.options[i].text.includes(ingredientName)) {
+          select.selectedIndex = i;
+          break;
+        }
+      }
+      openModal('modal-restock');
+    }
+
+    function quickAdjust(ingredientName, currentQty) {
+      document.getElementById('opname-item-name').value = ingredientName;
+      document.getElementById('opname-system-qty').value = currentQty + ' kg';
+      document.getElementById('opname-actual-qty').value = currentQty;
+      openModal('modal-opname');
+    }
+
+    function showToast(message) {
+      const toast = document.createElement('div');
+      toast.className = 'fixed bottom-20 md:bottom-8 right-6 bg-inverse-surface text-inverse-on-surface px-4 py-3 rounded-xl shadow-xl z-50 flex items-center gap-2.5 border border-outline animate-bounce';
+      toast.innerHTML = `<span class="material-symbols-outlined text-primary-fixed" data-icon="check_circle">check_circle</span> <span class="text-sm font-semibold">${message}</span>`;
+      document.body.appendChild(toast);
+      setTimeout(() => {
+        toast.remove();
+      }, 3500);
+    }
+
+    function handleRestockSubmit(e) {
+      e.preventDefault();
+      closeModal('modal-restock');
+      showToast('Belanja berhasil dicatat! Stok otomatis bertambah.');
+    }
+
+    function handleOpnameSubmit(e) {
+      e.preventDefault();
+      closeModal('modal-opname');
+      showToast('Stock Opname berhasil diselaraskan di sistem.');
+    }
+
+    // Filter Status Table
+    function filterStatus(status) {
+      const rows = document.querySelectorAll('.ingredient-row');
+      const buttons = {
+        'all': document.getElementById('filter-all-btn'),
+        'critical': document.getElementById('filter-critical-btn'),
+        'warning': document.getElementById('filter-warning-btn'),
+        'safe': document.getElementById('filter-safe-btn')
+      };
+
+      // Reset style
+      buttons['all'].className = 'px-3.5 py-1.5 rounded-full text-xs font-semibold bg-surface-container text-on-surface hover:bg-surface-container-high transition-all';
+      buttons['critical'].className = 'px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#FBEBE9] text-[#B93A2E] border border-[#F1BFBA] hover:bg-[#F9DDD9] transition-all flex items-center gap-1.5';
+      buttons['warning'].className = 'px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#FDF6E2] text-[#9E7000] border border-[#F4DB96] hover:bg-[#F9EDC7] transition-all flex items-center gap-1.5';
+      buttons['safe'].className = 'px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#EAF5EE] text-[#2E8B57] border border-[#B8E2C8] hover:bg-[#DDF0E4] transition-all flex items-center gap-1.5';
+
+      if (status === 'all') {
+        buttons['all'].className = 'px-3.5 py-1.5 rounded-full text-xs font-semibold bg-primary text-on-primary transition-all shadow-xs';
+      } else if (status === 'critical') {
+        buttons['critical'].className = 'px-3.5 py-1.5 rounded-full text-xs font-semibold bg-tertiary text-on-tertiary border border-tertiary transition-all flex items-center gap-1.5 shadow-xs';
+      } else if (status === 'warning') {
+        buttons['warning'].className = 'px-3.5 py-1.5 rounded-full text-xs font-semibold bg-secondary text-on-secondary border border-secondary transition-all flex items-center gap-1.5 shadow-xs';
+      } else if (status === 'safe') {
+        buttons['safe'].className = 'px-3.5 py-1.5 rounded-full text-xs font-semibold bg-primary text-on-primary border border-primary transition-all flex items-center gap-1.5 shadow-xs';
+      }
+
+      rows.forEach(row => {
+        if (status === 'all' || row.getAttribute('data-status') === status) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+
+    function filterKritis() {
+      filterStatus('critical');
+    }
+
+    function searchTable() {
+      const query = document.getElementById('search-input').value.toLowerCase();
+      const rows = document.querySelectorAll('.ingredient-row');
+      rows.forEach(row => {
+        const text = row.getAttribute('data-name');
+        if (text.includes(query)) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body></html>

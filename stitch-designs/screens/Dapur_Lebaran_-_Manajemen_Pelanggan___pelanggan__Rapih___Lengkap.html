@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dapur Lebaran - Manajemen Pelanggan</title>
+<!-- Google Fonts: Inter & Epilogue -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config Verbatim -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-container": "#745200",
+            "on-tertiary-fixed-variant": "#842505",
+            "tertiary-fixed": "#ffdbd1",
+            "tertiary-container": "#aa401f",
+            "secondary-container": "#fec65a",
+            "on-tertiary": "#ffffff",
+            "surface-container": "#ffeadd",
+            "on-error-container": "#93000a",
+            "primary-fixed": "#a5f3cc",
+            "on-primary": "#ffffff",
+            "background": "#fff8f5",
+            "inverse-primary": "#8ad6b0",
+            "on-primary-container": "#a1efc8",
+            "on-primary-fixed": "#002114",
+            "tertiary-fixed-dim": "#ffb5a0",
+            "on-error": "#ffffff",
+            "surface-variant": "#faddcb",
+            "on-secondary": "#ffffff",
+            "surface-container-high": "#ffe3d1",
+            "outline-variant": "#bec9c1",
+            "inverse-on-surface": "#ffede3",
+            "surface-container-highest": "#faddcb",
+            "error-container": "#ffdad6",
+            "surface-container-low": "#fff1e9",
+            "inverse-surface": "#3e2d21",
+            "primary-container": "#1f6f50",
+            "on-secondary-fixed-variant": "#5e4200",
+            "surface-tint": "#196b4c",
+            "on-secondary-fixed": "#271900",
+            "surface-container-lowest": "#ffffff",
+            "on-background": "#27180d",
+            "secondary-fixed-dim": "#f5be53",
+            "on-primary-fixed-variant": "#005137",
+            "surface": "#fff8f5",
+            "primary": "#00563a",
+            "surface-bright": "#fff8f5",
+            "on-surface": "#27180d",
+            "on-surface-variant": "#3f4943",
+            "secondary": "#7c5800",
+            "primary-fixed-dim": "#8ad6b0",
+            "error": "#ba1a1a",
+            "on-tertiary-container": "#ffd6cb",
+            "secondary-fixed": "#ffdea7",
+            "surface-dim": "#f1d4c2",
+            "on-tertiary-fixed": "#3b0a00",
+            "outline": "#6f7a73",
+            "tertiary": "#8a2908"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "2rem",
+            "space-xs": "0.25rem",
+            "gutter-desktop": "1.5rem",
+            "margin-desktop": "2rem",
+            "margin": "1rem",
+            "space-md": "1rem",
+            "gutter": "1rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "body-md": ["Inter"],
+            "body-lg-medium": ["Inter"],
+            "body-lg": ["Inter"],
+            "headline-lg": ["Epilogue"],
+            "body-lg-semibold": ["Inter"],
+            "body-sm": ["Inter"],
+            "headline-xl-mobile": ["Epilogue"],
+            "label-md": ["Inter"],
+            "headline-sm": ["Epilogue"],
+            "headline-lg-mobile": ["Epilogue"],
+            "headline-md": ["Epilogue"],
+            "body-md-medium": ["Inter"],
+            "headline-xl": ["Epilogue"],
+            "label-sm": ["Inter"]
+          },
+          "fontSize": {
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "body-lg-medium": ["16px", { "lineHeight": "24px", "fontWeight": "500" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+            "body-lg-semibold": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "headline-xl-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "26px", "fontWeight": "600" }],
+            "headline-lg-mobile": ["22px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-md-medium": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.5px", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      height: 6px;
+      width: 6px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background-color: #bec9c1;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex">
+<!-- ========================================================================= -->
+<!-- 1. SideNavBar Component (Shared Anchor Blueprint) -->
+<!-- ========================================================================= -->
+<aside class="hidden md:flex flex-col justify-between h-screen w-64 fixed left-0 top-0 bg-surface-container-lowest shadow-sm z-30 p-4 border-r border-[#E8DFCC]/40">
+<!-- Brand & Top CTA -->
+<div class="flex flex-col gap-5">
+<!-- Brand Logo / Header -->
+<div class="flex items-center gap-3 px-2 pt-1">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary shadow-sm flex-shrink-0">
+<span class="material-symbols-outlined text-2xl" data-icon="bakery_dining">bakery_dining</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm font-bold text-primary tracking-tight">Dapur Lebaran</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px] leading-tight">Manajemen Produksi &amp; Pesanan</span>
+</div>
+</div>
+<!-- Accent CTA Button: "+ Penjualan" -->
+<button class="w-full h-11 bg-secondary text-on-secondary rounded-xl font-label-md text-label-md flex items-center justify-center gap-2 shadow-sm hover:opacity-95 active:scale-98 transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="add_circle">add_circle</span>
+<span>+ Penjualan</span>
+</button>
+<!-- Primary Navigation Tabs (Pelanggan is Active: State Priority Lock) -->
+<nav class="flex flex-col gap-1">
+<!-- 1. Beranda -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-colors duration-150 active:scale-98" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Beranda</span>
+</a>
+<!-- 2. Penjualan -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-colors duration-150 active:scale-98" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="receipt_long">receipt_long</span>
+<span class="font-label-md text-label-md">Penjualan</span>
+</a>
+<!-- 3. Pelanggan (ACTIVE: style_active_navigation applied verbatim) -->
+<a class="flex items-center justify-between px-3 py-2.5 rounded-xl text-primary bg-surface-container font-semibold transition-colors duration-150 active:scale-98" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-xl text-primary" data-icon="group" data-weight="fill" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="font-label-md text-label-md">Pelanggan</span>
+</div>
+<span class="bg-primary text-on-primary text-[11px] font-bold px-2 py-0.5 rounded-full">48</span>
+</a>
+<!-- 4. Bahan -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-colors duration-150 active:scale-98" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="inventory_2">inventory_2</span>
+<span class="font-label-md text-label-md">Bahan</span>
+</a>
+<!-- 5. Resep -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-colors duration-150 active:scale-98" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="menu_book">menu_book</span>
+<span class="font-label-md text-label-md">Resep</span>
+</a>
+<!-- 6. Ringkasan -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-colors duration-150 active:scale-98" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="monitoring">monitoring</span>
+<span class="font-label-md text-label-md">Ringkasan</span>
+</a>
+<!-- 7. Karyawan -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-colors duration-150 active:scale-98" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="badge">badge</span>
+<span class="font-label-md text-label-md">Karyawan</span>
+</a>
+</nav>
+</div>
+<!-- Footer Menu & Profile Info -->
+<div class="flex flex-col gap-2 pt-3 border-t border-[#E8DFCC]">
+<a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Pengaturan</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="logout">logout</span>
+<span class="font-label-md text-label-md">Keluar</span>
+</a>
+<!-- Staff / Owner Identity Card -->
+<div class="mt-2 p-2.5 rounded-xl bg-surface-container-low flex items-center gap-3 border border-[#E8DFCC]/50">
+<div class="w-9 h-9 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold font-headline-sm text-sm">
+          NL
+        </div>
+<div class="flex flex-col flex-1 min-w-0">
+<p class="font-body-md-medium text-body-md-medium text-on-surface truncate leading-tight">Bu Nur Laila</p>
+<span class="text-[11px] text-on-surface-variant truncate">Head Baker &amp; Owner</span>
+</div>
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container" title="Online aktif"></span>
+</div>
+</div>
+</aside>
+<!-- ========================================================================= -->
+<!-- MAIN WORKSPACE CONTAINER (Desktop Margin: 260px left offset) -->
+<!-- ========================================================================= -->
+<div class="flex-1 flex flex-col md:pl-64 min-w-0">
+<!-- ======================================================================= -->
+<!-- 2. TopAppBar Component (Shared Anchor Blueprint) -->
+<!-- ======================================================================= -->
+<header class="sticky top-0 z-20 bg-surface-container-lowest shadow-sm flex items-center justify-between px-4 md:px-8 h-16 border-b border-[#E8DFCC]/40">
+<!-- Left: Mobile Menu + Search Bar -->
+<div class="flex items-center gap-3 w-full max-w-md">
+<!-- Mobile Drawer Toggle -->
+<button class="md:hidden p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-lg" data-icon="search">search</span>
+<input class="w-full h-10 pl-10 pr-4 rounded-xl bg-surface-container-low border border-[#E8DFCC] text-on-surface placeholder:text-outline font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all" placeholder="Cari pelanggan, pesanan, nomor WhatsApp..." type="text"/>
+</div>
+</div>
+<!-- Right: Action cluster (Sync, Notifications, Role Switch, Avatar) -->
+<div class="flex items-center gap-2 md:gap-3">
+<!-- Status Switch Peran RLS -->
+<div class="hidden lg:flex items-center bg-surface-container-low p-1 rounded-xl border border-[#E8DFCC]">
+<button class="px-3 py-1 rounded-lg bg-surface-container-lowest text-primary font-label-sm text-label-sm shadow-xs font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm" data-icon="admin_panel_settings">admin_panel_settings</span>
+            Owner: Mode Penuh
+          </button>
+<button class="px-3 py-1 rounded-lg text-on-surface-variant font-label-sm text-label-sm hover:text-on-surface">
+            Mode Staff
+          </button>
+</div>
+<!-- Sync Button -->
+<button class="w-10 h-10 rounded-xl flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low active:scale-95 transition-all" title="Sinkronisasi Pesanan">
+<span class="material-symbols-outlined text-xl" data-icon="sync">sync</span>
+</button>
+<!-- Notification Button with Badge -->
+<div class="relative">
+<button class="w-10 h-10 rounded-xl flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low active:scale-95 transition-all">
+<span class="material-symbols-outlined text-xl" data-icon="notifications">notifications</span>
+</button>
+<span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-error ring-2 ring-surface-container-lowest"></span>
+</div>
+<!-- Separator -->
+<div class="h-6 w-px bg-[#E8DFCC]"></div>
+<!-- Avatar & Role Trigger -->
+<div class="flex items-center gap-2.5 pl-1">
+<div class="w-9 h-9 rounded-xl bg-primary text-on-primary flex items-center justify-center font-bold text-sm shadow-xs">
+            AL
+          </div>
+<div class="hidden xl:flex flex-col text-left">
+<span class="font-label-md text-label-md text-on-surface leading-tight">Dapur Lebaran</span>
+<span class="text-[11px] text-primary font-semibold">Staff/Owner</span>
+</div>
+</div>
+</div>
+</header>
+<!-- ======================================================================= -->
+<!-- 3. PAGE BODY: BREADCRUMB, HEADER, AND ACTIONS -->
+<!-- ======================================================================= -->
+<main class="flex-1 p-4 md:p-8 max-w-7xl w-full mx-auto pb-24 md:pb-12 flex flex-col gap-6">
+<!-- Breadcrumbs & Title Section -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div>
+<!-- Breadcrumb -->
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm mb-1">
+<span>Dapur Lebaran</span>
+<span class="material-symbols-outlined text-xs" data-icon="chevron_right">chevron_right</span>
+<span class="text-primary font-semibold">Buku Tamu &amp; Pelanggan</span>
+</div>
+<div class="flex items-center gap-3">
+<h1 class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">Manajemen Pelanggan</h1>
+<span class="px-3 py-1 rounded-full bg-secondary-container/30 text-secondary border border-secondary/30 font-label-sm text-label-sm flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-sm" data-icon="celebration">celebration</span>
+              Musim Lebaran 1447 H
+            </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-2xl">
+            Pantau riwayat pemesanan toples kue, status tagihan sisa/piutang, dan preferensi nastar pelanggan setia.
+          </p>
+</div>
+<!-- Right Quick Action CTAs -->
+<div class="flex items-center gap-3">
+<button class="h-12 px-4 rounded-xl bg-surface-container-lowest border border-[#E8DFCC] text-on-surface font-label-md text-label-md flex items-center gap-2 shadow-xs hover:bg-surface-container-low active:scale-98 transition-all">
+<span class="material-symbols-outlined text-lg text-on-surface-variant" data-icon="download">download</span>
+<span>Export Kontak (.xlsx)</span>
+</button>
+<button class="h-12 px-5 rounded-xl bg-primary text-on-primary font-label-md text-label-md flex items-center gap-2 shadow-sm hover:opacity-95 active:scale-98 transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="person_add">person_add</span>
+<span>+ Tambah Pelanggan Baru</span>
+</button>
+</div>
+</div>
+<!-- ===================================================================== -->
+<!-- 4. 4 METRIC CARDS (PROPORSIONAL, BEBAS OVERFLOW/POTONGAN) -->
+<!-- ===================================================================== -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Card 1: Total Pelanggan Aktif -->
+<div class="p-5 rounded-2xl bg-surface-container-lowest border border-[#E8DFCC] shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Total Pelanggan Aktif</span>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface">48</span>
+<span class="text-xs font-semibold text-primary flex items-center gap-0.5">
+<span class="material-symbols-outlined text-xs" data-icon="trending_up">trending_up</span> +4 minggu ini
+                </span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-xl bg-surface-container-low text-primary flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-[#E8DFCC]/50">
+<div class="flex justify-between items-center text-[12px] text-on-surface-variant mb-1.5 font-medium">
+<span>Kuota PO Lebaran (80% terpenuhi)</span>
+<span class="font-semibold text-on-surface">48/60 slot</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-low overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 80%;"></div>
+</div>
+</div>
+</div>
+<!-- Card 2: Langganan Setia (VIP) -->
+<div class="p-5 rounded-2xl bg-surface-container-lowest border border-[#E8DFCC] shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Langganan Setia (VIP)</span>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface">18</span>
+<span class="text-xs font-semibold text-secondary flex items-center">
+                  37.5% dari total
+                </span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-xl bg-secondary-container/20 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-[#E8DFCC]/50 flex items-center gap-1.5 text-[12px] text-on-surface-variant font-medium">
+<span class="material-symbols-outlined text-sm text-secondary" data-icon="info">info</span>
+<span>Minimal 3x musim Lebaran berturut</span>
+</div>
+</div>
+<!-- Card 3: Pesanan Tertinggi -->
+<div class="p-5 rounded-2xl bg-surface-container-lowest border border-[#E8DFCC] shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Pesanan Tertinggi Musim Ini</span>
+<div class="flex items-baseline gap-1 mt-2">
+<span class="font-headline-md text-headline-md font-bold text-primary">Rp 4.850.000</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-xl bg-surface-container-low text-primary flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="military_tech">military_tech</span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-[#E8DFCC]/50 flex items-center justify-between text-[12px]">
+<span class="font-semibold text-on-surface truncate">Kantor BPKP</span>
+<span class="text-on-surface-variant font-medium">42 Toples Kue</span>
+</div>
+</div>
+<!-- Card 4: Pelanggan Ada Piutang -->
+<div class="p-5 rounded-2xl bg-surface-container-lowest border border-[#E8DFCC] shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-error font-medium">Pelanggan Ada Piutang</span>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-headline-lg text-headline-lg font-bold text-error">7</span>
+<span class="text-xs font-semibold text-on-surface-variant">Sisa Rp 1.850.000</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-xl bg-error-container/40 text-error flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="pending_actions">pending_actions</span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-[#E8DFCC]/50 flex items-center justify-between">
+<button class="w-full py-1.5 px-3 rounded-lg bg-[#EAF5EE] text-[#1F6F50] border border-[#B8E2C8] hover:bg-[#d8eedf] font-label-sm text-label-sm flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="send">send</span>
+              Tagih Semua WA (7)
+            </button>
+</div>
+</div>
+</div>
+<!-- ===================================================================== -->
+<!-- 5. CARD FORM PENDAFTARAN CEPAT PELANGGAN BARU -->
+<!-- ===================================================================== -->
+<section class="bg-surface-container-lowest rounded-2xl border border-[#E8DFCC] p-6 shadow-sm">
+<!-- Form Header -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-[#E8DFCC] gap-2">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-xl" data-icon="person_add">person_add</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Pendaftaran Cepat Pelanggan Baru</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Input data langsung masuk ke basis data operasional dapur &amp; otomatis terhubung ke WhatsApp.
+              </p>
+</div>
+</div>
+<div class="flex items-center gap-1 text-[12px] bg-surface-container-low px-3 py-1.5 rounded-lg text-on-surface-variant border border-[#E8DFCC]/50">
+<span class="material-symbols-outlined text-sm text-primary" data-icon="verified_user">verified_user</span>
+<span>Normalisasi otomatis nomor 08xx ke +62 WhatsApp</span>
+</div>
+</div>
+<!-- Form Elements Grid -->
+<form class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-5" onsubmit="event.preventDefault();">
+<!-- Field 1: Nama Lengkap -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface">
+              Nama Lengkap Pelanggan / Institusi <span class="text-error">*</span>
+</label>
+<input class="h-12 px-3.5 rounded-xl border border-[#E8DFCC] bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none" placeholder="Contoh: dr. Maya Anggraini / BPKP" required="" type="text"/>
+</div>
+<!-- Field 2: Nomor WhatsApp -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface">
+              Nomor WhatsApp Aktif <span class="text-error">*</span>
+</label>
+<div class="relative flex items-center">
+<span class="absolute left-3.5 font-label-md text-label-md text-outline font-semibold">+62</span>
+<input class="h-12 w-full pl-14 pr-3.5 rounded-xl border border-[#E8DFCC] bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none" placeholder="812-3456-7890" required="" type="tel"/>
+</div>
+</div>
+<!-- Field 3: Alamat Antar / Titik Ambil -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface">
+              Alamat Antar / Titik Ambil
+            </label>
+<input class="h-12 px-3.5 rounded-xl border border-[#E8DFCC] bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none" placeholder="Ambil di Dapur / Jl. Diponegoro No. 45" type="text"/>
+</div>
+<!-- Field 4: Preferensi Kue Favorit -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface">
+              Preferensi Kue Favorit
+            </label>
+<select class="h-12 px-3.5 rounded-xl border border-[#E8DFCC] bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none">
+<option value="nastar">Nastar Wijsman (Spesial Nanas Madu)</option>
+<option value="kastengel">Kastengel Edam Keju Belanda</option>
+<option value="putri_salju">Putri Salju Mede Lembut</option>
+<option value="hamper">Paket Hamper Mewah Lebaran</option>
+</select>
+</div>
+<!-- Field 5: Catatan Khusus -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface">
+              Catatan Rasa &amp; Packaging
+            </label>
+<input class="h-12 px-3.5 rounded-xl border border-[#E8DFCC] bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none" placeholder="Contoh: Kurang manis, tanpa cengkeh, pita emas" type="text"/>
+</div>
+<!-- Action Button: Simpan Pelanggan -->
+<div class="flex items-end">
+<button class="w-full h-12 bg-primary text-on-primary rounded-xl font-label-md text-label-md flex items-center justify-center gap-2 shadow-sm hover:opacity-95 active:scale-98 transition-all" type="submit">
+<span class="material-symbols-outlined text-lg" data-icon="check_circle">check_circle</span>
+              Simpan Data Pelanggan
+            </button>
+</div>
+</form>
+</section>
+<!-- ===================================================================== -->
+<!-- 6. FILTER & SEARCH CONTROL TABS UNTUK TABEL -->
+<!-- ===================================================================== -->
+<div class="flex flex-col gap-4">
+<!-- Filter Tabs -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 custom-scroll">
+<button class="px-4 py-2 rounded-xl bg-primary text-on-primary font-label-md text-label-md font-semibold flex items-center gap-2 whitespace-nowrap shadow-xs">
+<span>Semua Pelanggan</span>
+<span class="bg-on-primary/20 px-2 py-0.5 rounded-full text-xs">48</span>
+</button>
+<button class="px-4 py-2 rounded-xl bg-surface-container-lowest border border-[#E8DFCC] text-on-surface-variant hover:text-on-surface font-label-md text-label-md flex items-center gap-2 whitespace-nowrap transition-colors">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Langganan VIP</span>
+<span class="text-xs text-outline font-semibold">18</span>
+</button>
+<button class="px-4 py-2 rounded-xl bg-surface-container-lowest border border-[#E8DFCC] text-on-surface-variant hover:text-on-surface font-label-md text-label-md flex items-center gap-2 whitespace-nowrap transition-colors">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span>Ada Piutang Belum Lunas</span>
+<span class="text-xs text-error font-semibold">7</span>
+</button>
+<button class="px-4 py-2 rounded-xl bg-surface-container-lowest border border-[#E8DFCC] text-on-surface-variant hover:text-on-surface font-label-md text-label-md flex items-center gap-2 whitespace-nowrap transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="repeat">repeat</span>
+<span>Repeat Order Lebaran</span>
+<span class="text-xs text-outline font-semibold">32</span>
+</button>
+</div>
+<!-- Secondary Search + Sort Row -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-3 bg-surface-container-lowest p-3 rounded-2xl border border-[#E8DFCC]">
+<!-- Specific Search -->
+<div class="relative w-full sm:max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg" data-icon="search">search</span>
+<input class="w-full h-10 pl-9 pr-3 rounded-xl bg-surface-container-low border border-[#E8DFCC] text-on-surface placeholder:text-outline font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-primary focus:bg-surface-container-lowest" placeholder="Cari nama pelanggan, nomor WhatsApp (+62), instansi, atau alamat..." type="text"/>
+</div>
+<!-- Sort & Filter Dropdowns -->
+<div class="flex items-center gap-2 w-full sm:w-auto justify-end">
+<button class="h-10 px-3.5 rounded-xl border border-[#E8DFCC] text-on-surface font-label-sm text-label-sm flex items-center gap-2 hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-base text-outline" data-icon="tune">tune</span>
+<span>Filter Lanjutan</span>
+</button>
+<div class="flex items-center gap-1.5 h-10 px-3 rounded-xl border border-[#E8DFCC] bg-surface-container-low text-on-surface font-label-sm text-label-sm">
+<span class="text-outline">Urutkan:</span>
+<select class="bg-transparent border-0 p-0 pr-6 text-on-surface font-semibold text-xs focus:ring-0 cursor-pointer">
+<option>Total Belanja Terbanyak</option>
+<option>Pesanan Terakhir</option>
+<option>Nama (A-Z)</option>
+<option>Sisa Piutang Tertinggi</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+<!-- ===================================================================== -->
+<!-- 7. TABEL DIREKTORI PELANGGAN KOMPREHENSIF -->
+<!-- ===================================================================== -->
+<div class="bg-surface-container-lowest rounded-2xl border border-[#E8DFCC] shadow-sm overflow-hidden">
+<div class="overflow-x-auto custom-scroll">
+<table class="w-full text-left border-collapse min-w-[900px]">
+<thead>
+<tr class="bg-surface-container-low/70 border-b border-[#E8DFCC] text-on-surface-variant font-label-sm text-label-sm">
+<th class="py-3.5 px-4 font-semibold">Nama &amp; Afiliasi / Profil</th>
+<th class="py-3.5 px-4 font-semibold">Kontak WhatsApp</th>
+<th class="py-3.5 px-4 font-semibold">Riwayat &amp; Volume</th>
+<th class="py-3.5 px-4 font-semibold">Total Belanja</th>
+<th class="py-3.5 px-4 font-semibold">Status Tagihan</th>
+<th class="py-3.5 px-4 font-semibold text-right">Aksi Cepat</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#E8DFCC]/60 font-body-md text-body-md">
+<!-- Row 1: dr. Maya Anggraini (VIP, Lunas) -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<!-- Kolom 1 -->
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container/40 text-secondary flex items-center justify-center font-bold text-sm">
+                      MA
+                    </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-body-lg-semibold text-body-lg-semibold text-on-surface">dr. Maya Anggraini</span>
+<span class="bg-secondary/10 text-secondary border border-secondary/30 text-[10px] font-bold px-1.5 py-0.5 rounded-full flex items-center gap-0.5">
+<span class="material-symbols-outlined text-xs" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span> VIP (3 Thn)
+                        </span>
+</div>
+<span class="text-xs text-on-surface-variant mt-0.5">Rumah Sakit Umum Daerah - Paviliun Melati</span>
+</div>
+</div>
+</td>
+<!-- Kolom 2 -->
+<td class="py-4 px-4">
+<div class="flex items-center gap-2">
+<span class="font-medium text-on-surface">+62 812-8899-2310</span>
+<a class="w-7 h-7 rounded-lg bg-[#EAF5EE] text-[#1F6F50] border border-[#B8E2C8] flex items-center justify-center hover:bg-[#d8eedf] transition-colors" href="https://wa.me/6281288992310" target="_blank" title="Chat WhatsApp">
+<span class="material-symbols-outlined text-sm" data-icon="chat">chat</span>
+</a>
+</div>
+</td>
+<!-- Kolom 3 -->
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">18 Toples Kue</span>
+<span class="text-xs text-on-surface-variant">4x Pesanan Lebaran</span>
+</div>
+</td>
+<!-- Kolom 4 -->
+<td class="py-4 px-4 font-body-lg-semibold text-body-lg-semibold text-primary">
+                  Rp 2.850.000
+                </td>
+<!-- Kolom 5 -->
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-[#EAF5EE] text-[#2E8B57] border border-[#B8E2C8] font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-xs" data-icon="check_circle">check_circle</span>
+                    Lunas
+                  </span>
+</td>
+<!-- Kolom 6 -->
+<td class="py-4 px-4 text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="px-2.5 py-1.5 rounded-lg bg-surface-container-low border border-[#E8DFCC] text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high transition-colors">
+                      + Pesanan Baru
+                    </button>
+<button class="p-1.5 text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-lg" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Ibu Ratna Kartika (Piutang Belum Lunas) -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<!-- Kolom 1 -->
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-error-container/40 text-error flex items-center justify-center font-bold text-sm">
+                      RK
+                    </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-body-lg-semibold text-body-lg-semibold text-on-surface">Ibu Ratna Kartika</span>
+<span class="bg-error-container/60 text-error text-[10px] font-bold px-1.5 py-0.5 rounded-full">
+                          Ada Piutang
+                        </span>
+</div>
+<span class="text-xs text-on-surface-variant mt-0.5">Kompleks Perumahan Griya Asri Blok D2</span>
+</div>
+</div>
+</td>
+<!-- Kolom 2 -->
+<td class="py-4 px-4">
+<div class="flex items-center gap-2">
+<span class="font-medium text-on-surface">+62 821-4455-9012</span>
+<a class="w-7 h-7 rounded-lg bg-[#EAF5EE] text-[#1F6F50] border border-[#B8E2C8] flex items-center justify-center hover:bg-[#d8eedf] transition-colors" href="https://wa.me/6282144559012" target="_blank" title="Kirim Tagihan WA">
+<span class="material-symbols-outlined text-sm" data-icon="chat">chat</span>
+</a>
+</div>
+</td>
+<!-- Kolom 3 -->
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">6 Toples Nastar &amp; Putri Salju</span>
+<span class="text-xs text-on-surface-variant">2x Pesanan Baru</span>
+</div>
+</td>
+<!-- Kolom 4 -->
+<td class="py-4 px-4 font-body-lg-semibold text-body-lg-semibold text-primary">
+                  Rp 790.000
+                </td>
+<!-- Kolom 5 -->
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-[#FBEBE9] text-[#B93A2E] border border-[#F1BFBA] font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-xs" data-icon="warning">warning</span>
+                    Sisa Rp 190.000
+                  </span>
+</td>
+<!-- Kolom 6 -->
+<td class="py-4 px-4 text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="px-2.5 py-1.5 rounded-lg bg-[#FBEBE9] text-[#B93A2E] border border-[#F1BFBA] font-label-sm text-label-sm hover:bg-[#fadcd8] transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="send">send</span> Tagih WA
+                    </button>
+<button class="p-1.5 text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-lg" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Bpk. Irwan Setiawan (Kantor BPKP, Pesanan Tertinggi) -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<!-- Kolom 1 -->
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">
+                      IS
+                    </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-body-lg-semibold text-body-lg-semibold text-on-surface">Bpk. Irwan Setiawan</span>
+<span class="bg-primary/10 text-primary border border-primary/20 text-[10px] font-bold px-1.5 py-0.5 rounded-full">
+                          Instansi Kantor BPKP
+                        </span>
+</div>
+<span class="text-xs text-on-surface-variant mt-0.5">Gedung Keuangan Negara Lt. 4 (Antar H-4)</span>
+</div>
+</div>
+</td>
+<!-- Kolom 2 -->
+<td class="py-4 px-4">
+<div class="flex items-center gap-2">
+<span class="font-medium text-on-surface">+62 811-9201-4433</span>
+<a class="w-7 h-7 rounded-lg bg-[#EAF5EE] text-[#1F6F50] border border-[#B8E2C8] flex items-center justify-center hover:bg-[#d8eedf] transition-colors" href="https://wa.me/6281192014433" target="_blank" title="Chat WhatsApp">
+<span class="material-symbols-outlined text-sm" data-icon="chat">chat</span>
+</a>
+</div>
+</td>
+<!-- Kolom 3 -->
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">42 Toples Nastar &amp; Kastengel</span>
+<span class="text-xs text-on-surface-variant">Paket Hampers Korporat</span>
+</div>
+</td>
+<!-- Kolom 4 -->
+<td class="py-4 px-4 font-body-lg-semibold text-body-lg-semibold text-primary">
+                  Rp 4.850.000
+                </td>
+<!-- Kolom 5 -->
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-[#EAF5EE] text-[#2E8B57] border border-[#B8E2C8] font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-xs" data-icon="check_circle">check_circle</span>
+                    Lunas
+                  </span>
+</td>
+<!-- Kolom 6 -->
+<td class="py-4 px-4 text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="px-2.5 py-1.5 rounded-lg bg-surface-container-low border border-[#E8DFCC] text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high transition-colors">
+                      Faktur PDF
+                    </button>
+<button class="p-1.5 text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-lg" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Ibu Devi Novitasari (Status DP 50%) -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<!-- Kolom 1 -->
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container/30 text-secondary flex items-center justify-center font-bold text-sm">
+                      DN
+                    </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-body-lg-semibold text-body-lg-semibold text-on-surface">Ibu Devi Novitasari</span>
+<span class="bg-surface-container-high text-on-surface-variant text-[10px] font-semibold px-1.5 py-0.5 rounded-full">
+                          Langganan 2025
+                        </span>
+</div>
+<span class="text-xs text-on-surface-variant mt-0.5">Ambil di Dapur Langsung (H-2 Idul Fitri)</span>
+</div>
+</div>
+</td>
+<!-- Kolom 2 -->
+<td class="py-4 px-4">
+<div class="flex items-center gap-2">
+<span class="font-medium text-on-surface">+62 856-7788-1290</span>
+<a class="w-7 h-7 rounded-lg bg-[#EAF5EE] text-[#1F6F50] border border-[#B8E2C8] flex items-center justify-center hover:bg-[#d8eedf] transition-colors" href="https://wa.me/6285677881290" target="_blank" title="Chat WhatsApp">
+<span class="material-symbols-outlined text-sm" data-icon="chat">chat</span>
+</a>
+</div>
+</td>
+<!-- Kolom 3 -->
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">10 Toples Spesial Wijsman</span>
+<span class="text-xs text-on-surface-variant">PO Kloter Pertama</span>
+</div>
+</td>
+<!-- Kolom 4 -->
+<td class="py-4 px-4 font-body-lg-semibold text-body-lg-semibold text-primary">
+                  Rp 1.500.000
+                </td>
+<!-- Kolom 5 -->
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-[#FDF6E2] text-[#9E7000] border border-[#F4DB96] font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-xs" data-icon="hourglass_top">hourglass_top</span>
+                    DP 50% (Sisa Rp 750k)
+                  </span>
+</td>
+<!-- Kolom 6 -->
+<td class="py-4 px-4 text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="px-2.5 py-1.5 rounded-lg bg-surface-container-low border border-[#E8DFCC] text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high transition-colors">
+                      Pelunasan
+                    </button>
+<button class="p-1.5 text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-lg" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5: drg. Faisal Rahman (Alumni SMAN 1) -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<!-- Kolom 1 -->
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface font-bold text-sm flex items-center justify-center">
+                      FR
+                    </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-body-lg-semibold text-body-lg-semibold text-on-surface">drg. Faisal Rahman</span>
+<span class="bg-secondary/10 text-secondary border border-secondary/30 text-[10px] font-bold px-1.5 py-0.5 rounded-full">
+                          Alumni SMAN 1
+                        </span>
+</div>
+<span class="text-xs text-on-surface-variant mt-0.5">Klinik Gigi Sehat, Jl. Veteran 12</span>
+</div>
+</div>
+</td>
+<!-- Kolom 2 -->
+<td class="py-4 px-4">
+<div class="flex items-center gap-2">
+<span class="font-medium text-on-surface">+62 813-1029-3847</span>
+<a class="w-7 h-7 rounded-lg bg-[#EAF5EE] text-[#1F6F50] border border-[#B8E2C8] flex items-center justify-center hover:bg-[#d8eedf] transition-colors" href="https://wa.me/6281310293847" target="_blank" title="Chat WhatsApp">
+<span class="material-symbols-outlined text-sm" data-icon="chat">chat</span>
+</a>
+</div>
+</td>
+<!-- Kolom 3 -->
+<td class="py-4 px-4">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">8 Toples Kastengel &amp; Lidah Kucing</span>
+<span class="text-xs text-on-surface-variant">Pengiriman Grab Express</span>
+</div>
+</td>
+<!-- Kolom 4 -->
+<td class="py-4 px-4 font-body-lg-semibold text-body-lg-semibold text-primary">
+                  Rp 1.120.000
+                </td>
+<!-- Kolom 5 -->
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-[#EAF5EE] text-[#2E8B57] border border-[#B8E2C8] font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-xs" data-icon="check_circle">check_circle</span>
+                    Lunas
+                  </span>
+</td>
+<!-- Kolom 6 -->
+<td class="py-4 px-4 text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="px-2.5 py-1.5 rounded-lg bg-surface-container-low border border-[#E8DFCC] text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high transition-colors">
+                      + Pesanan Baru
+                    </button>
+<button class="p-1.5 text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-lg" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- =================================================================== -->
+<!-- 8. PAGINASI & FOOTER TABEL -->
+<!-- =================================================================== -->
+<div class="p-4 bg-surface-container-low/40 border-t border-[#E8DFCC] flex flex-col sm:flex-row items-center justify-between gap-3">
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+            Menampilkan <strong class="font-semibold text-on-surface">1 - 5</strong> dari <strong class="font-semibold text-on-surface">48</strong> pelanggan aktif
+          </span>
+<div class="flex items-center gap-1.5">
+<button class="h-9 px-3 rounded-xl border border-[#E8DFCC] bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm flex items-center gap-1 hover:bg-surface-container-low disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-base" data-icon="chevron_left">chevron_left</span>
+              Sebelumnya
+            </button>
+<button class="w-9 h-9 rounded-xl bg-primary text-on-primary font-label-sm text-label-sm font-semibold">1</button>
+<button class="w-9 h-9 rounded-xl border border-[#E8DFCC] bg-surface-container-lowest text-on-surface font-label-sm text-label-sm hover:bg-surface-container-low transition-colors">2</button>
+<button class="w-9 h-9 rounded-xl border border-[#E8DFCC] bg-surface-container-lowest text-on-surface font-label-sm text-label-sm hover:bg-surface-container-low transition-colors">3</button>
+<button class="h-9 px-3 rounded-xl border border-[#E8DFCC] bg-surface-container-lowest text-on-surface font-label-sm text-label-sm flex items-center gap-1 hover:bg-surface-container-low transition-colors">
+              Selanjutnya
+              <span class="material-symbols-outlined text-base" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Footer Info Operational Banner -->
+<div class="p-4 rounded-2xl bg-surface-container-low border border-[#E8DFCC] flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-2xl flex-shrink-0" data-icon="verified">verified</span>
+<div class="flex-1">
+<p class="font-body-md-medium text-body-md-medium text-on-surface">
+<strong>Protokol Pengiriman &amp; Loyalitas:</strong> Pelanggan berstatus <span class="text-secondary font-semibold">Langganan VIP</span> berhak atas slot panggang kloter pertama H-3 Idul Fitri dan kemasan tin box eksklusif Dapur Lebaran.
+          </p>
+</div>
+</div>
+</main>
+</div>
+<!-- ========================================================================= -->
+<!-- FLOATING ACTION BUTTON (Mobile Only) -->
+<!-- ========================================================================= -->
+<button class="md:hidden fixed bottom-20 right-4 z-40 h-12 px-4 rounded-full bg-secondary text-on-secondary shadow-lg flex items-center gap-2 font-label-md text-label-md active:scale-95 transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="add">add</span>
+<span>+ Penjualan</span>
+</button>
+<!-- ========================================================================= -->
+<!-- BOTTOM NAVIGATION BAR (Mobile Only - Exact Shared Blueprint Match) -->
+<!-- ========================================================================= -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 md:hidden bg-surface-container-lowest shadow-md">
+<!-- Beranda -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="dashboard">dashboard</span>
+<span class="text-[11px] font-label-sm text-label-sm">Beranda</span>
+</a>
+<!-- Penjualan -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="receipt_long">receipt_long</span>
+<span class="text-[11px] font-label-sm text-label-sm">Penjualan</span>
+</a>
+<!-- Pelanggan (ACTIVE) -->
+<a class="flex flex-col items-center justify-center text-primary font-semibold active:scale-95" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="group" data-weight="fill" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="text-[11px] font-label-sm text-label-sm">Pelanggan</span>
+</a>
+<!-- Bahan -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="inventory_2">inventory_2</span>
+<span class="text-[11px] font-label-sm text-label-sm">Bahan</span>
+</a>
+<!-- Ringkasan -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="monitoring">monitoring</span>
+<span class="text-[11px] font-label-sm text-label-sm">Ringkasan</span>
+</a>
+</nav>
+</body></html>

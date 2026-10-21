@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dapur Lebaran - Portal Operasional Internal</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Epilogue & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,500;0,600;0,700;0,800;1,600&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with custom plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary": "#00563a",
+            "on-error-container": "#93000a",
+            "surface-container-highest": "#faddcb",
+            "tertiary-container": "#aa401f",
+            "tertiary": "#8a2908",
+            "primary-container": "#1f6f50",
+            "on-surface": "#27180d",
+            "on-background": "#27180d",
+            "on-tertiary-fixed-variant": "#842505",
+            "secondary-container": "#fec65a",
+            "on-secondary-fixed-variant": "#5e4200",
+            "outline-variant": "#bec9c1",
+            "on-primary-fixed": "#002114",
+            "surface-container-low": "#fff1e9",
+            "error-container": "#ffdad6",
+            "error": "#ba1a1a",
+            "surface-variant": "#faddcb",
+            "surface-container-high": "#ffe3d1",
+            "surface-bright": "#fff8f5",
+            "inverse-primary": "#8ad6b0",
+            "inverse-on-surface": "#ffede3",
+            "on-secondary-container": "#745200",
+            "primary-fixed-dim": "#8ad6b0",
+            "background": "#fff8f5",
+            "on-secondary-fixed": "#271900",
+            "on-tertiary": "#ffffff",
+            "outline": "#6f7a73",
+            "tertiary-fixed": "#ffdbd1",
+            "on-surface-variant": "#3f4943",
+            "on-tertiary-fixed": "#3b0a00",
+            "on-secondary": "#ffffff",
+            "on-error": "#ffffff",
+            "inverse-surface": "#3e2d21",
+            "surface-container": "#ffeadd",
+            "surface-tint": "#196b4c",
+            "secondary-fixed": "#ffdea7",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#a1efc8",
+            "primary-fixed": "#a5f3cc",
+            "on-primary-fixed-variant": "#005137",
+            "on-tertiary-container": "#ffd6cb",
+            "tertiary-fixed-dim": "#ffb5a0",
+            "secondary": "#7c5800",
+            "surface-dim": "#f1d4c2",
+            "surface-container-lowest": "#ffffff",
+            "secondary-fixed-dim": "#f5be53",
+            "surface": "#fff8f5"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "2rem",
+            "margin-desktop": "2rem",
+            "space-lg": "1.5rem",
+            "gutter": "1rem",
+            "space-sm": "0.5rem",
+            "margin": "1rem",
+            "space-md": "1rem",
+            "space-xs": "0.25rem",
+            "gutter-desktop": "1.5rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["Epilogue"],
+            "body-lg-semibold": ["Inter"],
+            "body-lg-medium": ["Inter"],
+            "headline-sm": ["Epilogue"],
+            "headline-md": ["Epilogue"],
+            "headline-lg-mobile": ["Epilogue"],
+            "headline-xl-mobile": ["Epilogue"],
+            "body-lg": ["Inter"],
+            "label-md": ["Inter"],
+            "label-sm": ["Inter"],
+            "body-md-medium": ["Inter"],
+            "body-md": ["Inter"],
+            "body-sm": ["Inter"],
+            "headline-xl": ["Epilogue"]
+          },
+          "fontSize": {
+            "headline-lg": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+            "body-lg-semibold": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "body-lg-medium": ["16px", { "lineHeight": "24px", "fontWeight": "500" }],
+            "headline-sm": ["18px", { "lineHeight": "26px", "fontWeight": "600" }],
+            "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "headline-lg-mobile": ["22px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "headline-xl-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.5px", "fontWeight": "600" }],
+            "body-md-medium": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill {
+      font-variation-settings: 'FILL' 1;
+    }
+    /* Subtle warm ambient patterns for artisanal depth */
+    .bg-pattern-warm {
+      background-color: #fff8f5;
+      background-image: radial-gradient(#e8dfcc 0.75px, transparent 0.75px);
+      background-size: 20px 20px;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex flex-col justify-between selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- Top Slim System Utility Strip -->
+<header class="w-full bg-surface-container-lowest border-b border-outline-variant/30 py-2 px-4 md:px-8 z-20">
+<div class="max-w-7xl mx-auto flex items-center justify-between text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center justify-center w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-body-sm text-on-surface font-medium">Portal Produksi Internal Lebaran 1447H</span>
+<span class="hidden sm:inline text-outline-variant">•</span>
+<span class="hidden sm:inline text-outline">Terhubung ke Supabase RLS Cluster Jakarta (JKT-01)</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container text-primary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+          Akses Internal Terenkripsi
+        </span>
+</div>
+</div>
+</header>
+<!-- Main Login Showcase Container (Split View) -->
+<main class="flex-1 flex items-center justify-center p-3 sm:p-6 md:p-10">
+<div class="w-full max-w-7xl bg-surface-container-lowest rounded-2xl shadow-sm border border-outline-variant/40 overflow-hidden grid grid-cols-1 lg:grid-cols-12 min-h-[680px]">
+<!-- KOLOM KIRI: Visual Showcase Operasional Lebaran (5/12) -->
+<section class="lg:col-span-5 relative bg-primary-container text-on-primary flex flex-col justify-between p-8 sm:p-10 overflow-hidden">
+<!-- Ambient Background Glow & Festive Accent Texture -->
+<div class="absolute -top-24 -left-24 w-80 h-80 rounded-full bg-primary blur-3xl opacity-60 pointer-events-none"></div>
+<div class="absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-secondary blur-3xl opacity-30 pointer-events-none"></div>
+<!-- Background Imagery with Dark Emerald Overlay for Contrast -->
+<div class="absolute inset-0 z-0 opacity-20 mix-blend-overlay pointer-events-none" data-alt="A warm top-down aesthetic photograph of artisanal Indonesian Eid al-Fitr cookies including golden Nastar with cloves and glossy egg glaze, Kastengel with grated edam cheese, and snow-dusted Putri Salju in luxury crystal jars on a dark green linen background. High-end festive pastry workshop lighting with soft golden highlights and cinematic clarity." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAL3m9RxkZnqo78JR7-rbFkUu5BHYejRNpsQqGeXTfGMOooBPNoszMLnTWR49c1giOEU6_dlgjfeemIfmJqV0W2na5YZzY2yxbFTpD27qir3sQ1TkzdG-JhwFCoCpNeCEezqcXmZgeZmQZbjgrbKeF7RlCKCAjU2onxyJffLLoAsQ2rw7sFJW-x4JimduovZWguxwn9fIsynXKloAJs_6TnWeDxQd517-9_q6Payzjaqkx4yICFnzo8Pw')">
+</div>
+<!-- Top Header & Badges -->
+<div class="relative z-10 space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-xl bg-surface-container-lowest/15 backdrop-blur-md flex items-center justify-center border border-surface-container-lowest/25 shadow-inner">
+<span class="material-symbols-outlined text-secondary-fixed text-2xl">bakery_dining</span>
+</div>
+<div>
+<span class="text-label-sm font-label-sm tracking-wider uppercase text-on-primary-container">Dapur Lebaran Studio</span>
+<h1 class="text-headline-sm font-headline-sm font-semibold tracking-tight text-surface-bright">Operasional Nastar &amp; Kue Kering</h1>
+</div>
+</div>
+<!-- Feature Tag Pills -->
+<div class="flex flex-wrap gap-2 pt-2">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-label-sm font-label-sm bg-surface-container-lowest/10 border border-surface-container-lowest/20 backdrop-blur-sm text-surface-bright">
+<span class="material-symbols-outlined text-[15px] text-secondary-fixed">shield_lock</span>
+              Internal Operational Only
+            </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-label-sm font-label-sm bg-surface-container-lowest/10 border border-surface-container-lowest/20 backdrop-blur-sm text-surface-bright">
+<span class="material-symbols-outlined text-[15px] text-inverse-primary">database</span>
+              Supabase RLS Active
+            </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-label-sm font-label-sm bg-surface-container-lowest/10 border border-surface-container-lowest/20 backdrop-blur-sm text-surface-bright">
+<span class="material-symbols-outlined text-[15px] text-secondary-fixed">wifi_off</span>
+              PWA Offline Ready
+            </span>
+</div>
+</div>
+<!-- Middle Content / Value & Live Status Cards -->
+<div class="relative z-10 my-8 space-y-6">
+<div class="space-y-2">
+<span class="text-secondary-fixed font-label-md text-label-md tracking-wide">Sistem Terintegrasi Musim Raya</span>
+<h2 class="text-headline-lg font-headline-lg text-surface-bright leading-snug">
+              Sistem Operasi Produksi &amp; Penjualan Kue Kering Idul Fitri 1447H
+            </h2>
+<p class="text-body-md text-inverse-on-surface/90 pt-1">
+              Platform hulu ke hilir untuk penimbangan butter Wijsman, penjadwalan kloter oven, pencetakan struk pesanan hampers, hingga kontrol keuangan HPP toples.
+            </p>
+</div>
+<!-- Live Production Status Bento Card -->
+<div class="p-4 rounded-xl bg-surface-container-lowest/10 border border-surface-container-lowest/15 backdrop-blur-md space-y-3 shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-fixed animate-ping"></span>
+<span class="text-label-md font-label-md text-surface-bright">Status Dapur Live</span>
+</div>
+<span class="px-2 py-0.5 rounded text-label-sm font-label-sm bg-secondary-fixed/20 text-secondary-fixed border border-secondary-fixed/30">
+                Shift Pagi Aktif
+              </span>
+</div>
+<div class="grid grid-cols-2 gap-3 pt-1 border-t border-surface-container-lowest/10">
+<div>
+<span class="text-body-sm text-surface-container-highest/80 block">Batch Oven Aktif</span>
+<span class="text-body-lg-semibold font-body-lg-semibold text-surface-bright">#18 Nastar Wijsman</span>
+</div>
+<div>
+<span class="text-body-sm text-surface-container-highest/80 block">Kapasitas Harian</span>
+<span class="text-body-lg-semibold font-body-lg-semibold text-secondary-fixed">840 / 1.200 Toples</span>
+</div>
+</div>
+<!-- Progress bar -->
+<div class="w-full bg-surface-container-lowest/20 rounded-full h-1.5 overflow-hidden">
+<div class="bg-secondary-fixed h-full rounded-full transition-all duration-500" style="width: 70%"></div>
+</div>
+</div>
+</div>
+<!-- Bottom Quote / Motivation -->
+<div class="relative z-10 pt-4 border-t border-surface-container-lowest/15 flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary-fixed text-2xl shrink-0 mt-0.5">format_quote</span>
+<p class="text-body-sm font-body-sm text-surface-container-highest/90 italic leading-relaxed">
+            "Mendukung target 1.200 toples kue kering berkualitas untuk Idul Fitri yang penuh berkah, rapi dalam pembukuan, amanah dalam timbangan rasa."
+          </p>
+</div>
+</section>
+<!-- KOLOM KANAN: Panel Form Autentikasi Internal (7/12) -->
+<section class="lg:col-span-7 p-6 sm:p-10 md:p-12 flex flex-col justify-between bg-surface-container-lowest">
+<!-- Form Header -->
+<div class="space-y-6">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-2xl font-bold">cookie</span>
+<span class="font-headline-sm text-headline-sm font-semibold text-primary">Dapur Lebaran</span>
+<span class="text-label-sm font-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant">Internal</span>
+</div>
+<div class="flex items-center gap-1.5 text-body-sm text-outline">
+<span class="material-symbols-outlined text-[18px]">calendar_month</span>
+<span>Ramadhan / Syawal 1447H</span>
+</div>
+</div>
+<div>
+<h2 class="text-headline-md font-headline-md text-on-surface font-semibold tracking-tight">
+              Masuk ke Sistem Operasi Dapur
+            </h2>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1">
+              Gunakan akun terdaftar staf produksi, kasir pengiriman, atau akun owner superadmin Bu Nur Laila.
+            </p>
+</div>
+<!-- Quick Demo Switch / Role Selector Pills -->
+<div class="bg-surface-container-low p-3.5 rounded-xl border border-outline-variant/30 space-y-2">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1 font-semibold text-primary">
+<span class="material-symbols-outlined text-[16px]">swap_horiz</span>
+                Pilih Akses Cepat (Quick Role Demo):
+              </span>
+<span class="text-outline">Klik untuk autofill akun</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+<!-- Role 1: Owner -->
+<button class="role-btn text-left p-2.5 rounded-lg border border-primary/40 bg-surface-container-lowest text-on-surface shadow-xs transition-all hover:border-primary focus:outline-none focus:ring-1 focus:ring-primary group" id="btn-role-owner" onclick="selectRole('owner')" type="button">
+<div class="flex items-center justify-between mb-1">
+<span class="text-label-sm font-label-sm font-semibold text-primary">Owner / Admin</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">verified_user</span>
+</div>
+<div class="text-body-sm font-medium text-on-surface truncate">Bu Nur Laila</div>
+<div class="text-[11px] text-on-surface-variant leading-tight truncate">Finansial &amp; Margin HPP</div>
+</button>
+<!-- Role 2: Baker -->
+<button class="role-btn text-left p-2.5 rounded-lg border border-outline-variant/50 bg-surface-container-lowest/60 text-on-surface hover:bg-surface-container-lowest transition-all hover:border-outline focus:outline-none focus:ring-1 focus:ring-primary group" id="btn-role-baker" onclick="selectRole('baker')" type="button">
+<div class="flex items-center justify-between mb-1">
+<span class="text-label-sm font-label-sm font-semibold text-on-surface">Staff &amp; Baker</span>
+<span class="material-symbols-outlined text-[16px] text-outline">soup_kitchen</span>
+</div>
+<div class="text-body-sm font-medium text-on-surface truncate">Siti Aminah</div>
+<div class="text-[11px] text-on-surface-variant leading-tight truncate">Resep &amp; Stok Bahan</div>
+</button>
+<!-- Role 3: Kasir -->
+<button class="role-btn text-left p-2.5 rounded-lg border border-outline-variant/50 bg-surface-container-lowest/60 text-on-surface hover:bg-surface-container-lowest transition-all hover:border-outline focus:outline-none focus:ring-1 focus:ring-primary group" id="btn-role-cashier" onclick="selectRole('cashier')" type="button">
+<div class="flex items-center justify-between mb-1">
+<span class="text-label-sm font-label-sm font-semibold text-on-surface">Kasir &amp; Kurir</span>
+<span class="material-symbols-outlined text-[16px] text-outline">point_of_sale</span>
+</div>
+<div class="text-body-sm font-medium text-on-surface truncate">Budi Santoso</div>
+<div class="text-[11px] text-on-surface-variant leading-tight truncate">Invoice &amp; Tagih WA</div>
+</button>
+</div>
+</div>
+<!-- Authentication Form -->
+<form class="space-y-4" onsubmit="event.preventDefault(); handleLogin();">
+<!-- Email / Username Input -->
+<div class="space-y-1.5">
+<label class="block text-label-md font-label-md text-on-surface" for="username">
+                Email / ID Staf Dapur
+              </label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined text-[20px]">badge</span>
+</div>
+<input class="block w-full h-12 pl-11 pr-4 rounded-xl border border-outline-variant bg-surface-container-lowest text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/15 transition-all text-body-md font-body-md" id="username" placeholder="nama@dapurlebaran.id" required="" type="text" value="owner@dapurlebaran.id"/>
+</div>
+</div>
+<!-- Password Input with Toggle -->
+<div class="space-y-1.5">
+<div class="flex items-center justify-between">
+<label class="block text-label-md font-label-md text-on-surface" for="password">
+                  Kata Sandi Akses
+                </label>
+<a class="text-body-sm font-body-sm font-medium text-primary hover:underline" href="#hubungi-owner" onclick="alert('Silakan hubungi Bu Nur Laila (Superadmin) di meja kasir pusat untuk mereset kunci PIN/Kata Sandi akun Anda.'); return false;">
+                  Lupa Kata Sandi?
+                </a>
+</div>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined text-[20px]">key</span>
+</div>
+<input class="block w-full h-12 pl-11 pr-12 rounded-xl border border-outline-variant bg-surface-container-lowest text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/15 transition-all text-body-md font-body-md" id="password" placeholder="Masukkan kata sandi..." required="" type="password" value="••••••••••••"/>
+<button class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-outline hover:text-on-surface transition-colors focus:outline-none" onclick="togglePassword()" title="Lihat / Sembunyikan Kata Sandi" type="button">
+<span class="material-symbols-outlined text-[20px]" id="password-toggle-icon">visibility</span>
+</button>
+</div>
+</div>
+<!-- Remember Session Checkbox -->
+<div class="flex items-center justify-between pt-1">
+<label class="flex items-center gap-2.5 cursor-pointer select-none">
+<input checked="" class="w-4 h-4 rounded text-primary border-outline-variant focus:ring-primary focus:ring-offset-0" type="checkbox"/>
+<span class="text-body-sm font-body-sm text-on-surface">
+                  Ingat sesi di perangkat dapur ini (Tablet/Oven PC)
+                </span>
+</label>
+</div>
+<!-- Action Button CTA -->
+<div class="pt-2">
+<button class="w-full h-12 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md font-semibold flex items-center justify-center gap-2 shadow-sm active:scale-[0.99] transition-all" id="submit-btn" type="submit">
+<span>Masuk ke Dapur Lebaran</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</form>
+<!-- Row-Level Security Notice -->
+<div class="p-3 rounded-xl bg-surface-container-low border border-outline-variant/30 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">verified</span>
+<div class="text-body-sm font-body-sm text-on-surface-variant">
+<strong class="text-on-surface font-semibold">Row-Level Security (RLS) Aktif.</strong> 
+              Hak akses data finansial, daftar resep rahasia Wijsman, dan rekap omzet terisolasi otomatis berdasarkan role profil Anda.
+            </div>
+</div>
+</div>
+<!-- Footer / App Versioning -->
+<div class="pt-6 mt-6 border-t border-outline-variant/20 flex flex-col sm:flex-row items-center justify-between text-body-sm text-outline gap-2">
+<div>
+            Dapur Lebaran v2.4 PROD • Hak Cipta Terlindungi
+          </div>
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>Khusus Penggunaan Internal Toko</span>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Bottom Floating Notification / Toast placeholder -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none" id="toast">
+<div class="bg-inverse-surface text-inverse-on-surface px-4 py-3 rounded-xl shadow-lg flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-fixed">check_circle</span>
+<span class="text-body-sm font-medium" id="toast-text">Profil dipilih</span>
+</div>
+</div>
+<!-- Interactive Logic for Demo Switcher and Form -->
+<script>
+    function selectRole(role) {
+      const usernameInput = document.getElementById('username');
+      const passwordInput = document.getElementById('password');
+      const toast = document.getElementById('toast');
+      const toastText = document.getElementById('toast-text');
+      
+      // Reset button styles
+      document.querySelectorAll('.role-btn').forEach(btn => {
+        btn.classList.remove('border-primary', 'bg-surface-container-lowest', 'shadow-xs');
+        btn.classList.add('border-outline-variant/50', 'bg-surface-container-lowest/60');
+      });
+
+      if (role === 'owner') {
+        usernameInput.value = 'owner@dapurlebaran.id';
+        passwordInput.value = '••••••••••••';
+        const activeBtn = document.getElementById('btn-role-owner');
+        activeBtn.classList.add('border-primary', 'bg-surface-container-lowest', 'shadow-xs');
+        showToast('Login sebagai: Bu Nur Laila (Superadmin Owner)');
+      } else if (role === 'baker') {
+        usernameInput.value = 'siti.aminah@dapurlebaran.id';
+        passwordInput.value = '••••••••••••';
+        const activeBtn = document.getElementById('btn-role-baker');
+        activeBtn.classList.add('border-primary', 'bg-surface-container-lowest', 'shadow-xs');
+        showToast('Login sebagai: Siti Aminah (Staf Dapur & Baker)');
+      } else if (role === 'cashier') {
+        usernameInput.value = 'budi.santoso@dapurlebaran.id';
+        passwordInput.value = '••••••••••••';
+        const activeBtn = document.getElementById('btn-role-cashier');
+        activeBtn.classList.add('border-primary', 'bg-surface-container-lowest', 'shadow-xs');
+        showToast('Login sebagai: Budi Santoso (Kasir & Pengiriman)');
+      }
+    }
+
+    function togglePassword() {
+      const passwordInput = document.getElementById('password');
+      const toggleIcon = document.getElementById('password-toggle-icon');
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        toggleIcon.textContent = 'visibility_off';
+      } else {
+        passwordInput.type = 'password';
+        toggleIcon.textContent = 'visibility';
+      }
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const toastText = document.getElementById('toast-text');
+      toastText.textContent = message;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 2500);
+    }
+
+    function handleLogin() {
+      const submitBtn = document.getElementById('submit-btn');
+      const origContent = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `
+        <span class="inline-block animate-spin w-5 h-5 border-2 border-on-primary border-t-transparent rounded-full"></span>
+        <span>Memverifikasi RLS & Sesi...</span>
+      `;
+      setTimeout(() => {
+        showToast('Autentikasi Berhasil! Mengalihkan ke dashboard dapur...');
+        setTimeout(() => {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = origContent;
+        }, 1500);
+      }, 1000);
+    }
+  </script>
+</body></html>

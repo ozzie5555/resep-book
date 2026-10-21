@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dapur Lebaran - Ringkasan Finansial & Kelola Karyawan</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@100..900&family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-fixed-dim": "#f5be53",
+            "inverse-on-surface": "#ffede3",
+            "on-secondary-container": "#745200",
+            "primary": "#00563a",
+            "on-primary-fixed": "#002114",
+            "on-background": "#27180d",
+            "on-secondary": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "outline-variant": "#bec9c1",
+            "tertiary-fixed": "#ffdbd1",
+            "error": "#ba1a1a",
+            "tertiary": "#8a2908",
+            "inverse-primary": "#8ad6b0",
+            "on-error": "#ffffff",
+            "on-primary": "#ffffff",
+            "on-surface-variant": "#3f4943",
+            "on-tertiary-fixed": "#3b0a00",
+            "surface-variant": "#faddcb",
+            "on-error-container": "#93000a",
+            "primary-fixed": "#a5f3cc",
+            "inverse-surface": "#3e2d21",
+            "on-secondary-fixed-variant": "#5e4200",
+            "primary-container": "#1f6f50",
+            "surface-container-high": "#ffe3d1",
+            "on-tertiary-container": "#ffd6cb",
+            "surface-container": "#ffeadd",
+            "outline": "#6f7a73",
+            "on-secondary-fixed": "#271900",
+            "on-surface": "#27180d",
+            "on-tertiary-fixed-variant": "#842505",
+            "secondary": "#7c5800",
+            "primary-fixed-dim": "#8ad6b0",
+            "surface-container-low": "#fff1e9",
+            "error-container": "#ffdad6",
+            "surface": "#fff8f5",
+            "on-primary-container": "#a1efc8",
+            "on-primary-fixed-variant": "#005137",
+            "secondary-container": "#fec65a",
+            "surface-bright": "#fff8f5",
+            "secondary-fixed": "#ffdea7",
+            "tertiary-container": "#aa401f",
+            "surface-container-lowest": "#ffffff",
+            "tertiary-fixed-dim": "#ffb5a0",
+            "background": "#fff8f5",
+            "surface-tint": "#196b4c",
+            "surface-dim": "#f1d4c2",
+            "surface-container-highest": "#faddcb"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-desktop": "2rem",
+            "space-xl": "2rem",
+            "space-lg": "1.5rem",
+            "space-md": "1rem",
+            "gutter-desktop": "1.5rem",
+            "gutter": "1rem",
+            "space-sm": "0.5rem",
+            "margin": "1rem",
+            "space-xs": "0.25rem"
+          },
+          "fontFamily": {
+            "label-sm": ["Inter"],
+            "body-md": ["Inter"],
+            "body-lg": ["Inter"],
+            "body-md-medium": ["Inter"],
+            "headline-xl-mobile": ["Epilogue"],
+            "body-lg-medium": ["Inter"],
+            "headline-lg": ["Epilogue"],
+            "label-md": ["Inter"],
+            "headline-xl": ["Epilogue"],
+            "body-lg-semibold": ["Inter"],
+            "body-sm": ["Inter"],
+            "headline-lg-mobile": ["Epilogue"],
+            "headline-md": ["Epilogue"],
+            "headline-sm": ["Epilogue"]
+          },
+          "fontSize": {
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.5px", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "body-md-medium": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "headline-xl-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+            "body-lg-medium": ["16px", { "lineHeight": "24px", "fontWeight": "500" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "fontWeight": "600" }],
+            "body-lg-semibold": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "headline-lg-mobile": ["22px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "26px", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      line-height: 1;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      height: 6px;
+      width: 6px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background-color: #bec9c1;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body class="bg-[#FBF6EC] text-on-surface antialiased font-body-md min-h-screen flex flex-col md:flex-row pb-20 md:pb-0">
+<!-- ================= SIDE NAVIGATION BAR (SHARED COMPONENT) ================= -->
+<aside class="hidden md:flex flex-col justify-between h-screen w-64 fixed left-0 top-0 bg-surface-container-lowest dark:bg-inverse-surface shadow-sm z-30 p-4 border-r border-[#E8DFCC]">
+<!-- Brand / Header -->
+<div class="flex flex-col gap-3">
+<div class="flex items-center gap-3 px-2 py-1">
+<div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-on-primary font-headline-md shadow-sm">
+<span class="material-symbols-outlined text-secondary-fixed text-2xl" data-icon="bakery_dining">bakery_dining</span>
+</div>
+<div class="flex flex-col">
+<span class="text-headline-sm font-headline-sm font-semibold text-primary">Dapur Lebaran</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant leading-none">Manajemen Produksi & Pesanan</span>
+</div>
+</div>
+<!-- Quick CTA -->
+<button class="w-full mt-2 bg-primary-container text-on-primary hover:bg-primary py-2.5 px-4 rounded-xl font-label-md text-label-md flex items-center justify-center gap-2 shadow-sm transition-all duration-150 active:scale-95">
+<span class="material-symbols-outlined text-lg" data-icon="add_circle">add_circle</span>
+        + Penjualan
+      </button>
+<!-- Navigation Links -->
+<nav class="flex flex-col gap-1 mt-4">
+<!-- 1. Beranda -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-colors duration-150 font-label-md text-label-md" href="#beranda">
+<span class="material-symbols-outlined text-xl" data-icon="dashboard">dashboard</span>
+          Beranda
+        </a>
+<!-- 2. Penjualan -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-colors duration-150 font-label-md text-label-md" href="#penjualan">
+<span class="material-symbols-outlined text-xl" data-icon="receipt_long">receipt_long</span>
+          Penjualan
+        </a>
+<!-- 3. Pelanggan -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-colors duration-150 font-label-md text-label-md" href="#pelanggan">
+<span class="material-symbols-outlined text-xl" data-icon="group">group</span>
+          Pelanggan
+        </a>
+<!-- 4. Bahan -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-colors duration-150 font-label-md text-label-md" href="#bahan">
+<span class="material-symbols-outlined text-xl" data-icon="inventory_2">inventory_2</span>
+          Bahan
+        </a>
+<!-- 5. Resep -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-colors duration-150 font-label-md text-label-md" href="#resep">
+<span class="material-symbols-outlined text-xl" data-icon="menu_book">menu_book</span>
+          Resep
+        </a>
+<!-- 6. Ringkasan (ACTIVE TAB 1) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-primary font-semibold bg-surface-container font-label-md text-label-md transition-all shadow-xs" href="#ringkasan">
+<span class="material-symbols-outlined text-xl" data-icon="monitoring" style="font-variation-settings: 'FILL' 1;">monitoring</span>
+          Ringkasan
+          <span class="ml-auto w-2 h-2 rounded-full bg-primary"></span>
+</a>
+<!-- 7. Karyawan (ACTIVE TAB 2) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-primary font-semibold bg-[#F5ECE0] font-label-md text-label-md transition-all" href="#karyawan-section">
+<span class="material-symbols-outlined text-xl" data-icon="badge" style="font-variation-settings: 'FILL' 1;">badge</span>
+          Karyawan
+          <span class="ml-auto text-[10px] px-1.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm">4 Staf</span>
+</a>
+</nav>
+</div>
+<!-- Footer SideNav -->
+<div class="flex flex-col gap-1 border-t border-[#E8DFCC] pt-3">
+<a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-colors duration-150 font-label-md text-label-md" href="#pengaturan">
+<span class="material-symbols-outlined text-xl" data-icon="settings">settings</span>
+        Pengaturan
+      </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-xl text-error hover:bg-error-container/40 transition-colors duration-150 font-label-md text-label-md" href="#keluar">
+<span class="material-symbols-outlined text-xl" data-icon="logout">logout</span>
+        Keluar
+      </a>
+<div class="mt-2 p-2.5 bg-surface-container-low rounded-xl flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold text-xs uppercase ring-2 ring-secondary-fixed">
+          NL
+        </div>
+<div class="flex flex-col truncate">
+<span class="font-label-md text-label-md text-on-surface truncate">Ibu Nur Laila</span>
+<span class="font-body-sm text-body-sm text-secondary flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-xs" data-icon="verified_user">verified_user</span> Owner (RLS Aktif)
+          </span>
+</div>
+</div>
+</div>
+</aside>
+<!-- ================= TOP APP BAR (SHARED COMPONENT) ================= -->
+<div class="md:pl-64 flex flex-col flex-1">
+<header class="bg-surface-container-lowest sticky top-0 z-20 shadow-sm w-full border-b border-[#E8DFCC]">
+<div class="flex justify-between items-center w-full px-4 md:px-8 max-w-7xl mx-auto h-16">
+<!-- Brand & Context -->
+<div class="flex items-center gap-3">
+<div class="md:hidden flex items-center justify-center w-9 h-9 rounded-lg bg-primary-container text-on-primary">
+<span class="material-symbols-outlined text-lg" data-icon="bakery_dining">bakery_dining</span>
+</div>
+<div>
+<h1 class="text-headline-sm font-headline-sm font-semibold text-primary flex items-center gap-2">
+              Dapur Lebaran
+              <span class="hidden sm:inline-flex text-label-sm font-label-sm px-2.5 py-0.5 rounded-full bg-[#EAF5EE] text-[#2E8B57] border border-[#B8E2C8] items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-[#2E8B57] animate-pulse"></span> Musim 1447H
+              </span>
+</h1>
+<p class="text-body-sm font-body-sm text-on-surface-variant hidden md:block">Portal Eksekutif & Pengelolaan Keuangan Toko Nastar</p>
+</div>
+</div>
+<!-- Trailing Actions & Search -->
+<div class="flex items-center gap-3">
+<!-- Search Box -->
+<div class="relative hidden lg:block w-64">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-lg" data-icon="search">search</span>
+<input class="w-full pl-9 pr-3 py-1.5 text-body-md font-body-md bg-surface-container-lowest border border-[#E8DFCC] rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Cari invoice, staf, kue..." type="text"/>
+</div>
+<!-- Quick Action Sync -->
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-xl transition-colors active:scale-95" title="Sinkronisasi Data RLS">
+<span class="material-symbols-outlined text-xl" data-icon="sync">sync</span>
+</button>
+<!-- Notifications with Badge -->
+<button class="relative p-2 text-on-surface-variant hover:bg-surface-container-low rounded-xl transition-colors active:scale-95" title="Notifikasi Baru">
+<span class="material-symbols-outlined text-xl" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-tertiary-container rounded-full border-2 border-surface-container-lowest"></span>
+</button>
+<!-- Owner Profile Avatar Pill -->
+<div class="flex items-center gap-2 pl-2 border-l border-[#E8DFCC]">
+<img class="w-9 h-9 rounded-full object-cover border border-[#E8DFCC] shadow-xs" data-alt="Potret wajah Ibu Nur Laila tersenyum ramah memakai jilbab bersahaja di dapur kue toko artisanal Dapur Lebaran, diterangi cahaya hangat lembut pagi hari bernuansa emas dan hijau zaitun elegan, suasana bakery tradisional modern berkualitas tinggi." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcMcGDz1wCQ0yuFnl4raLzMw_B5_YuDr6BqaxmVgup2vhfLvavi38hoJ7C14RkKd8cYG6UPJS6lE06-AtyFQGMqasGKA7wHL6VZFuJlyyNX04Vg_X4lmTcEYW6iHWdhvuxizwDnuL8-bR3-1BXGAY2T62TL63EAvD2J3TMDhQZmU9koOG6fbTJcFB355cKf_3P9n5DygolSAEcaw-HKzTeIm1wk7MyOW0bLDyex5dOWXmcd_mImqjD5w"/>
+<div class="hidden xl:flex flex-col">
+<span class="text-label-md font-label-md text-on-surface">Staff/Owner</span>
+<span class="text-[11px] text-[#7A6A5C] leading-none">Ibu Nur Laila</span>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- ================= MAIN CONTENT CANVAS ================= -->
+<main class="flex-1 max-w-7xl w-full mx-auto px-4 md:px-8 py-6 flex flex-col gap-8">
+<!-- Top Operational Banner: Role & Security Info -->
+<section class="bg-gradient-to-r from-[#1F6F50] to-[#17583F] text-on-primary rounded-2xl p-5 md:p-6 shadow-sm relative overflow-hidden flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary text-on-secondary text-label-sm font-label-sm font-semibold tracking-wide flex items-center gap-1 shadow-xs">
+<span class="material-symbols-outlined text-xs" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span> Akses Terproteksi RLS Superadmin
+            </span>
+<span class="text-xs text-primary-fixed-dim">ID Toko: #DL-2026-BDG</span>
+</div>
+<h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg text-white">Ringkasan Finansial & Kendali Operasional</h2>
+<p class="text-body-md font-body-md text-[#E0EFE8] max-w-2xl mt-1">
+            Selamat datang kembali, <strong>Ibu Nur Laila</strong>. Semua mutasi pendapatan, konfirmasi uang muka (DP), dan otorisasi wewenang staf tersinkronisasi langsung ke cloud perbankan.
+          </p>
+</div>
+<div class="flex items-center gap-3 relative z-10 w-full sm:w-auto">
+<button class="flex-1 sm:flex-initial h-11 px-4 bg-[#C8962E] hover:bg-[#b58525] text-white rounded-xl font-label-md text-label-md flex items-center justify-center gap-2 shadow-sm transition-all active:scale-95">
+<span class="material-symbols-outlined text-lg" data-icon="download">download</span> Unduh Buku Kas (Excel/PDF)
+          </button>
+</div>
+<!-- Decorative golden glow icon -->
+<div class="absolute -right-6 -bottom-6 opacity-10 pointer-events-none select-none">
+<span class="material-symbols-outlined text-[160px] text-white" data-icon="workspace_premium">workspace_premium</span>
+</div>
+</section>
+<!-- ================= FITUR 1: RINGKASAN FINANSIAL & ANALITIK PENJUALAN ================= -->
+<section class="space-y-6" id="ringkasan">
+<!-- Section Header with Date Range Filter -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div>
+<h3 class="text-headline-md font-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="analytics">analytics</span>
+              Analitik & Arus Kas Penjualan
+            </h3>
+<p class="text-body-sm font-body-sm text-[#7A6A5C]">Pantau perputaran omzet pesanan kue kering Lebaran 1447H</p>
+</div>
+<!-- Time Range Filter Tabs -->
+<div class="inline-flex p-1 bg-surface-container-lowest border border-[#E8DFCC] rounded-xl shadow-xs self-start sm:self-auto">
+<button class="px-3.5 py-1.5 text-label-md font-label-md rounded-lg text-on-surface-variant hover:text-on-surface transition-colors">
+              Hari Ini
+            </button>
+<button class="px-3.5 py-1.5 text-label-md font-label-md rounded-lg text-on-surface-variant hover:text-on-surface transition-colors">
+              7 Hari Terakhir
+            </button>
+<button class="px-3.5 py-1.5 text-label-md font-label-md rounded-lg bg-primary-container text-on-primary font-semibold shadow-xs">
+              Musim Lebaran 1447H
+            </button>
+</div>
+</div>
+<!-- 4 Metric Cards (Bento Style) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Card 1: Total Omzet -->
+<div class="bg-surface-container-lowest p-5 rounded-2xl border border-[#E8DFCC] shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-3">
+<span class="text-label-md font-label-md text-[#7A6A5C]">Total Omzet Penjualan</span>
+<div class="w-9 h-9 rounded-xl bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-xl" data-icon="payments">payments</span>
+</div>
+</div>
+<div>
+<div class="text-headline-lg font-headline-lg text-[#1F6F50] font-bold tracking-tight">Rp 18.450.000</div>
+<div class="mt-2 flex items-center gap-1.5 text-body-sm font-body-sm text-[#2E8B57]">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+<span>+24.8% dari target kuota batch</span>
+</div>
+</div>
+</div>
+<!-- Card 2: Total Lunas -->
+<div class="bg-surface-container-lowest p-5 rounded-2xl border border-[#E8DFCC] shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-3">
+<span class="text-label-md font-label-md text-[#7A6A5C]">Total Lunas</span>
+<div class="w-9 h-9 rounded-xl bg-[#EAF5EE] flex items-center justify-center text-[#2E8B57]">
+<span class="material-symbols-outlined text-xl" data-icon="check_circle">check_circle</span>
+</div>
+</div>
+<div>
+<div class="text-headline-lg font-headline-lg text-on-surface font-bold tracking-tight">Rp 12.250.000</div>
+<div class="mt-2 flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-[#EAF5EE] text-[#2E8B57] border border-[#B8E2C8]">
+                  66.4% dari total
+                </span>
+<span class="text-body-sm font-body-sm text-[#7A6A5C]">48 Transaksi</span>
+</div>
+</div>
+</div>
+<!-- Card 3: DP Tertampung -->
+<div class="bg-surface-container-lowest p-5 rounded-2xl border border-[#E8DFCC] shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-3">
+<span class="text-label-md font-label-md text-[#7A6A5C]">DP Tertampung</span>
+<div class="w-9 h-9 rounded-xl bg-[#FDF6E2] flex items-center justify-center text-[#9E7000]">
+<span class="material-symbols-outlined text-xl" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+</div>
+<div>
+<div class="text-headline-lg font-headline-lg text-[#7c5800] font-bold tracking-tight">Rp 4.350.000</div>
+<div class="mt-2 flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-[#FDF6E2] text-[#9E7000] border border-[#F4DB96]">
+                  Uang Muka Aktif
+                </span>
+<span class="text-body-sm font-body-sm text-[#7A6A5C]">22 Pemesan</span>
+</div>
+</div>
+</div>
+<!-- Card 4: Sisa Piutang Belum Lunas -->
+<div class="bg-surface-container-lowest p-5 rounded-2xl border border-[#F1BFBA] shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow bg-gradient-to-b from-[#FFFFFF] to-[#FFF5F4]">
+<div class="flex items-center justify-between mb-3">
+<span class="text-label-md font-label-md text-[#B93A2E] font-semibold">Sisa Piutang Belum Lunas</span>
+<div class="w-9 h-9 rounded-xl bg-[#FBEBE9] flex items-center justify-center text-[#B93A2E]">
+<span class="material-symbols-outlined text-xl" data-icon="pending_actions">pending_actions</span>
+</div>
+</div>
+<div>
+<div class="text-headline-lg font-headline-lg text-[#B93A2E] font-bold tracking-tight">Rp 1.850.000</div>
+<div class="mt-2 flex items-center justify-between">
+<span class="text-body-sm font-body-sm text-[#B93A2E] flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-sm" data-icon="info">info</span> 7 Pelanggan
+                </span>
+<a class="text-label-sm font-label-sm text-[#1F6F50] hover:underline font-bold" href="#piutang-prioritas">Tagih Segera →</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Analytical Centerpiece: Trend Chart & Top 5 Kue Bento -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Chart Visual (7 Columns) -->
+<div class="lg:col-span-7 bg-surface-container-lowest p-6 rounded-2xl border border-[#E8DFCC] shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-4">
+<div>
+<h4 class="text-headline-sm font-headline-sm text-on-surface">Tren Penjualan Harian Menjelang Idul Fitri</h4>
+<p class="text-body-sm font-body-sm text-[#7A6A5C]">Kurva akselerasi pesanan toples & hampers per hari</p>
+</div>
+<span class="text-label-sm font-label-sm bg-surface-container px-2.5 py-1 rounded-lg text-primary font-semibold">H-14 s/d H-3</span>
+</div>
+<!-- Custom Graphic Bar Chart Representation -->
+<div class="h-60 w-full flex items-end gap-2 sm:gap-4 pt-6 pb-2 border-b border-[#E8DFCC]">
+<!-- Day 1 -->
+<div class="flex-1 flex flex-col items-center gap-2 group cursor-pointer">
+<div class="text-[10px] text-[#7A6A5C] opacity-0 group-hover:opacity-100 transition-opacity">Rp 850k</div>
+<div class="w-full bg-[#E8DFCC] rounded-t-lg transition-all duration-300 group-hover:bg-primary-container h-16 relative"></div>
+<span class="text-body-sm font-body-sm text-[#7A6A5C]">H-14</span>
+</div>
+<!-- Day 2 -->
+<div class="flex-1 flex flex-col items-center gap-2 group cursor-pointer">
+<div class="text-[10px] text-[#7A6A5C] opacity-0 group-hover:opacity-100 transition-opacity">Rp 1.1M</div>
+<div class="w-full bg-[#E8DFCC] rounded-t-lg transition-all duration-300 group-hover:bg-primary-container h-24 relative"></div>
+<span class="text-body-sm font-body-sm text-[#7A6A5C]">H-12</span>
+</div>
+<!-- Day 3 -->
+<div class="flex-1 flex flex-col items-center gap-2 group cursor-pointer">
+<div class="text-[10px] text-[#7A6A5C] opacity-0 group-hover:opacity-100 transition-opacity">Rp 1.8M</div>
+<div class="w-full bg-[#8ad6b0] rounded-t-lg transition-all duration-300 group-hover:bg-primary-container h-32 relative"></div>
+<span class="text-body-sm font-body-sm text-[#7A6A5C]">H-10</span>
+</div>
+<!-- Day 4 -->
+<div class="flex-1 flex flex-col items-center gap-2 group cursor-pointer">
+<div class="text-[10px] text-[#7A6A5C] opacity-0 group-hover:opacity-100 transition-opacity">Rp 2.4M</div>
+<div class="w-full bg-[#8ad6b0] rounded-t-lg transition-all duration-300 group-hover:bg-primary-container h-40 relative"></div>
+<span class="text-body-sm font-body-sm text-[#7A6A5C]">H-8</span>
+</div>
+<!-- Day 5 (Peak 1) -->
+<div class="flex-1 flex flex-col items-center gap-2 group cursor-pointer">
+<div class="text-[10px] text-primary font-bold opacity-0 group-hover:opacity-100 transition-opacity">Rp 3.6M</div>
+<div class="w-full bg-primary-container rounded-t-lg transition-all duration-300 h-48 relative shadow-sm">
+<div class="w-2 h-2 rounded-full bg-secondary-fixed-dim mx-auto mt-1"></div>
+</div>
+<span class="text-body-sm font-body-sm font-semibold text-primary">H-6</span>
+</div>
+<!-- Day 6 (Weekend Run) -->
+<div class="flex-1 flex flex-col items-center gap-2 group cursor-pointer">
+<div class="text-[10px] text-primary font-bold opacity-0 group-hover:opacity-100 transition-opacity">Rp 4.2M</div>
+<div class="w-full bg-primary rounded-t-lg transition-all duration-300 h-52 relative shadow-md">
+<div class="w-2 h-2 rounded-full bg-secondary-fixed mx-auto mt-1"></div>
+</div>
+<span class="text-body-sm font-body-sm font-semibold text-primary">H-4</span>
+</div>
+<!-- Day 7 (Today / Highest) -->
+<div class="flex-1 flex flex-col items-center gap-2 group cursor-pointer">
+<div class="text-[10px] text-secondary font-bold">Rp 4.45M</div>
+<div class="w-full bg-gradient-to-t from-primary to-[#C8962E] rounded-t-lg transition-all duration-300 h-56 relative shadow-md">
+<span class="material-symbols-outlined text-white text-[12px] block text-center mt-1" data-icon="star">star</span>
+</div>
+<span class="text-body-sm font-body-sm font-bold text-[#C8962E]">Hari Ini</span>
+</div>
+</div>
+<!-- Legend & Note -->
+<div class="mt-4 flex flex-wrap items-center justify-between text-body-sm font-body-sm text-[#7A6A5C]">
+<div class="flex items-center gap-4">
+<span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-sm bg-primary"></span> Pesanan Masuk</span>
+<span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-sm bg-[#C8962E]"></span> Puncak Lonjakan Pre-Order</span>
+</div>
+<span>Rata-rata: <strong>Rp 2.635.000 / hari</strong></span>
+</div>
+</div>
+<!-- Top 5 Kue Terlaris (5 Columns) -->
+<div class="lg:col-span-5 bg-surface-container-lowest p-6 rounded-2xl border border-[#E8DFCC] shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-3">
+<div>
+<h4 class="text-headline-sm font-headline-sm text-on-surface">Top 5 Kue Terlaris</h4>
+<p class="text-body-sm font-body-sm text-[#7A6A5C]">Produk terfavorit musim 1447H</p>
+</div>
+<span class="material-symbols-outlined text-secondary text-2xl" data-icon="emoji_events">emoji_events</span>
+</div>
+<div class="space-y-3.5 my-auto">
+<!-- Item 1 -->
+<div>
+<div class="flex justify-between items-center text-body-md font-body-md mb-1">
+<span class="font-medium flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-bold text-xs flex items-center justify-center">1</span>
+                    Nastar Wijsman
+                  </span>
+<span class="font-bold text-[#1F6F50]">64 toples</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 100%"></div>
+</div>
+</div>
+<!-- Item 2 -->
+<div>
+<div class="flex justify-between items-center text-body-md font-body-md mb-1">
+<span class="font-medium flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-[#E8DFCC] text-[#3B2A1E] font-bold text-xs flex items-center justify-center">2</span>
+                    Kastengel Keju Edam
+                  </span>
+<span class="font-bold text-[#1F6F50]">42 toples</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-[#1F6F50]/80 rounded-full" style="width: 66%"></div>
+</div>
+</div>
+<!-- Item 3 -->
+<div>
+<div class="flex justify-between items-center text-body-md font-body-md mb-1">
+<span class="font-medium flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-[#E8DFCC] text-[#3B2A1E] font-bold text-xs flex items-center justify-center">3</span>
+                    Putri Salju Mede
+                  </span>
+<span class="font-bold text-[#1F6F50]">28 toples</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-[#1F6F50]/60 rounded-full" style="width: 44%"></div>
+</div>
+</div>
+<!-- Item 4 -->
+<div>
+<div class="flex justify-between items-center text-body-md font-body-md mb-1">
+<span class="font-medium flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-[#E8DFCC] text-[#3B2A1E] font-bold text-xs flex items-center justify-center">4</span>
+                    Lidah Kucing
+                  </span>
+<span class="font-bold text-[#1F6F50]">20 toples</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-[#1F6F50]/40 rounded-full" style="width: 31%"></div>
+</div>
+</div>
+<!-- Item 5 -->
+<div>
+<div class="flex justify-between items-center text-body-md font-body-md mb-1">
+<span class="font-medium flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-[#E8DFCC] text-[#3B2A1E] font-bold text-xs flex items-center justify-center">5</span>
+                    Hamper Duo Royal
+                  </span>
+<span class="font-bold text-secondary">14 box</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary-fixed-dim rounded-full" style="width: 22%"></div>
+</div>
+</div>
+</div>
+<div class="pt-2 text-right">
+<a class="text-body-sm font-body-sm text-primary font-semibold hover:underline" href="#resep">Kelola Bahan & Resep Terkait →</a>
+</div>
+</div>
+</div>
+<!-- Row: Loyal Customers & Debt Follow-up -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Top 5 Pelanggan Terloyal (5 Columns) -->
+<div class="lg:col-span-5 bg-surface-container-lowest p-6 rounded-2xl border border-[#E8DFCC] shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div>
+<h4 class="text-headline-sm font-headline-sm text-on-surface">Top 5 Pelanggan Terloyal</h4>
+<p class="text-body-sm font-body-sm text-[#7A6A5C]">Pelanggan dengan volume pesanan tertinggi</p>
+</div>
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="loyalty">loyalty</span>
+</div>
+<div class="divide-y divide-[#E8DFCC]">
+<!-- Pelanggan 1 -->
+<div class="py-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center font-bold text-primary text-xs">MA</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">dr. Maya Anggraini</div>
+<div class="text-body-sm font-body-sm text-[#7A6A5C]">16 Toples • 4 Hamper VIP</div>
+</div>
+</div>
+<span class="text-label-md font-label-md font-bold text-[#1F6F50]">Rp 2.850.000</span>
+</div>
+<!-- Pelanggan 2 -->
+<div class="py-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center font-bold text-primary text-xs">SR</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">Bu Siti Rahayu</div>
+<div class="text-body-sm font-body-sm text-[#7A6A5C]">12 Toples Nastar & Kastengel</div>
+</div>
+</div>
+<span class="text-label-md font-label-md font-bold text-[#1F6F50]">Rp 1.950.000</span>
+</div>
+<!-- Pelanggan 3 -->
+<div class="py-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center font-bold text-primary text-xs">BH</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">Bpk. Hendra</div>
+<div class="text-body-sm font-body-sm text-[#7A6A5C]">10 Toples Spesial Wijsman</div>
+</div>
+</div>
+<span class="text-label-md font-label-md font-bold text-[#1F6F50]">Rp 1.600.000</span>
+</div>
+<!-- Pelanggan 4 -->
+<div class="py-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center font-bold text-primary text-xs">IR</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">Ibu Ratna</div>
+<div class="text-body-sm font-body-sm text-[#7A6A5C]">8 Toples Kombinasi Mede</div>
+</div>
+</div>
+<span class="text-label-md font-label-md font-bold text-[#1F6F50]">Rp 1.250.000</span>
+</div>
+<!-- Pelanggan 5 -->
+<div class="py-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center font-bold text-secondary text-xs">BP</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">Kantor BPKP (Corporate)</div>
+<div class="text-body-sm font-body-sm text-[#7A6A5C]">15 Paket Hampers Lebaran</div>
+</div>
+</div>
+<span class="text-label-md font-label-md font-bold text-[#1F6F50]">Rp 3.750.000</span>
+</div>
+</div>
+</div>
+<div class="pt-3 border-t border-[#E8DFCC] mt-2">
+<a class="w-full block text-center text-label-md font-label-md text-[#1F6F50] font-semibold hover:underline" href="#pelanggan">
+                Buka Direktori Pelanggan →
+              </a>
+</div>
+</div>
+<!-- Daftar Prioritas Piutang Belum Lunas (7 Columns) -->
+<div class="lg:col-span-7 bg-surface-container-lowest p-6 rounded-2xl border border-[#F1BFBA] shadow-sm flex flex-col justify-between" id="piutang-prioritas">
+<div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+<div>
+<div class="flex items-center gap-2">
+<h4 class="text-headline-sm font-headline-sm text-on-surface">Prioritas Piutang Belum Lunas</h4>
+<span class="px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-[#FBEBE9] text-[#B93A2E] border border-[#F1BFBA] font-bold">
+                      7 Tagihan
+                    </span>
+</div>
+<p class="text-body-sm font-body-sm text-[#7A6A5C]">Pemberitahuan langsung via WhatsApp sebelum pengiriman kue</p>
+</div>
+<span class="text-label-sm font-label-sm text-[#B93A2E] font-semibold flex items-center gap-1 self-start sm:self-auto">
+<span class="material-symbols-outlined text-sm" data-icon="alarm">alarm</span> Batas Pelunasan: H-2
+                </span>
+</div>
+<!-- List with Direct WhatsApp Billing Action -->
+<div class="space-y-3">
+<!-- Tagihan 1 -->
+<div class="p-3.5 rounded-xl border border-[#E8DFCC] bg-[#FFFBF7] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold">dr. Maya Anggraini</span>
+<span class="px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-[#FDF6E2] text-[#9E7000] border border-[#F4DB96]">DP Rp 1.500.000</span>
+</div>
+<span class="text-body-sm font-body-sm text-[#7A6A5C]">INV-2026-089 • Pesanan: 16 Nastar & 4 Hampers</span>
+</div>
+<div class="flex items-center justify-between sm:justify-end gap-3 pt-2 sm:pt-0 border-t sm:border-t-0 border-[#E8DFCC]">
+<div class="text-left sm:text-right">
+<div class="text-[11px] text-[#7A6A5C]">Sisa Kurang</div>
+<div class="text-label-md font-label-md text-[#B93A2E] font-bold">Rp 1.350.000</div>
+</div>
+<a class="h-9 px-3.5 bg-[#25D366] hover:bg-[#20ba59] text-white rounded-xl font-label-md text-label-md flex items-center gap-1.5 shadow-sm transition-all active:scale-95" href="https://wa.me/6281234567890?text=Halo%20dr.%20Maya,%20salam%20hangat%20dari%20Dapur%20Lebaran.%20Pesanan%20kue%20kering%20siap%20diproses,%20berikut%20rincian%20sisa%20pelunasan:%20Rp%201.350.000" target="_blank">
+<span class="material-symbols-outlined text-base" data-icon="chat">chat</span> Tagih WA
+                    </a>
+</div>
+</div>
+<!-- Tagihan 2 -->
+<div class="p-3.5 rounded-xl border border-[#E8DFCC] bg-[#FFFBF7] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Kantor BPKP (Panitia Bingkisan)</span>
+<span class="px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-[#FDF6E2] text-[#9E7000] border border-[#F4DB96]">DP Rp 2.000.000</span>
+</div>
+<span class="text-body-sm font-body-sm text-[#7A6A5C]">INV-2026-104 • Pesanan: 15 Paket Hampers Lebaran</span>
+</div>
+<div class="flex items-center justify-between sm:justify-end gap-3 pt-2 sm:pt-0 border-t sm:border-t-0 border-[#E8DFCC]">
+<div class="text-left sm:text-right">
+<div class="text-[11px] text-[#7A6A5C]">Sisa Kurang</div>
+<div class="text-label-md font-label-md text-[#B93A2E] font-bold">Rp 1.750.000</div>
+</div>
+<a class="h-9 px-3.5 bg-[#25D366] hover:bg-[#20ba59] text-white rounded-xl font-label-md text-label-md flex items-center gap-1.5 shadow-sm transition-all active:scale-95" href="https://wa.me/6281298765432?text=Halo%20Ibu%20Ratna%20BPKP,%20mohon%20konfirmasi%20pelunasan%20hampers%20Dapur%20Lebaran%20sebesar%20Rp%201.750.000" target="_blank">
+<span class="material-symbols-outlined text-base" data-icon="chat">chat</span> Tagih WA
+                    </a>
+</div>
+</div>
+<!-- Tagihan 3 -->
+<div class="p-3.5 rounded-xl border border-[#E8DFCC] bg-[#FFFBF7] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Bpk. Hendra</span>
+<span class="px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-[#FBEBE9] text-[#B93A2E] border border-[#F1BFBA]">Belum DP</span>
+</div>
+<span class="text-body-sm font-body-sm text-[#7A6A5C]">INV-2026-118 • Pesanan: 10 Nastar Wijsman</span>
+</div>
+<div class="flex items-center justify-between sm:justify-end gap-3 pt-2 sm:pt-0 border-t sm:border-t-0 border-[#E8DFCC]">
+<div class="text-left sm:text-right">
+<div class="text-[11px] text-[#7A6A5C]">Total Tagihan</div>
+<div class="text-label-md font-label-md text-[#B93A2E] font-bold">Rp 1.600.000</div>
+</div>
+<a class="h-9 px-3.5 bg-[#25D366] hover:bg-[#20ba59] text-white rounded-xl font-label-md text-label-md flex items-center gap-1.5 shadow-sm transition-all active:scale-95" href="https://wa.me/6281345678901?text=Halo%20Bpk.%20Hendra,%20pesanan%2010%20toples%20Nastar%20Dapur%20Lebaran%20menunggu%20DP%20konfirmasi." target="_blank">
+<span class="material-symbols-outlined text-base" data-icon="chat">chat</span> Tagih WA
+                    </a>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-3 border-t border-[#E8DFCC] mt-3 flex justify-between items-center text-body-sm font-body-sm">
+<span class="text-[#7A6A5C]">Menampilkan 3 dari 7 invoice pending</span>
+<button class="text-primary font-semibold hover:underline">Lihat Semua Tagihan (4 lainnya) →</button>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= FITUR 2: MANAJEMEN AKUN KARYAWAN & HAK AKSES ================= -->
+<section class="space-y-6 pt-4 border-t border-[#E8DFCC]" id="karyawan-section">
+<!-- Header with Add Employee CTA -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div>
+<div class="flex items-center gap-2">
+<h3 class="text-headline-md font-headline-md text-on-surface">Manajemen Akun Karyawan & Hak Akses</h3>
+<span class="px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-surface-container text-primary font-bold">Owner Only</span>
+</div>
+<p class="text-body-sm font-body-sm text-[#7A6A5C]">Atur limitasi akses staf kitchen, kurir, dan kasir demi menjaga kerahasiaan margin keuntungan</p>
+</div>
+<button class="h-11 px-4 bg-primary hover:bg-[#17583F] text-white rounded-xl font-label-md text-label-md flex items-center justify-center gap-2 shadow-sm transition-all duration-150 active:scale-95 self-start sm:self-auto" onclick="document.getElementById('modal-tambah-karyawan').classList.remove('hidden')">
+<span class="material-symbols-outlined text-lg" data-icon="person_add">person_add</span>
+            + Tambah Karyawan Baru
+          </button>
+</div>
+<!-- Table / Grid of Employees -->
+<div class="bg-surface-container-lowest rounded-2xl border border-[#E8DFCC] shadow-sm overflow-hidden">
+<div class="overflow-x-auto custom-scroll">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-[#E8DFCC] text-[#7A6A5C] text-label-sm font-label-sm">
+<th class="py-3.5 px-4 font-semibold">Nama & Kontak</th>
+<th class="py-3.5 px-4 font-semibold">Peran / Jabatan</th>
+<th class="py-3.5 px-4 font-semibold">Cakupan Otorisasi Hak Akses (RLS)</th>
+<th class="py-3.5 px-4 font-semibold">Status Akun</th>
+<th class="py-3.5 px-4 font-semibold text-right">Tindakan Kelola</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#E8DFCC] text-body-md font-body-md">
+<!-- 1. Ibu Nur Laila (Owner) -->
+<tr class="hover:bg-surface-container-lowest/80 transition-colors">
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary text-white font-bold flex items-center justify-center text-sm shadow-xs ring-2 ring-[#F4DB96]">
+                        NL
+                      </div>
+<div>
+<div class="font-label-md text-label-md text-on-surface flex items-center gap-1.5 font-bold">
+                          Ibu Nur Laila
+                          <span class="material-symbols-outlined text-secondary text-sm" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="text-body-sm font-body-sm text-[#7A6A5C]">owner@dapurlebaran.id • 0812-3344-5566</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="px-2.5 py-1 rounded-lg bg-surface-container text-primary font-semibold text-label-sm font-label-sm">
+                      Owner & Superadmin
+                    </span>
+</td>
+<td class="py-4 px-4 max-w-xs">
+<div class="text-body-sm font-body-sm text-[#1F6F50] font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-base" data-icon="lock_open">lock_open</span> Akses Penuh: Finansial, Laba Rugi, HPP, Resep, & Manajemen Staf
+                    </div>
+</td>
+<td class="py-4 px-4">
+<span class="px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-[#EAF5EE] text-[#2E8B57] border border-[#B8E2C8] inline-flex items-center gap-1 font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#2E8B57]"></span> Aktif Permanen
+                    </span>
+</td>
+<td class="py-4 px-4 text-right">
+<span class="text-body-sm font-body-sm text-[#7A6A5C] italic">Terkunci (Superuser)</span>
+</td>
+</tr>
+<!-- 2. Siti Aminah (Staff Dapur) -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-[#E8DFCC] text-[#3B2A1E] font-bold flex items-center justify-center text-sm">
+                        SA
+                      </div>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">Siti Aminah</div>
+<div class="text-body-sm font-body-sm text-[#7A6A5C]">siti.aminah@dapurlebaran.id • 0857-1122-3344</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="px-2.5 py-1 rounded-lg bg-surface-container-low text-on-surface-variant font-medium text-label-sm font-label-sm">
+                      Staff Dapur
+                    </span>
+</td>
+<td class="py-4 px-4 max-w-sm">
+<div class="text-body-sm font-body-sm text-on-surface space-y-1">
+<div class="text-[#2E8B57] flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="check">check</span> Catat Penjualan, Lihat Bahan, Lihat Resep
+                      </div>
+<div class="text-[#B93A2E] flex items-center gap-1 text-[11px]">
+<span class="material-symbols-outlined text-sm" data-icon="block">block</span> Terkunci: Harga Modal (HPP), Laporan Finansial Toko
+                      </div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-[#EAF5EE] text-[#2E8B57] border border-[#B8E2C8] inline-flex items-center gap-1 font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#2E8B57]"></span> Aktif
+                    </span>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg transition-colors" onclick="bukaModalAksi('Siti Aminah', 'Hak Akses')" title="Ubah Hak Akses">
+<span class="material-symbols-outlined text-lg" data-icon="tune">tune</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-secondary hover:bg-surface-container rounded-lg transition-colors" onclick="bukaModalAksi('Siti Aminah', 'Reset Sandi')" title="Reset Kata Sandi">
+<span class="material-symbols-outlined text-lg" data-icon="key">key</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-error hover:bg-error-container/40 rounded-lg transition-colors" onclick="bukaModalAksi('Siti Aminah', 'Nonaktifkan')" title="Nonaktifkan Akun">
+<span class="material-symbols-outlined text-lg" data-icon="person_off">person_off</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- 3. Rian Kurniawan (Staff Baking & Packing) -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-[#E8DFCC] text-[#3B2A1E] font-bold flex items-center justify-center text-sm">
+                        RK
+                      </div>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">Rian Kurniawan</div>
+<div class="text-body-sm font-body-sm text-[#7A6A5C]">rian.k@dapurlebaran.id • 0878-9900-1122</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="px-2.5 py-1 rounded-lg bg-surface-container-low text-on-surface-variant font-medium text-label-sm font-label-sm">
+                      Baking & Packing
+                    </span>
+</td>
+<td class="py-4 px-4 max-w-sm">
+<div class="text-body-sm font-body-sm text-on-surface space-y-1">
+<div class="text-[#2E8B57] flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="check">check</span> Hak Dapur, Update Status Batch Toples, Stok Toples Kosong
+                      </div>
+<div class="text-[#B93A2E] flex items-center gap-1 text-[11px]">
+<span class="material-symbols-outlined text-sm" data-icon="block">block</span> Terkunci: Pembukuan & Omzet Penjualan
+                      </div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-[#EAF5EE] text-[#2E8B57] border border-[#B8E2C8] inline-flex items-center gap-1 font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#2E8B57]"></span> Aktif
+                    </span>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="p-1.5 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-lg transition-colors" onclick="bukaModalAksi('Rian Kurniawan', 'Hak Akses')" title="Ubah Hak Akses">
+<span class="material-symbols-outlined text-lg" data-icon="tune">tune</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-secondary hover:bg-surface-container rounded-lg transition-colors" onclick="bukaModalAksi('Rian Kurniawan', 'Reset Sandi')" title="Reset Kata Sandi">
+<span class="material-symbols-outlined text-lg" data-icon="key">key</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-error hover:bg-error-container/40 rounded-lg transition-colors" onclick="bukaModalAksi('Rian Kurniawan', 'Nonaktifkan')" title="Nonaktifkan Akun">
+<span class="material-symbols-outlined text-lg" data-icon="person_off">person_off</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- 4. Budi Santoso (Staff Pengiriman & Kurir) -->
+<tr class="hover:bg-surface-container-low transition-colors bg-[#FAF8F5]">
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-[#E8DFCC] text-[#7A6A5C] font-bold flex items-center justify-center text-sm">
+                        BS
+                      </div>
+<div>
+<div class="font-label-md text-label-md text-[#7A6A5C] font-semibold">Budi Santoso</div>
+<div class="text-body-sm font-body-sm text-[#7A6A5C]">budi.s@dapurlebaran.id • 0819-2233-4455</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="px-2.5 py-1 rounded-lg bg-surface-container-low text-on-surface-variant font-medium text-label-sm font-label-sm">
+                      Kurir / Pengiriman
+                    </span>
+</td>
+<td class="py-4 px-4 max-w-sm">
+<div class="text-body-sm font-body-sm text-[#7A6A5C] space-y-1">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="local_shipping">local_shipping</span> Hanya Lihat Alamat Kirim & Update Bukti Penerimaan
+                      </div>
+</div>
+</td>
+<td class="py-4 px-4">
+<span class="px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-[#FBEBE9] text-[#B93A2E] border border-[#F1BFBA] inline-flex items-center gap-1 font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#B93A2E]"></span> Nonaktif sementara
+                    </span>
+</td>
+<td class="py-4 px-4 text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="px-2.5 py-1 text-label-sm font-label-sm font-semibold text-[#1F6F50] hover:bg-surface-container rounded-lg border border-[#B8E2C8] transition-colors" onclick="bukaModalAksi('Budi Santoso', 'Aktifkan Kembali')" title="Aktifkan Kembali Akun">
+                        Aktifkan
+                      </button>
+<button class="p-1.5 text-on-surface-variant hover:text-secondary hover:bg-surface-container rounded-lg transition-colors" onclick="bukaModalAksi('Budi Santoso', 'Reset Sandi')" title="Reset Kata Sandi">
+<span class="material-symbols-outlined text-lg" data-icon="key">key</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Bottom helper bar -->
+<div class="p-4 bg-surface-container-low border-t border-[#E8DFCC] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-body-sm font-body-sm text-[#7A6A5C]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base" data-icon="shield">shield</span>
+<span>Proteksi Row Level Security (RLS) aktif: Staf dapur tidak dapat membaca kolom <code>margin_profit</code> & <code>hpp_formula</code>.</span>
+</div>
+<span class="font-medium">Total: 4 Akun Terdaftar (3 Aktif, 1 Tertunda)</span>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- ================= BOTTOM NAVIGATION BAR (SHARED COMPONENT - MOBILE ONLY) ================= -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 md:hidden bg-surface-container-lowest shadow-md border-t border-[#E8DFCC]">
+<!-- 1. Beranda -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors duration-150 py-1" href="#beranda">
+<span class="material-symbols-outlined text-2xl" data-icon="dashboard">dashboard</span>
+<span class="text-label-sm font-label-sm mt-0.5">Beranda</span>
+</a>
+<!-- 2. Penjualan -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors duration-150 py-1" href="#penjualan">
+<span class="material-symbols-outlined text-2xl" data-icon="receipt_long">receipt_long</span>
+<span class="text-label-sm font-label-sm mt-0.5">Penjualan</span>
+</a>
+<!-- 3. Pelanggan -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors duration-150 py-1" href="#pelanggan">
+<span class="material-symbols-outlined text-2xl" data-icon="group">group</span>
+<span class="text-label-sm font-label-sm mt-0.5">Pelanggan</span>
+</a>
+<!-- 4. Bahan -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors duration-150 py-1" href="#bahan">
+<span class="material-symbols-outlined text-2xl" data-icon="inventory_2">inventory_2</span>
+<span class="text-label-sm font-label-sm mt-0.5">Bahan</span>
+</a>
+<!-- 5. Ringkasan (ACTIVE NAVIGATION TAB) -->
+<a class="flex flex-col items-center justify-center text-primary font-semibold py-1" href="#ringkasan">
+<span class="material-symbols-outlined text-2xl" data-icon="monitoring" style="font-variation-settings: 'FILL' 1;">monitoring</span>
+<span class="text-label-sm font-label-sm mt-0.5">Ringkasan</span>
+</a>
+</nav>
+<!-- ================= MODAL 1: TAMBAH KARYAWAN BARU ================= -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-xs p-4" id="modal-tambah-karyawan">
+<div class="bg-surface-container-lowest w-full max-w-lg rounded-2xl border border-[#E8DFCC] shadow-xl overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+<div class="p-5 border-b border-[#E8DFCC] flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-xl bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-xl" data-icon="person_add">person_add</span>
+</div>
+<div>
+<h4 class="text-headline-sm font-headline-sm text-on-surface font-semibold">Tambah Staf Dapur Baru</h4>
+<p class="text-body-sm font-body-sm text-[#7A6A5C]">Buat akun login dengan limitasi wewenang aman</p>
+</div>
+</div>
+<button class="p-1.5 text-on-surface-variant hover:bg-surface-container rounded-lg" onclick="document.getElementById('modal-tambah-karyawan').classList.add('hidden')">
+<span class="material-symbols-outlined text-xl" data-icon="close">close</span>
+</button>
+</div>
+<form class="p-5 space-y-4" onsubmit="simpanKaryawan(event)">
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1.5">Nama Lengkap Karyawan</label>
+<input class="w-full h-12 px-3.5 bg-surface-container-lowest border border-[#E8DFCC] rounded-xl text-body-md font-body-md focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Contoh: Fitri Handayani" required="" type="text"/>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1.5">Alamat Email Toko</label>
+<input class="w-full h-12 px-3.5 bg-surface-container-lowest border border-[#E8DFCC] rounded-xl text-body-md font-body-md focus:outline-none focus:ring-2 focus:ring-primary" placeholder="nama@dapurlebaran.id" required="" type="email"/>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1.5">Nomor WhatsApp</label>
+<input class="w-full h-12 px-3.5 bg-surface-container-lowest border border-[#E8DFCC] rounded-xl text-body-md font-body-md focus:outline-none focus:ring-2 focus:ring-primary" placeholder="08xxxxxxxxxx" required="" type="tel"/>
+</div>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface mb-1.5">Peran & Hak Akses Operasional</label>
+<div class="space-y-2">
+<label class="flex items-start gap-3 p-3 rounded-xl border border-[#E8DFCC] bg-surface-container-low cursor-pointer">
+<input checked="" class="mt-1 text-primary focus:ring-primary" name="role" type="radio" value="dapur"/>
+<div>
+<span class="font-label-md text-label-md text-on-surface block font-semibold">Staff Dapur & Produksi</span>
+<span class="text-body-sm font-body-sm text-[#7A6A5C] block">Bisa catat order & cek bahan. Tidak bisa melihat harga beli modal (HPP) dan omzet kas.</span>
+</div>
+</label>
+<label class="flex items-start gap-3 p-3 rounded-xl border border-[#E8DFCC] bg-surface-container-low cursor-pointer">
+<input class="mt-1 text-primary focus:ring-primary" name="role" type="radio" value="kurir"/>
+<div>
+<span class="font-label-md text-label-md text-on-surface block font-semibold">Kurir Pengantaran</span>
+<span class="text-body-sm font-body-sm text-[#7A6A5C] block">Hanya bisa melihat daftar alamat tujuan dan foto bukti serah terima pesanan.</span>
+</div>
+</label>
+</div>
+</div>
+<div class="p-3 bg-[#EAF5EE] rounded-xl border border-[#B8E2C8] flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[#2E8B57] text-lg" data-icon="lock">lock</span>
+<span class="text-body-sm font-body-sm text-[#1F6F50]">Kata sandi sementara akan dibuat otomatis dan dikirimkan ke WhatsApp karyawan.</span>
+</div>
+<div class="flex items-center justify-end gap-3 pt-3 border-t border-[#E8DFCC]">
+<button class="h-11 px-4 rounded-xl border border-[#E8DFCC] text-[#3B2A1E] font-label-md text-label-md hover:bg-surface-container-low" onclick="document.getElementById('modal-tambah-karyawan').classList.add('hidden')" type="button">
+            Batal
+          </button>
+<button class="h-11 px-5 rounded-xl bg-primary hover:bg-[#17583F] text-white font-label-md text-label-md font-semibold shadow-sm active:scale-95 transition-all" type="submit">
+            Simpan & Aktifkan Akun
+          </button>
+</div>
+</form>
+</div>
+</div>
+<!-- ================= MODAL 2: DIALOG KONFIRMASI AKSI KARYAWAN ================= -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-xs p-4" id="modal-aksi-karyawan">
+<div class="bg-surface-container-lowest w-full max-w-md rounded-2xl border border-[#E8DFCC] shadow-xl p-6 text-center animate-in fade-in zoom-in-95 duration-150">
+<div class="w-12 h-12 rounded-full bg-[#FBEBE9] text-[#B93A2E] flex items-center justify-center mx-auto mb-3" id="modal-aksi-icon-wrapper">
+<span class="material-symbols-outlined text-2xl" data-icon="warning" id="modal-aksi-icon">warning</span>
+</div>
+<h4 class="text-headline-sm font-headline-sm text-on-surface font-semibold mb-1" id="modal-aksi-title">Konfirmasi Aksi</h4>
+<p class="text-body-md font-body-md text-[#7A6A5C] mb-6" id="modal-aksi-desc">Apakah Anda yakin ingin melanjutkan perubahan akun staf ini?</p>
+<div class="flex items-center justify-center gap-3">
+<button class="flex-1 h-11 rounded-xl border border-[#E8DFCC] text-[#3B2A1E] font-label-md text-label-md hover:bg-surface-container-low" onclick="document.getElementById('modal-aksi-karyawan').classList.add('hidden')">
+          Batal
+        </button>
+<button class="flex-1 h-11 rounded-xl bg-primary text-white font-label-md text-label-md font-semibold hover:bg-[#17583F] shadow-sm active:scale-95 transition-all" id="modal-aksi-confirm-btn" onclick="eksekusiAksi()">
+          Lanjutkan
+        </button>
+</div>
+</div>
+</div>
+<!-- Toast Notification Container -->
+<div class="fixed bottom-20 md:bottom-6 right-6 z-50 hidden bg-[#1F6F50] text-white px-4 py-3 rounded-xl shadow-lg border border-[#A1EFC8]/40 flex items-center gap-3 animate-in fade-in duration-200" id="toast">
+<span class="material-symbols-outlined text-secondary-fixed text-xl" data-icon="check_circle">check_circle</span>
+<span class="text-body-md font-body-md font-medium" id="toast-text">Perubahan berhasil disimpan!</span>
+</div>
+<!-- Micro-interactions Script -->
+<script>
+    let activeAction = {};
+
+    function bukaModalAksi(namaStaf, tipeAksi) {
+      activeAction = { nama: namaStaf, tipe: tipeAksi };
+      const modal = document.getElementById('modal-aksi-karyawan');
+      const title = document.getElementById('modal-aksi-title');
+      const desc = document.getElementById('modal-aksi-desc');
+      const icon = document.getElementById('modal-aksi-icon');
+      const iconWrapper = document.getElementById('modal-aksi-icon-wrapper');
+      const confirmBtn = document.getElementById('modal-aksi-confirm-btn');
+
+      if (tipeAksi === 'Reset Sandi') {
+        title.innerText = `Reset Kata Sandi - ${namaStaf}`;
+        desc.innerText = `Kirim link reset keamanan baru via pesan WhatsApp resmi Dapur Lebaran ke nomor staf ini?`;
+        icon.innerText = 'key';
+        iconWrapper.className = 'w-12 h-12 rounded-full bg-[#FDF6E2] text-[#9E7000] flex items-center justify-center mx-auto mb-3';
+        confirmBtn.className = 'flex-1 h-11 rounded-xl bg-secondary text-white font-label-md text-label-md font-semibold hover:bg-secondary/90 shadow-sm active:scale-95 transition-all';
+        confirmBtn.innerText = 'Kirim Tautan';
+      } else if (tipeAksi === 'Nonaktifkan') {
+        title.innerText = `Nonaktifkan Akun ${namaStaf}?`;
+        desc.innerText = `Akses staf ke sistem resep dan penerimaan pesanan akan segera diblokir seketika. Data riwayat tetap tersimpan.`;
+        icon.innerText = 'person_off';
+        iconWrapper.className = 'w-12 h-12 rounded-full bg-[#FBEBE9] text-[#B93A2E] flex items-center justify-center mx-auto mb-3';
+        confirmBtn.className = 'flex-1 h-11 rounded-xl bg-error text-white font-label-md text-label-md font-semibold hover:bg-error/90 shadow-sm active:scale-95 transition-all';
+        confirmBtn.innerText = 'Ya, Nonaktifkan';
+      } else if (tipeAksi === 'Aktifkan Kembali') {
+        title.innerText = `Aktifkan Kembali ${namaStaf}?`;
+        desc.innerText = `Staf akan diizinkan kembali masuk menggunakan kredensial terdaftar untuk tugas pengantaran kue musim ini.`;
+        icon.innerText = 'how_to_reg';
+        iconWrapper.className = 'w-12 h-12 rounded-full bg-[#EAF5EE] text-[#2E8B57] flex items-center justify-center mx-auto mb-3';
+        confirmBtn.className = 'flex-1 h-11 rounded-xl bg-primary text-white font-label-md text-label-md font-semibold hover:bg-[#17583F] shadow-sm active:scale-95 transition-all';
+        confirmBtn.innerText = 'Aktifkan Akun';
+      } else {
+        title.innerText = `Ubah Hak Akses RLS - ${namaStaf}`;
+        desc.innerText = `Buka jendela modifikasi hak baca/tulis tabel pesanan, database bahan, serta kalkulasi margin?`;
+        icon.innerText = 'tune';
+        iconWrapper.className = 'w-12 h-12 rounded-full bg-surface-container text-primary flex items-center justify-center mx-auto mb-3';
+        confirmBtn.className = 'flex-1 h-11 rounded-xl bg-primary text-white font-label-md text-label-md font-semibold hover:bg-[#17583F] shadow-sm active:scale-95 transition-all';
+        confirmBtn.innerText = 'Buka Konfigurasi';
+      }
+
+      modal.classList.remove('hidden');
+    }
+
+    function eksekusiAksi() {
+      document.getElementById('modal-aksi-karyawan').classList.add('hidden');
+      tampilkanToast(`${activeAction.tipe} untuk ${activeAction.nama} berhasil diproses.`);
+    }
+
+    function simpanKaryawan(event) {
+      event.preventDefault();
+      document.getElementById('modal-tambah-karyawan').classList.add('hidden');
+      tampilkanToast('Karyawan baru berhasil didaftarkan ke sistem Dapur Lebaran.');
+    }
+
+    function tampilkanToast(pesan) {
+      const toast = document.getElementById('toast');
+      const text = document.getElementById('toast-text');
+      text.innerText = pesan;
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 3500);
+    }
+  </script>
+</body></html>

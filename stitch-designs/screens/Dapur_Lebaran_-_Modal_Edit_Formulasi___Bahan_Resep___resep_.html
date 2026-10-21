@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Resep &amp; Mode Masak - Dapur Lebaran</title>
+<!-- Google Fonts: Epilogue & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-fixed-dim": "#f5be53",
+            "inverse-on-surface": "#ffede3",
+            "on-secondary-container": "#745200",
+            "primary": "#00563a",
+            "on-primary-fixed": "#002114",
+            "on-background": "#27180d",
+            "on-secondary": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "outline-variant": "#bec9c1",
+            "tertiary-fixed": "#ffdbd1",
+            "error": "#ba1a1a",
+            "tertiary": "#8a2908",
+            "inverse-primary": "#8ad6b0",
+            "on-error": "#ffffff",
+            "on-primary": "#ffffff",
+            "on-surface-variant": "#3f4943",
+            "on-tertiary-fixed": "#3b0a00",
+            "surface-variant": "#faddcb",
+            "on-error-container": "#93000a",
+            "primary-fixed": "#a5f3cc",
+            "inverse-surface": "#3e2d21",
+            "on-secondary-fixed-variant": "#5e4200",
+            "primary-container": "#1f6f50",
+            "surface-container-high": "#ffe3d1",
+            "on-tertiary-container": "#ffd6cb",
+            "surface-container": "#ffeadd",
+            "outline": "#6f7a73",
+            "on-secondary-fixed": "#271900",
+            "on-surface": "#27180d",
+            "on-tertiary-fixed-variant": "#842505",
+            "secondary": "#7c5800",
+            "primary-fixed-dim": "#8ad6b0",
+            "surface-container-low": "#fff1e9",
+            "error-container": "#ffdad6",
+            "surface": "#fff8f5",
+            "on-primary-container": "#a1efc8",
+            "on-primary-fixed-variant": "#005137",
+            "secondary-container": "#fec65a",
+            "surface-bright": "#fff8f5",
+            "secondary-fixed": "#ffdea7",
+            "tertiary-container": "#aa401f",
+            "surface-container-lowest": "#ffffff",
+            "tertiary-fixed-dim": "#ffb5a0",
+            "background": "#fff8f5",
+            "surface-tint": "#196b4c",
+            "surface-dim": "#f1d4c2",
+            "surface-container-highest": "#faddcb"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-desktop": "2rem",
+            "space-xl": "2rem",
+            "space-lg": "1.5rem",
+            "space-md": "1rem",
+            "gutter-desktop": "1.5rem",
+            "gutter": "1rem",
+            "space-sm": "0.5rem",
+            "margin": "1rem",
+            "space-xs": "0.25rem"
+          },
+          "fontFamily": {
+            "label-sm": ["Inter"],
+            "body-md": ["Inter"],
+            "body-lg": ["Inter"],
+            "body-md-medium": ["Inter"],
+            "headline-xl-mobile": ["Epilogue"],
+            "body-lg-medium": ["Inter"],
+            "headline-lg": ["Epilogue"],
+            "label-md": ["Inter"],
+            "headline-xl": ["Epilogue"],
+            "body-lg-semibold": ["Inter"],
+            "body-sm": ["Inter"],
+            "headline-lg-mobile": ["Epilogue"],
+            "headline-md": ["Epilogue"],
+            "headline-sm": ["Epilogue"]
+          },
+          "fontSize": {
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.5px", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "body-md-medium": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "headline-xl-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+            "body-lg-medium": ["16px", { "lineHeight": "24px", "fontWeight": "500" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "fontWeight": "600" }],
+            "body-lg-semibold": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "headline-lg-mobile": ["22px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "26px", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background-color: #E8DFCC;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen antialiased flex flex-col md:flex-row pb-24 md:pb-0">
+<!-- ==================== DESKTOP SIDE NAVIGATION ==================== -->
+<aside class="hidden md:flex flex-col justify-between h-screen w-64 fixed left-0 top-0 bg-surface-container-lowest shadow-sm z-30 p-4 border-r border-[#E8DFCC]">
+<!-- Brand Header -->
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-3 px-2 py-1">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-surface-bright shadow-sm">
+<span class="material-symbols-outlined text-2xl" data-icon="bakery_dining">bakery_dining</span>
+</div>
+<div>
+<h1 class="text-headline-sm font-headline-sm font-semibold text-primary tracking-tight">Dapur Lebaran</h1>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Manajemen Produksi &amp; Pesanan</p>
+</div>
+</div>
+<!-- Quick Action CTA -->
+<button class="w-full h-11 bg-secondary text-surface-container-lowest font-label-md text-label-md rounded-xl flex items-center justify-center gap-2 shadow-sm hover:bg-on-secondary-container transition-colors duration-150 active:scale-98">
+<span class="material-symbols-outlined text-lg" data-icon="add">add</span>
+<span>+ Penjualan</span>
+</button>
+<!-- Main Navigation Tabs -->
+<nav class="flex flex-col gap-1">
+<!-- Beranda -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors duration-150 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="dashboard">dashboard</span>
+<span>Beranda</span>
+</a>
+<!-- Penjualan -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors duration-150 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="receipt_long">receipt_long</span>
+<span>Penjualan</span>
+</a>
+<!-- Pelanggan -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors duration-150 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="group">group</span>
+<span>Pelanggan</span>
+</a>
+<!-- Bahan -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors duration-150 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="inventory_2">inventory_2</span>
+<span>Bahan</span>
+</a>
+<!-- Resep (ACTIVE TAB) -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-primary bg-surface-container font-semibold font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-xl text-primary" data-icon="menu_book">menu_book</span>
+<span>Resep</span>
+</a>
+<!-- Ringkasan -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors duration-150 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="monitoring">monitoring</span>
+<span>Ringkasan</span>
+</a>
+<!-- Karyawan -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors duration-150 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="badge">badge</span>
+<span>Karyawan</span>
+</a>
+</nav>
+</div>
+<!-- Footer SideNav -->
+<div class="border-t border-[#E8DFCC] pt-3 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors duration-150 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="settings">settings</span>
+<span>Pengaturan</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-xl text-on-surface-variant hover:text-error hover:bg-error-container/20 transition-colors duration-150 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="logout">logout</span>
+<span>Keluar</span>
+</a>
+</div>
+</aside>
+<!-- ==================== MAIN CONTENT WRAPPER ==================== -->
+<div class="flex-1 md:ml-64 flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-surface-container-lowest shadow-sm sticky top-0 z-20 w-full border-b border-[#E8DFCC]">
+<div class="flex justify-between items-center w-full px-4 md:px-8 max-w-7xl mx-auto h-16">
+<!-- Search bar on left -->
+<div class="flex items-center gap-3 w-1/3 max-w-xs">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-xl" data-icon="search">search</span>
+<input class="w-full h-10 pl-10 pr-3 rounded-xl border border-[#E8DFCC] bg-background text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="Cari resep kue..." type="text"/>
+</div>
+</div>
+<!-- Center Brand / Breadcrumbs on Mobile -->
+<div class="md:hidden flex items-center gap-2">
+<span class="font-headline-sm-mobile text-headline-sm-mobile font-semibold text-primary">Dapur Lebaran</span>
+</div>
+<!-- Trailing Actions: Sync, Notifications & Staff/Owner Toggle -->
+<div class="flex items-center gap-3">
+<!-- Sync status -->
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-xl transition-colors duration-150 active:scale-95" title="Sinkronisasi Data Resep">
+<span class="material-symbols-outlined text-xl" data-icon="sync">sync</span>
+</button>
+<!-- Notifications -->
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-xl transition-colors duration-150 relative active:scale-95" title="Notifikasi">
+<span class="material-symbols-outlined text-xl" data-icon="notifications">notifications</span>
+<span class="w-2 h-2 rounded-full bg-error absolute top-2 right-2"></span>
+</button>
+<div class="h-6 w-px bg-[#E8DFCC]"></div>
+<!-- Role Toggle: Staff / Owner -->
+<div class="flex items-center bg-surface-container-low p-1 rounded-xl border border-[#E8DFCC]">
+<button class="px-3 py-1 text-label-sm font-label-sm rounded-lg transition-all text-on-surface-variant hover:text-on-surface" id="roleStaffBtn" onclick="setRole('Staff')">
+              Staff
+            </button>
+<button class="px-3 py-1 text-label-sm font-label-sm rounded-lg transition-all bg-primary text-on-primary shadow-xs font-semibold" id="roleOwnerBtn" onclick="setRole('Owner')">
+              Owner
+            </button>
+</div>
+<!-- Profile Badge -->
+<div class="flex items-center gap-2 pl-1">
+<div class="w-9 h-9 rounded-full bg-secondary-fixed border border-[#E8DFCC] flex items-center justify-center font-bold text-on-secondary-container text-body-md">
+              DL
+            </div>
+</div>
+</div>
+</div>
+</header>
+<!-- Role Context Warning Banner for Staff -->
+<div class="hidden bg-secondary-fixed/50 border-b border-[#E8DFCC] px-4 md:px-8 py-2" id="staffNoticeBanner">
+<div class="max-w-7xl mx-auto flex items-center justify-between text-on-secondary-container">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-lg" data-icon="lock">lock</span>
+<p class="font-body-sm text-body-sm">
+<span class="font-semibold">Mode Staff Aktif:</span> Anda dapat melihat panduan takaran &amp; memulai mode masak. Penyesuaian formulasi resep terkunci hanya untuk Pemilik (Owner).
+          </p>
+</div>
+<span class="text-xs bg-surface-container-lowest px-2 py-0.5 rounded border border-[#E8DFCC]">Read-Only Formulasi</span>
+</div>
+</div>
+<!-- Main Content Canvas -->
+<main class="flex-1 p-4 md:p-8 max-w-7xl mx-auto w-full flex flex-col gap-8">
+<!-- Hero Header Section with Quick Stats & Fullscreen Cook Mode Launch -->
+<section class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-2 border-b border-[#E8DFCC]">
+<div>
+<div class="flex items-center gap-2 text-primary font-label-sm text-label-sm uppercase tracking-wider mb-1">
+<span class="material-symbols-outlined text-base" data-icon="local_fire_department">local_fire_department</span>
+<span>Batch Baking Musim Lebaran 1447H</span>
+</div>
+<h2 class="text-headline-xl-mobile md:text-headline-xl font-headline-xl text-on-surface">Katalog Resep &amp; Panduan Produksi</h2>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1">
+            Formulasi baku adonan kue kering premium. Sesuaikan skala batch otomatis untuk hasil presisi tanpa kalkulasi manual.
+          </p>
+</div>
+<!-- Big Launch Cooking Mode CTA -->
+<div class="flex items-center gap-3">
+<button class="h-12 px-5 bg-surface-container-lowest border border-[#E8DFCC] text-on-surface rounded-xl font-label-md text-label-md flex items-center gap-2 hover:bg-surface-container-low transition-all" id="editFormulaBtn" onclick="document.getElementById('editFormulaModal').style.display='flex'">
+<span class="material-symbols-outlined text-xl" data-icon="edit_note">edit_note</span>
+<span>Ubah Formulasi</span>
+</button>
+<button class="h-12 px-6 bg-primary hover:bg-[#17583F] text-on-primary rounded-xl font-label-md text-label-md flex items-center gap-2 shadow-sm transition-all active:scale-95 group" onclick="openCookingMode()">
+<span class="material-symbols-outlined text-xl group-hover:scale-110 transition-transform" data-icon="fullscreen">fullscreen</span>
+<span>Mulai Mode Masak Layar Penuh</span>
+</button>
+</div>
+</section>
+<!-- Section 1: Recipe Catalogue Pill/Grid -->
+<section>
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Pilih Resep Kue Kering</h3>
+<span class="text-body-sm font-body-sm text-on-surface-variant">5 Resep Tersedia</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+<!-- Card 1: Nastar Wijsman (Active) -->
+<div class="cursor-pointer bg-surface-container-lowest rounded-2xl border-2 border-primary shadow-sm hover:shadow-md transition-all overflow-hidden flex flex-col relative group" id="card-recipe-0" onclick="selectRecipe(0)">
+<div class="absolute top-3 right-3 z-10 bg-primary text-on-primary text-label-sm font-label-sm px-2.5 py-1 rounded-full flex items-center gap-1 shadow-xs">
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span>
+<span>Unggulan</span>
+</div>
+<div class="h-36 w-full overflow-hidden bg-surface-container-low relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Golden baked Nastar pineapple tart cookies dusted with cloves, displayed inside crystal gift jars on an Indonesian Lebaran table with warm lighting and honey tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4R36RqgBN2bJP2VCEVB2ubVA5CMlTmjbifgUOXrp6qTFui3A7PbE7e9-sLLOslox3LinD0r-onY8PO7YDo0j6Yr5tKXTyu1Serw-dcSTUYxiv9YOYyA5lnTt5BKqUgzm7wpwl5cSkMPNbwglUjiwL2rMhbecyCcjG-dqsfhRN3-X8BTE2EjnSf3LLwCp7M_pVGwrvj4EA7fm40CxgVmf71Z4tQid9QhyJ_pbqubObEbdTXFjbEGcBtg"/>
+</div>
+<div class="p-4 flex flex-col flex-1 justify-between">
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1">Nastar Wijsman Cengkeh</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Klasik nanas legit lumer di lidah</p>
+</div>
+<div class="grid grid-cols-3 gap-1 pt-3 mt-3 border-t border-[#E8DFCC] text-center">
+<div class="flex flex-col">
+<span class="text-label-sm font-label-sm text-outline">Waktu</span>
+<span class="text-body-sm font-body-sm-medium text-on-surface">90 mnt</span>
+</div>
+<div class="flex flex-col border-x border-[#E8DFCC]">
+<span class="text-label-sm font-label-sm text-outline">Suhu</span>
+<span class="text-body-sm font-body-sm-medium text-on-surface">145°C</span>
+</div>
+<div class="flex flex-col">
+<span class="text-label-sm font-label-sm text-outline">Hasil/Batch</span>
+<span class="text-body-sm font-body-sm-medium text-primary">4 toples</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2: Kastengel Keju Edam -->
+<div class="cursor-pointer bg-surface-container-lowest rounded-2xl border border-[#E8DFCC] shadow-sm hover:shadow-md transition-all overflow-hidden flex flex-col relative group" id="card-recipe-1" onclick="selectRecipe(1)">
+<div class="h-36 w-full overflow-hidden bg-surface-container-low relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Savory golden brown Kastengel cheese stick cookies topped with crispy shredded Edam and cheddar cheese arranged in a glass canister on an artisan pastry table." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXenzv7K3j3zOQ9zn-nzpxiTrL9YDQClRGXSjxh_GXVA7a5_PIcmqb6RYHgMDdQfibPlhtjZ1UraeAUcZuiEVJIxJwlusy7K759_1tLgeZ8_kadjVt_GIc62KhM149SQmoLFgh_t9MPN6y5g8WH5oDwnJh7TlBUyszcFqO-ANp6-C5saSR_i1Wri12_VQStyTlTKpJe0pjxz1Ls--fGDyQTzfh9zxWYg0xJpbsgZ2wrYxe28nwfxRVPw"/>
+</div>
+<div class="p-4 flex flex-col flex-1 justify-between">
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1">Kastengel Edam Spesial</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Gurih keju tua Belanda &amp; renyah</p>
+</div>
+<div class="grid grid-cols-3 gap-1 pt-3 mt-3 border-t border-[#E8DFCC] text-center">
+<div class="flex flex-col">
+<span class="text-label-sm font-label-sm text-outline">Waktu</span>
+<span class="text-body-sm font-body-sm-medium text-on-surface">75 mnt</span>
+</div>
+<div class="flex flex-col border-x border-[#E8DFCC]">
+<span class="text-label-sm font-label-sm text-outline">Suhu</span>
+<span class="text-body-sm font-body-sm-medium text-on-surface">140°C</span>
+</div>
+<div class="flex flex-col">
+<span class="text-label-sm font-label-sm text-outline">Hasil/Batch</span>
+<span class="text-body-sm font-body-sm-medium text-primary">4 toples</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 3: Putri Salju Mede -->
+<div class="cursor-pointer bg-surface-container-lowest rounded-2xl border border-[#E8DFCC] shadow-sm hover:shadow-md transition-all overflow-hidden flex flex-col relative group" id="card-recipe-2" onclick="selectRecipe(2)">
+<div class="h-36 w-full overflow-hidden bg-surface-container-low relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Crescent shaped Putri Salju snow cookies covered in powdered confectioners sugar and ground cashew nuts inside an elegant Eid bakery kitchen." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnC1mRKxknG1vZ1K-PX3jGynEXq4a8h1dhCXVXhzrI2zgFpEbqhAqHmaKxifnf8pcOGneWWG4SYbeCHnrVoV4p9-cGvX_g-T-6ecluzYlXJoLryGmvVKyrWWiHkUrd4GesT2SlElSdOCzG-BAZxEtQZTdIcaiZ-ZcbZQBmM8QoKTsG-nEf6KeCokdQes3GoBlkqhKQq2AnLeqDwjdJ9TOCvoqJjzJSv3Y5Lk81Yj8arB85SRQHiavJRw"/>
+</div>
+<div class="p-4 flex flex-col flex-1 justify-between">
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1">Putri Salju Mede Lembut</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Sensasi dingin gula donat &amp; mete</p>
+</div>
+<div class="grid grid-cols-3 gap-1 pt-3 mt-3 border-t border-[#E8DFCC] text-center">
+<div class="flex flex-col">
+<span class="text-label-sm font-label-sm text-outline">Waktu</span>
+<span class="text-body-sm font-body-sm-medium text-on-surface">60 mnt</span>
+</div>
+<div class="flex flex-col border-x border-[#E8DFCC]">
+<span class="text-label-sm font-label-sm text-outline">Suhu</span>
+<span class="text-body-sm font-body-sm-medium text-on-surface">135°C</span>
+</div>
+<div class="flex flex-col">
+<span class="text-label-sm font-label-sm text-outline">Hasil/Batch</span>
+<span class="text-body-sm font-body-sm-medium text-primary">4 toples</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 4: Lidah Kucing -->
+<div class="cursor-pointer bg-surface-container-lowest rounded-2xl border border-[#E8DFCC] shadow-sm hover:shadow-md transition-all overflow-hidden flex flex-col relative group" id="card-recipe-3" onclick="selectRecipe(3)">
+<div class="h-36 w-full overflow-hidden bg-surface-container-low relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Thin crispy golden Lidah Kucing cat tongue cookies resting elegantly next to a brass tea set on a warm cream marble counter." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGnDtVu3dTxuHa6f41KMQZ5bi1NHs1g_OGzmKjWJeVniHaGRv_nO8GZO0ccyMohRCw84Yk3c7pvp3UZl7a_g1rwReaFS1dU9LI8qBt_4gKwsKZUm1HrcNB4ammCdXQtcWy-t6s1wvXAUybnAKmomiUA_jgwVaeWB247pTmMSbZQ0OF7Fm9qsIRg_TX_vsZB9WfqmG3iOIxzKvqCoKFsO3E7JeLGctiYH_xNc_-UDsvyL2WHfNhg__gXw"/>
+</div>
+<div class="p-4 flex flex-col flex-1 justify-between">
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1">Lidah Kucing Mentega</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Tipis, renyah manis aroma vanila</p>
+</div>
+<div class="grid grid-cols-3 gap-1 pt-3 mt-3 border-t border-[#E8DFCC] text-center">
+<div class="flex flex-col">
+<span class="text-label-sm font-label-sm text-outline">Waktu</span>
+<span class="text-body-sm font-body-sm-medium text-on-surface">50 mnt</span>
+</div>
+<div class="flex flex-col border-x border-[#E8DFCC]">
+<span class="text-label-sm font-label-sm text-outline">Suhu</span>
+<span class="text-body-sm font-body-sm-medium text-on-surface">150°C</span>
+</div>
+<div class="flex flex-col">
+<span class="text-label-sm font-label-sm text-outline">Hasil/Batch</span>
+<span class="text-body-sm font-body-sm-medium text-primary">5 toples</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 5: Sagu Keju -->
+<div class="cursor-pointer bg-surface-container-lowest rounded-2xl border border-[#E8DFCC] shadow-sm hover:shadow-md transition-all overflow-hidden flex flex-col relative group" id="card-recipe-4" onclick="selectRecipe(4)">
+<div class="h-36 w-full overflow-hidden bg-surface-container-low relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Melt in your mouth Sagu Keju cheese sago cookies piped in delicate star rosettes in an artisanal Indonesian bakery studio." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDURH8LoPaOrpdd33l4wy497ljyOgHpZTH3xQD5-AApw-9b2KZeo0X2KykrcN8b1nQi9-pamF0YycoZICyKP8iYBZfyJ_ylpnu2g1hcPEca3cuNuWSpI-khnTmZTdlutSlO_NjeW9jQNehOIy55Os7kLP2KguiCNWoDFT9jHoLv-OV83W9sEhmtOcB_1g9B3zch9DH_LCr0jrLD9a6NiDZ84vR1pjHL2WvtuMmDagv-b3naqEv_QLRdhQ"/>
+</div>
+<div class="p-4 flex flex-col flex-1 justify-between">
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1">Sagu Keju Pandan Sangrai</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Lumer seketika wangi daun pandan</p>
+</div>
+<div class="grid grid-cols-3 gap-1 pt-3 mt-3 border-t border-[#E8DFCC] text-center">
+<div class="flex flex-col">
+<span class="text-label-sm font-label-sm text-outline">Waktu</span>
+<span class="text-body-sm font-body-sm-medium text-on-surface">65 mnt</span>
+</div>
+<div class="flex flex-col border-x border-[#E8DFCC]">
+<span class="text-label-sm font-label-sm text-outline">Suhu</span>
+<span class="text-body-sm font-body-sm-medium text-on-surface">140°C</span>
+</div>
+<div class="flex flex-col">
+<span class="text-label-sm font-label-sm text-outline">Hasil/Batch</span>
+<span class="text-body-sm font-body-sm-medium text-primary">4 toples</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Selected Recipe Interactive Workspace (Batch Scaler + Ingredients & Steps) -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- Left: Batch Scaler & Interactive Ingredients Checksheet (5 cols) -->
+<div class="lg:col-span-5 flex flex-col gap-6">
+<!-- Batch Scaler Card -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 border border-[#E8DFCC] shadow-sm">
+<div class="flex items-center justify-between pb-4 border-b border-[#E8DFCC]">
+<div>
+<span class="text-label-sm font-label-sm text-secondary font-semibold uppercase tracking-wider">Kalkulator Adonan Dapur</span>
+<h3 class="text-headline-md font-headline-md text-on-surface">Pengali Batch (Scaler)</h3>
+</div>
+<span class="w-10 h-10 rounded-xl bg-secondary-fixed/50 flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-2xl" data-icon="calculate">calculate</span>
+</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant my-4">
+              Pilih volume adonan yang akan dikerjakan hari ini. Semua takaran gramatur dan butir telur di bawah akan disesuaikan otomatis:
+            </p>
+<!-- Scaler Buttons -->
+<div class="grid grid-cols-4 gap-2 mb-4">
+<button class="h-12 rounded-xl font-label-md text-label-md border flex flex-col items-center justify-center transition-all bg-primary text-on-primary border-primary" id="btn-scale-1" onclick="setMultiplier(1)">
+<span>1x</span>
+<span class="text-[10px] opacity-80 leading-none">4 Toples</span>
+</button>
+<button class="h-12 rounded-xl font-label-md text-label-md border flex flex-col items-center justify-center transition-all bg-surface border-[#E8DFCC] text-on-surface hover:bg-surface-container-low" id="btn-scale-2" onclick="setMultiplier(2)">
+<span>2x</span>
+<span class="text-[10px] text-on-surface-variant leading-none">8 Toples</span>
+</button>
+<button class="h-12 rounded-xl font-label-md text-label-md border flex flex-col items-center justify-center transition-all bg-surface border-[#E8DFCC] text-on-surface hover:bg-surface-container-low" id="btn-scale-3" onclick="setMultiplier(3)">
+<span>3x</span>
+<span class="text-[10px] text-on-surface-variant leading-none">12 Toples</span>
+</button>
+<button class="h-12 rounded-xl font-label-md text-label-md border flex flex-col items-center justify-center transition-all bg-surface border-[#E8DFCC] text-on-surface hover:bg-surface-container-low" id="btn-scale-5" onclick="setMultiplier(5)">
+<span>5x</span>
+<span class="text-[10px] text-on-surface-variant leading-none">20 Toples</span>
+</button>
+</div>
+<!-- Custom Stepper Row -->
+<div class="flex items-center justify-between p-3 bg-background rounded-xl border border-[#E8DFCC]">
+<span class="text-body-sm font-body-sm text-on-surface font-medium">Kustom Kelipatan:</span>
+<div class="flex items-center gap-3">
+<button class="w-9 h-9 rounded-lg bg-surface-container-lowest border border-[#E8DFCC] flex items-center justify-center text-on-surface hover:bg-surface-container-low active:scale-95 transition-all" onclick="adjustMultiplier(-1)">
+<span class="material-symbols-outlined text-base" data-icon="remove">remove</span>
+</button>
+<span class="font-headline-md text-headline-md text-primary w-8 text-center" id="currentMultiplierDisplay">1x</span>
+<button class="w-9 h-9 rounded-lg bg-surface-container-lowest border border-[#E8DFCC] flex items-center justify-center text-on-surface hover:bg-surface-container-low active:scale-95 transition-all" onclick="adjustMultiplier(1)">
+<span class="material-symbols-outlined text-base" data-icon="add">add</span>
+</button>
+</div>
+</div>
+<!-- Summary output box -->
+<div class="mt-4 p-3 bg-surface-container-low/70 rounded-xl flex items-center gap-3 border border-[#E8DFCC]">
+<span class="material-symbols-outlined text-secondary text-2xl" data-icon="inventory">inventory</span>
+<div class="text-body-sm font-body-sm">
+                Target Produksi: <span class="font-semibold text-primary" id="targetJarCount">4 toples</span> ukuran standar 500g.
+              </div>
+</div>
+</div>
+<!-- Ingredients Timbangan Checksheet -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 border border-[#E8DFCC] shadow-sm">
+<div class="flex items-center justify-between pb-3 border-b border-[#E8DFCC]">
+<div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Takaran Bahan &amp; Timbangan</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Centang setelah ditimbang di stasiun dapur</p>
+</div>
+<button class="text-xs text-primary font-medium hover:underline flex items-center gap-1" onclick="resetIngredientChecks()">
+<span class="material-symbols-outlined text-sm" data-icon="refresh">refresh</span>
+<span>Reset Centang</span>
+</button>
+</div>
+<!-- Ingredient Items List -->
+<ul class="divide-y divide-[#E8DFCC] mt-2" id="ingredientListContainer">
+<!-- Dynamically populated by JS based on recipe and multiplier -->
+</ul>
+<div class="mt-4 pt-3 border-t border-[#E8DFCC] flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant">Status Timbangan:</span>
+<span class="font-semibold text-primary" id="ingredientWeighedCount">0 dari 7 bahan siap</span>
+</div>
+</div>
+</div>
+<!-- Right: Detailed Recipe Blueprint & Step by Step (7 cols) -->
+<div class="lg:col-span-7 flex flex-col gap-6">
+<!-- Recipe Header Snapshot Banner -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 border border-[#E8DFCC] shadow-sm relative overflow-hidden">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-primary text-label-sm font-label-sm mb-2">
+<span class="material-symbols-outlined text-sm" data-icon="verified">verified</span>
+<span>Standar Resep Resmi Dapur Lebaran</span>
+</div>
+<h3 class="text-headline-lg font-headline-lg text-on-surface" id="recipeTitleDisplay">Nastar Wijsman Cengkeh</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1" id="recipeDescDisplay">
+                  Kue nastar warisan dengan paduan 100% Wijsman Butter dan margarin pilihan, dipanggang dengan olesan telur bebek kuning keemasan.
+                </p>
+</div>
+<!-- Quick Spec Metric Badges -->
+<div class="flex md:flex-col gap-2 shrink-0">
+<div class="bg-background px-4 py-2 rounded-xl border border-[#E8DFCC] flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="timer">timer</span>
+<div>
+<span class="block text-[11px] text-outline font-label-sm">Estimasi Total</span>
+<span class="font-semibold text-body-md text-on-surface" id="recipeTimeDisplay">90 Menit</span>
+</div>
+</div>
+<div class="bg-background px-4 py-2 rounded-xl border border-[#E8DFCC] flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="thermostat">thermostat</span>
+<div>
+<span class="block text-[11px] text-outline font-label-sm">Suhu Oven</span>
+<span class="font-semibold text-body-md text-on-surface" id="recipeTempDisplay">140°C - 150°C</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Pro-tip Notice Box -->
+<div class="mt-4 p-4 rounded-xl bg-surface-container-low border-l-4 border-secondary flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-xl mt-0.5" data-icon="tips_and_updates">tips_and_updates</span>
+<div>
+<span class="font-label-md text-label-md text-on-surface">Kiat Chef Dapur Lebaran:</span>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">
+                  Jangan mengocok adonan mentega terlalu lama (cukup 1-2 menit hingga rata saja). Jika overmix, nastar berisiko meleber saat dipanggang dan teksturnya mengeras.
+                </p>
+</div>
+</div>
+</div>
+<!-- Step-by-Step Procedure Cards -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 border border-[#E8DFCC] shadow-sm">
+<div class="flex items-center justify-between pb-4 border-b border-[#E8DFCC]">
+<div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Langkah-Langkah Pembuatan</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Ikuti tahapan sesuai urutan standar HACCP dapur kue</p>
+</div>
+<button class="px-4 py-2 rounded-xl bg-primary-container text-on-primary-container font-label-sm text-label-sm flex items-center gap-1.5 hover:opacity-90 transition-opacity" onclick="openCookingMode()">
+<span class="material-symbols-outlined text-sm" data-icon="play_arrow">play_arrow</span>
+<span>Pandu Langkah</span>
+</button>
+</div>
+<!-- Steps Container -->
+<div class="flex flex-col gap-4 mt-6" id="stepsListContainer">
+<!-- Dynamically populated steps -->
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- ==================== MOBILE BOTTOM NAVIGATION DOCK ==================== -->
+<nav class="fixed bottom-0 left-0 w-full z-40 flex justify-around items-center px-4 py-2 md:hidden bg-surface-container-lowest shadow-md border-t border-[#E8DFCC]">
+<!-- Beranda -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors py-1" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="dashboard">dashboard</span>
+<span class="text-label-sm font-label-sm mt-0.5">Beranda</span>
+</a>
+<!-- Penjualan -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors py-1" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="receipt_long">receipt_long</span>
+<span class="text-label-sm font-label-sm mt-0.5">Penjualan</span>
+</a>
+<!-- Pelanggan -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors py-1" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="group">group</span>
+<span class="text-label-sm font-label-sm mt-0.5">Pelanggan</span>
+</a>
+<!-- Bahan -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors py-1" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="inventory_2">inventory_2</span>
+<span class="text-label-sm font-label-sm mt-0.5">Bahan</span>
+</a>
+<!-- Resep (Active) -->
+<a class="flex flex-col items-center justify-center text-primary font-semibold py-1" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="menu_book">menu_book</span>
+<span class="text-label-sm font-label-sm mt-0.5">Resep</span>
+</a>
+</nav>
+<!-- ==================== FULLSCREEN COOKING MODE OVERLAY MODAL ==================== -->
+<!-- ==================== FORMULA & INGREDIENT EDIT MODAL ==================== -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-6 bg-black/50 backdrop-blur-sm overflow-y-auto" id="editFormulaModal">
+<div class="bg-surface-container-lowest w-full max-w-4xl rounded-2xl shadow-xl border border-[#E8DFCC] overflow-hidden my-auto flex flex-col max-h-[92vh]">
+<!-- Header Modal -->
+<div class="p-5 md:p-6 border-b border-[#E8DFCC] flex items-start justify-between bg-surface-bright shrink-0">
+<div>
+<div class="flex items-center gap-2 mb-1.5">
+<span class="material-symbols-outlined text-primary text-2xl">tune</span>
+<h3 class="text-headline-md font-headline-md font-semibold text-on-surface">Formulasi Resep &amp; Bahan Baku</h3>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-[11px] font-semibold">
+<span class="material-symbols-outlined text-[14px]">sync_alt</span>
+            Tersinkronisasi ke Inventaris (/bahan)
+          </span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+          Sesuaikan gramatur standar 1 batch, suhu oven, dan estimasi waktu untuk resep Nastar Wijsman Cengkeh
+        </p>
+</div>
+<button class="w-9 h-9 rounded-xl border border-[#E8DFCC] flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors active:scale-95" onclick="document.getElementById('editFormulaModal').style.display='none'" type="button">
+<span class="material-symbols-outlined text-xl">close</span>
+</button>
+</div>
+<!-- Scrollable Form Content -->
+<div class="p-5 md:p-6 overflow-y-auto custom-scroll flex flex-col gap-6">
+<!-- Top Meta Specs Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4 p-4 rounded-xl bg-surface-container-low/70 border border-[#E8DFCC]">
+<div class="md:col-span-5 flex flex-col gap-1.5">
+<label class="text-label-sm font-label-sm text-on-surface-variant font-semibold">Nama Resep Baku</label>
+<input class="w-full h-10 px-3 rounded-lg border border-[#E8DFCC] bg-surface-container-lowest text-on-surface font-body-md text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-primary" type="text" value="Nastar Wijsman Cengkeh"/>
+</div>
+<div class="md:col-span-4 flex flex-col gap-1.5">
+<label class="text-label-sm font-label-sm text-on-surface-variant font-semibold">Kategori Resep</label>
+<select class="w-full h-10 px-3 rounded-lg border border-[#E8DFCC] bg-surface-container-lowest text-on-surface font-body-md text-sm focus:outline-none focus:ring-2 focus:ring-primary">
+<option selected="">Kue Kering Klasik Lebaran</option>
+<option>Kue Kering Modern Cheese</option>
+<option>Pastry &amp; Bolu Musiman</option>
+</select>
+</div>
+<div class="md:col-span-3 flex flex-col gap-1.5">
+<label class="text-label-sm font-label-sm text-on-surface-variant font-semibold">Hasil Standar 1 Batch</label>
+<input class="w-full h-10 px-3 rounded-lg border border-[#E8DFCC] bg-surface-container-lowest text-on-surface font-body-md text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-primary" type="text" value="4 Toples (2.0 kg)"/>
+</div>
+<div class="md:col-span-6 flex flex-col gap-1.5">
+<label class="text-label-sm font-label-sm text-on-surface-variant font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-primary">timer</span>
+            Estimasi Durasi Kerja
+          </label>
+<input class="w-full h-10 px-3 rounded-lg border border-[#E8DFCC] bg-surface-container-lowest text-on-surface font-body-md text-sm focus:outline-none focus:ring-2 focus:ring-primary" type="text" value="90 Menit"/>
+</div>
+<div class="md:col-span-6 flex flex-col gap-1.5">
+<label class="text-label-sm font-label-sm text-on-surface-variant font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-secondary">thermostat</span>
+            Suhu Oven Rekomendasi
+          </label>
+<input class="w-full h-10 px-3 rounded-lg border border-[#E8DFCC] bg-surface-container-lowest text-on-surface font-body-md text-sm focus:outline-none focus:ring-2 focus:ring-primary" type="text" value="140°C - 150°C"/>
+</div>
+</div>
+<!-- Ingredients & Grammage Editor Table -->
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div>
+<h4 class="text-headline-sm font-headline-sm font-semibold text-on-surface">Daftar Bahan Baku &amp; Gramatur (Per 1 Batch)</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Gramatur berikut menjadi rujukan pengali otomatis (batch scaler) staf dapur.</p>
+</div>
+<span class="text-label-sm font-label-sm text-outline">7 Bahan Baku</span>
+</div>
+<!-- Table Container -->
+<div class="border border-[#E8DFCC] rounded-xl overflow-hidden">
+<div class="bg-surface-container-low px-4 py-2.5 grid grid-cols-12 gap-2 text-label-sm font-label-sm font-semibold text-on-surface-variant border-b border-[#E8DFCC]">
+<div class="col-span-5">Nama Bahan (Stok Terhubung)</div>
+<div class="col-span-3 text-right">Takaran / Gramatur</div>
+<div class="col-span-2">Satuan</div>
+<div class="col-span-2 text-center">Aksi / Status</div>
+</div>
+<div class="divide-y divide-[#E8DFCC] bg-surface-container-lowest font-body-md text-sm">
+<!-- Row 1 -->
+<div class="px-4 py-3 grid grid-cols-12 gap-2 items-center hover:bg-surface-container-low/40 transition-colors">
+<div class="col-span-5 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">check_circle</span>
+<span class="font-medium text-on-surface">Mentega Wijsman Asli</span>
+<span class="px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-container text-[10px] font-semibold tracking-wide">Bahan Kritis</span>
+</div>
+<div class="col-span-3">
+<input class="w-full h-9 px-2 text-right rounded-lg border border-[#E8DFCC] bg-surface font-semibold text-primary focus:ring-2 focus:ring-primary focus:outline-none" type="number" value="500"/>
+</div>
+<div class="col-span-2 text-on-surface-variant font-medium pl-1">gram</div>
+<div class="col-span-2 flex justify-center">
+<button class="w-8 h-8 rounded-lg hover:bg-error-container/20 text-on-surface-variant hover:text-error flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="px-4 py-3 grid grid-cols-12 gap-2 items-center hover:bg-surface-container-low/40 transition-colors">
+<div class="col-span-5 flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-base">check_circle</span>
+<span class="font-medium text-on-surface">Margarin Blueband Cake &amp; Cookie</span>
+</div>
+<div class="col-span-3">
+<input class="w-full h-9 px-2 text-right rounded-lg border border-[#E8DFCC] bg-surface font-semibold text-primary focus:ring-2 focus:ring-primary focus:outline-none" type="number" value="200"/>
+</div>
+<div class="col-span-2 text-on-surface-variant font-medium pl-1">gram</div>
+<div class="col-span-2 flex justify-center">
+<button class="w-8 h-8 rounded-lg hover:bg-error-container/20 text-on-surface-variant hover:text-error flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+</div>
+<!-- Row 3 -->
+<div class="px-4 py-3 grid grid-cols-12 gap-2 items-center hover:bg-surface-container-low/40 transition-colors">
+<div class="col-span-5 flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-base">check_circle</span>
+<span class="font-medium text-on-surface">Gula Halus (diayak)</span>
+</div>
+<div class="col-span-3">
+<input class="w-full h-9 px-2 text-right rounded-lg border border-[#E8DFCC] bg-surface font-semibold text-primary focus:ring-2 focus:ring-primary focus:outline-none" type="number" value="160"/>
+</div>
+<div class="col-span-2 text-on-surface-variant font-medium pl-1">gram</div>
+<div class="col-span-2 flex justify-center">
+<button class="w-8 h-8 rounded-lg hover:bg-error-container/20 text-on-surface-variant hover:text-error flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+</div>
+<!-- Row 4 -->
+<div class="px-4 py-3 grid grid-cols-12 gap-2 items-center hover:bg-surface-container-low/40 transition-colors">
+<div class="col-span-5 flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-base">check_circle</span>
+<span class="font-medium text-on-surface">Kuning Telur Ayam Segar</span>
+</div>
+<div class="col-span-3">
+<input class="w-full h-9 px-2 text-right rounded-lg border border-[#E8DFCC] bg-surface font-semibold text-primary focus:ring-2 focus:ring-primary focus:outline-none" type="number" value="6"/>
+</div>
+<div class="col-span-2 text-on-surface-variant font-medium pl-1">butir</div>
+<div class="col-span-2 flex justify-center">
+<button class="w-8 h-8 rounded-lg hover:bg-error-container/20 text-on-surface-variant hover:text-error flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+</div>
+<!-- Row 5 -->
+<div class="px-4 py-3 grid grid-cols-12 gap-2 items-center hover:bg-surface-container-low/40 transition-colors">
+<div class="col-span-5 flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-base">check_circle</span>
+<span class="font-medium text-on-surface">Tepung Terigu Protein Rendah (Kunci Biru)</span>
+</div>
+<div class="col-span-3">
+<input class="w-full h-9 px-2 text-right rounded-lg border border-[#E8DFCC] bg-surface font-semibold text-primary focus:ring-2 focus:ring-primary focus:outline-none" type="number" value="700"/>
+</div>
+<div class="col-span-2 text-on-surface-variant font-medium pl-1">gram</div>
+<div class="col-span-2 flex justify-center">
+<button class="w-8 h-8 rounded-lg hover:bg-error-container/20 text-on-surface-variant hover:text-error flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+</div>
+<!-- Row 6 -->
+<div class="px-4 py-3 grid grid-cols-12 gap-2 items-center hover:bg-surface-container-low/40 transition-colors">
+<div class="col-span-5 flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-base">check_circle</span>
+<span class="font-medium text-on-surface">Susu Bubuk Full Cream</span>
+</div>
+<div class="col-span-3">
+<input class="w-full h-9 px-2 text-right rounded-lg border border-[#E8DFCC] bg-surface font-semibold text-primary focus:ring-2 focus:ring-primary focus:outline-none" type="number" value="100"/>
+</div>
+<div class="col-span-2 text-on-surface-variant font-medium pl-1">gram</div>
+<div class="col-span-2 flex justify-center">
+<button class="w-8 h-8 rounded-lg hover:bg-error-container/20 text-on-surface-variant hover:text-error flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+</div>
+<!-- Row 7 -->
+<div class="px-4 py-3 grid grid-cols-12 gap-2 items-center hover:bg-surface-container-low/40 transition-colors">
+<div class="col-span-5 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">check_circle</span>
+<span class="font-medium text-on-surface">Selai Nanas Nastar Homemade (Pulen)</span>
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container text-[10px] font-semibold tracking-wide">Isian</span>
+</div>
+<div class="col-span-3">
+<input class="w-full h-9 px-2 text-right rounded-lg border border-[#E8DFCC] bg-surface font-semibold text-primary focus:ring-2 focus:ring-primary focus:outline-none" type="number" value="600"/>
+</div>
+<div class="col-span-2 text-on-surface-variant font-medium pl-1">gram</div>
+<div class="col-span-2 flex justify-center">
+<button class="w-8 h-8 rounded-lg hover:bg-error-container/20 text-on-surface-variant hover:text-error flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Add Ingredient CTA -->
+<button class="w-full py-2.5 px-4 rounded-xl border border-dashed border-primary text-primary font-label-md text-sm font-semibold hover:bg-primary/5 flex items-center justify-center gap-2 transition-colors active:scale-98" type="button">
+<span class="material-symbols-outlined text-lg">add_circle</span>
+<span>+ Tambah Bahan Baru ke Resep</span>
+</button>
+</div>
+<!-- Baker / Chef Notes Textarea -->
+<div class="flex flex-col gap-2">
+<label class="text-label-sm font-label-sm font-semibold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-base">tips_and_updates</span>
+          Catatan Penting &amp; Tips Chef / Baker
+        </label>
+<textarea class="w-full p-3 rounded-xl border border-[#E8DFCC] bg-background text-on-surface font-body-md text-sm focus:outline-none focus:ring-2 focus:ring-primary leading-relaxed" rows="2">Kiat Dapur: Jangan mengocok adonan mentega terlalu lama (cukup 1-2 menit hingga rata saja). Jika overmix, nastar berisiko melebar saat dipanggang dan teksturnya mengeras.</textarea>
+</div>
+</div>
+<!-- Footer Actions -->
+<div class="p-4 md:px-6 bg-surface-bright border-t border-[#E8DFCC] flex flex-col-reverse sm:flex-row items-center justify-between gap-3 shrink-0">
+<button class="w-full sm:w-auto px-5 py-2.5 rounded-xl border border-[#E8DFCC] bg-surface-container-lowest text-on-surface hover:bg-surface-container-low font-label-md text-label-md transition-colors" onclick="document.getElementById('editFormulaModal').style.display='none'" type="button">
+        Batal
+      </button>
+<div class="w-full sm:w-auto flex items-center gap-3">
+<button class="flex-1 sm:flex-none px-4 py-2.5 rounded-xl border border-primary text-primary hover:bg-primary/10 font-label-md text-label-md transition-colors" type="button">
+          Simpan Sebagai Resep Baru
+        </button>
+<button class="flex-1 sm:flex-none px-6 py-2.5 rounded-xl bg-primary hover:bg-[#17583F] text-on-primary font-label-md text-label-md flex items-center justify-center gap-2 shadow-sm transition-all active:scale-95 font-semibold" onclick="document.getElementById('editFormulaModal').style.display='none'" type="button">
+<span class="material-symbols-outlined text-lg">check_circle</span>
+<span>Simpan Perubahan Formulasi</span>
+</button>
+</div>
+</div>
+</div>
+</div><div class="fixed inset-0 z-50 bg-background hidden flex-col" id="cookingModeOverlay">
+<!-- Header Modal -->
+<header class="h-20 bg-surface-container-lowest border-b border-[#E8DFCC] px-6 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="w-10 h-10 rounded-xl bg-primary text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl" data-icon="skillet">skillet</span>
+</span>
+<div>
+<span class="text-label-sm font-label-sm text-secondary font-semibold uppercase tracking-wider">Mode Masak Staf Dapur</span>
+<h2 class="text-headline-md font-headline-md text-on-surface" id="modalRecipeName">Nastar Wijsman Cengkeh</h2>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden sm:flex items-center gap-2 bg-surface-container px-3 py-1.5 rounded-xl border border-[#E8DFCC]">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="layers">layers</span>
+<span class="text-body-sm font-body-sm text-on-surface">Batch Aktif: <strong id="modalBatchMultiplier">1x (4 toples)</strong></span>
+</div>
+<button class="h-10 px-4 rounded-xl border border-[#E8DFCC] bg-surface-container-lowest text-on-surface hover:bg-surface-container-low font-label-md text-label-md flex items-center gap-1.5 active:scale-95 transition-all" onclick="closeCookingMode()">
+<span class="material-symbols-outlined text-xl" data-icon="close">close</span>
+<span>Keluar Mode Masak</span>
+</button>
+</div>
+</header>
+<!-- Main Step Canvas (Single Focus Step Per Screen) -->
+<main class="flex-1 max-w-4xl w-full mx-auto p-6 md:p-12 flex flex-col justify-between overflow-y-auto custom-scroll">
+<!-- Top Step Progress Indicator -->
+<div>
+<div class="flex items-center justify-between mb-3 text-body-sm font-body-sm">
+<span class="text-primary font-semibold font-label-md" id="modalStepCountLabel">Langkah 1 dari 4</span>
+<span class="text-on-surface-variant" id="modalStepPercentage">25% Selesai</span>
+</div>
+<div class="w-full h-2.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary transition-all duration-300" id="modalProgressBar" style="width: 25%;"></div>
+</div>
+</div>
+<!-- Step Content Display -->
+<div class="my-auto py-8">
+<div class="inline-block px-3 py-1 bg-secondary-fixed text-on-secondary-container font-label-sm text-label-sm rounded-lg mb-4">
+<span id="modalStepCategory">Tahap 1: Persiapan Bahan</span>
+</div>
+<h1 class="text-headline-xl md:text-3xl font-headline-xl text-on-surface mb-4" id="modalStepTitle">
+          Persiapan &amp; Sangrai Tepung Terigu
+        </h1>
+<div class="p-6 bg-surface-container-lowest border border-[#E8DFCC] rounded-2xl shadow-sm mb-6">
+<p class="text-body-lg md:text-xl font-body-lg text-on-surface leading-relaxed" id="modalStepDescription">
+            Sangrai tepung terigu protein rendah bersama 2 lembar daun pandan di atas api sangat kecil selama 8-10 menit hingga tepung terasa ringan dan wangi. Ayak dan dinginkan suhu ruang sebelum dicampur ke adonan mentega.
+          </p>
+</div>
+<!-- Dynamic Step Checklist / Mini Note -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-surface-container-low p-4 rounded-xl border border-[#E8DFCC] flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-2xl" data-icon="timer">timer</span>
+<div>
+<span class="block text-label-sm text-outline">Target Waktu Langkah:</span>
+<span class="font-semibold text-body-md text-on-surface" id="modalStepTimer">15 Menit</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl border border-[#E8DFCC] flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="checklist">checklist</span>
+<div>
+<span class="block text-label-sm text-outline">Pemeriksaan Staf:</span>
+<span class="font-semibold text-body-md text-on-surface" id="modalStepCheckNote">Tepung tidak boleh berwarna kecokelatan</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Step Navigation Actions -->
+<div class="pt-6 border-t border-[#E8DFCC] flex items-center justify-between">
+<button class="h-14 px-6 rounded-xl border border-[#E8DFCC] bg-surface-container-lowest text-on-surface hover:bg-surface-container-low font-label-md text-label-md flex items-center gap-2 disabled:opacity-40 transition-all" id="modalPrevBtn" onclick="prevStep()">
+<span class="material-symbols-outlined text-xl" data-icon="arrow_back">arrow_back</span>
+<span>Langkah Sebelumnya</span>
+</button>
+<button class="h-14 px-8 rounded-xl bg-primary hover:bg-[#17583F] text-on-primary font-label-md text-label-md flex items-center gap-3 shadow-md active:scale-98 transition-all" id="modalNextBtn" onclick="nextStep()">
+<span id="modalNextBtnText">Langkah Berikutnya</span>
+<span class="material-symbols-outlined text-xl" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</main>
+</div>
+<!-- ==================== JAVASCRIPT LOGIC ==================== -->
+<script>
+    // State Data
+    let userRole = 'Owner'; // 'Owner' or 'Staff'
+    let currentMultiplier = 1;
+    let selectedRecipeIndex = 0;
+    let activeCookingStepIndex = 0;
+
+    // Database of Recipes with base amounts (1x = 4 toples 500g)
+    const recipes = [
+      {
+        name: "Nastar Wijsman Cengkeh",
+        shortDesc: "Klasik nanas legit lumer di lidah",
+        fullDesc: "Kue nastar warisan dengan paduan 100% Wijsman Butter dan margarin pilihan, dipanggang dengan olesan telur bebek kuning keemasan dan ditancap cengkeh wangi.",
+        time: "90 Menit",
+        temp: "140°C - 150°C",
+        baseJars: 4,
+        ingredients: [
+          { name: "Mentega Wijsman Asli", baseQty: 500, unit: "gram", checked: false },
+          { name: "Margarin Blueband Cake & Cookie", baseQty: 200, unit: "gram", checked: false },
+          { name: "Gula Halus (diayak)", baseQty: 160, unit: "gram", checked: false },
+          { name: "Kuning Telur Ayam Segar", baseQty: 6, unit: "butir", checked: false },
+          { name: "Tepung Terigu Protein Rendah (Kunci Biru)", baseQty: 700, unit: "gram", checked: false },
+          { name: "Susu Bubuk Full Cream", baseQty: 100, unit: "gram", checked: false },
+          { name: "Selai Nanas Nastar Homemade (Pulen)", baseQty: 600, unit: "gram", checked: false }
+        ],
+        steps: [
+          {
+            category: "Tahap 1: Persiapan & Sangrai",
+            title: "Persiapan & Sangrai Tepung Terigu",
+            desc: "Sangrai tepung terigu bersama 2 lembar daun pandan dengan api sangat kecil selama 8-10 menit. Langkah ini krusial agar nastar menghasilkan tekstur renyah dan lumer tanpa bau tepung mentah. Biarkan dingin sempurna sebelum diayak bersama susu bubuk.",
+            timer: "15 Menit",
+            note: "Pastikan tepung dingin sebelum masuk adonan mentega."
+          },
+          {
+            category: "Tahap 2: Pengocokan",
+            title: "Pengocokan Butter, Margarin & Gula",
+            desc: "Kocok mentega Wijsman, margarin, dan gula halus menggunakan mixer kecepatan rendah selama maksimal 1-2 menit saja sampai tercampur rata dan pucat. Masukkan kuning telur satu per satu sambil diaduk perlahan menggunakan spatula kayu.",
+            timer: "10 Menit",
+            note: "Jangan overmix agar adonan tidak meleber saat dipanggang."
+          },
+          {
+            category: "Tahap 3: Pembentukan & Isian",
+            title: "Pembentukan Adonan & Isian Selai Cengkeh",
+            desc: "Timbang adonan kulit seberat 7-8 gram dan bulatan selai nanas 4-5 gram. Pipihkan adonan, letakkan selai di tengah, lalu rapatkan dan bulatkan hingga permukaan mulus tanpa retakan. Tata di loyang beralas baking paper dan tancapkan sekuntum cengkeh di atasnya.",
+            timer: "40 Menit",
+            note: "Pastikan selai tertutup rapat agar tidak bocor dan gosong."
+          },
+          {
+            category: "Tahap 4: Pemanggangan & Olesan",
+            title: "Pemanggangan & Pengolesan Kuning Telur Emas",
+            desc: "Panggang awal selama 25-30 menit pada suhu 145°C. Keluarkan loyang, biarkan uap panas hilang hingga kue hangat kuku. Olesi permukaan dengan campuran 3 kuning telur bebek, 1 sdm minyak dan 1 sdt madu. Panggang kembali selama 10-15 menit hingga kuning keemasan berkilau.",
+            timer: "25 Menit",
+            note: "Olesan saat nastar dingin menghasilkan kilap kaca tanpa retak."
+          }
+        ]
+      },
+      {
+        name: "Kastengel Keju Edam Spesial",
+        shortDesc: "Gurih keju tua Belanda & renyah",
+        fullDesc: "Kastengel renyah gurih memadukan keju Edam tua parut kering dan taburan keju cheddar melimpah tanpa pengembang kimiawi.",
+        time: "75 Menit",
+        temp: "140°C",
+        baseJars: 4,
+        ingredients: [
+          { name: "Mentega Wijsman", baseQty: 300, unit: "gram", checked: false },
+          { name: "Margarin Berkualitas", baseQty: 150, unit: "gram", checked: false },
+          { name: "Keju Edam (Ayam Emas) Parut Halus", baseQty: 350, unit: "gram", checked: false },
+          { name: "Kuning Telur", baseQty: 4, unit: "butir", checked: false },
+          { name: "Tepung Terigu Protein Rendah", baseQty: 500, unit: "gram", checked: false },
+          { name: "Tepung Maizena", baseQty: 50, unit: "gram", checked: false },
+          { name: "Keju Cheddar Parut (Topping)", baseQty: 200, unit: "gram", checked: false }
+        ],
+        steps: [
+          {
+            category: "Tahap 1: Pengolahan Keju",
+            title: "Parut & Angin-anginkan Keju Edam",
+            desc: "Parut keju Edam lalu angin-anginkan selama 30 menit agar teksturnya kering dan renyah saat dipanggang dalam adonan.",
+            timer: "15 Menit",
+            note: "Keju kering membuat kastengel renyah tahan lama."
+          },
+          {
+            category: "Tahap 2: Pengadukan",
+            title: "Pencampuran Adonan Mentega & Keju",
+            desc: "Kocok mentega dan margarin sebentar saja, masukkan kuning telur, lalu aduk keju Edam parut dengan spatula hingga merata.",
+            timer: "10 Menit",
+            note: "Gunakan spatula, hindari tangan langsung agar mentega tidak leleh."
+          },
+          {
+            category: "Tahap 3: Pemotongan",
+            title: "Giling & Potong Seragam",
+            desc: "Giling adonan dengan ketebalan 0.8 cm, potong memanjang ukuran 1x3 cm menggunakan roller kastengel.",
+            timer: "30 Menit",
+            note: "Ketebalan seragam kunci kematangan rata."
+          },
+          {
+            category: "Tahap 4: Topping & Oven",
+            title: "Oles Kuning Telur & Tabur Cheddar",
+            desc: "Oles kuning telur di atas batang kastengel lalu taburi parutan cheddar. Panggang pada 140°C selama 35 menit hingga matang kecokelatan.",
+            timer: "35 Menit",
+            note: "Jangan sampai keju gosong di rak atas oven."
+          }
+        ]
+      },
+      {
+        name: "Putri Salju Mede Lembut",
+        shortDesc: "Sensasi dingin gula donat & mete",
+        fullDesc: "Kue putri salju berbentuk bulan sabit lumer dengan campuran kacang mete sangrai tumbuk dan taburan gula dingin.",
+        time: "60 Menit",
+        temp: "135°C",
+        baseJars: 4,
+        ingredients: [
+          { name: "Butter Wijsman / Butter Blend", baseQty: 400, unit: "gram", checked: false },
+          { name: "Gula Halus", baseQty: 100, unit: "gram", checked: false },
+          { name: "Kuning Telur", baseQty: 3, unit: "butir", checked: false },
+          { name: "Kacang Mede Sangrai (Halus)", baseQty: 250, unit: "gram", checked: false },
+          { name: "Tepung Terigu Protein Rendah", baseQty: 550, unit: "gram", checked: false },
+          { name: "Tepung Maizena", baseQty: 60, unit: "gram", checked: false },
+          { name: "Gula Salju Dingin (Dextrose)", baseQty: 300, unit: "gram", checked: false }
+        ],
+        steps: [
+          {
+            category: "Tahap 1: Pengolahan Kacang",
+            title: "Sangrai & Cincang Halus Kacang Mede",
+            desc: "Sangrai kacang mede hingga harum dan matang. Cincang halus namun sisakan sedikit tekstur butiran gurih.",
+            timer: "15 Menit",
+            note: "Pastikan mede dingin sebelum dimasukkan adonan."
+          },
+          {
+            category: "Tahap 2: Pengadukan",
+            title: "Aduk Adonan & Campur Mede",
+            desc: "Kocok mentega dan gula halus sebentar, masukkan kuning telur, mede halus, dan ayak terigu serta maizena.",
+            timer: "10 Menit",
+            note: "Adonan harus cukup kalis dan mudah dicetak."
+          },
+          {
+            category: "Tahap 3: Pencetakan Bulan Sabit",
+            title: "Cetak Bentuk Bulan Sabit",
+            desc: "Gilas adonan setebal 0.7 cm lalu cetak dengan cookie cutter berbentuk bulan sabit. Susun rapi di loyang.",
+            timer: "20 Menit",
+            note: "Beri jarak 1 cm antar kue."
+          },
+          {
+            category: "Tahap 4: Pemanggangan & Taburan",
+            title: "Panggang Rendah & Gulingkan Gula",
+            desc: "Panggang pada suhu 135°C selama 25 menit. Saat masih hangat, gulingkan kue pada gula halus, lalu setelah dingin gulingkan di gula salju dingin.",
+            timer: "25 Menit",
+            note: "Gula salju dingin menempel sempurna saat lapisan pertama set."
+          }
+        ]
+      },
+      {
+        name: "Lidah Kucing Mentega",
+        shortDesc: "Tipis, renyah manis aroma vanila",
+        fullDesc: "Kue lidah kucing garing renyah dipanggang di loyang khusus cekung dengan mentega aromatik dan putih telur kocok.",
+        time: "50 Menit",
+        temp: "150°C",
+        baseJars: 5,
+        ingredients: [
+          { name: "Mentega Wijsman", baseQty: 250, unit: "gram", checked: false },
+          { name: "Margarin", baseQty: 150, unit: "gram", checked: false },
+          { name: "Gula Halus", baseQty: 200, unit: "gram", checked: false },
+          { name: "Putih Telur Suhu Ruang", baseQty: 150, unit: "gram", checked: false },
+          { name: "Tepung Terigu Protein Rendah", baseQty: 250, unit: "gram", checked: false },
+          { name: "Tepung Maizena", baseQty: 50, unit: "gram", checked: false },
+          { name: "Ekstrak Vanila Murni", baseQty: 10, unit: "gram", checked: false }
+        ],
+        steps: [
+          {
+            category: "Tahap 1: Pengocokan Putih Telur",
+            title: "Kocok Putih Telur Kaku",
+            desc: "Kocok putih telur hingga mengembang soft peak di wadah bersih bebas minyak.",
+            timer: "10 Menit",
+            note: "Gunakan mangkuk stainless steel bebas lemak."
+          },
+          {
+            category: "Tahap 2: Pengocokan Mentega",
+            title: "Kocok Mentega & Gula Halus",
+            desc: "Kocok mentega, margarin, gula halus, dan vanila hingga sangat mengembang dan creamy putih.",
+            timer: "10 Menit",
+            note: "Harus sangat creamy agar adonan mengalir saat dipanggang."
+          },
+          {
+            category: "Tahap 3: Spuit ke Loyang",
+            title: "Spuit Adonan ke Cetakan Khusus",
+            desc: "Masukkan adonan ke piping bag lalu semprotkan memanjang di alur cetakan lidah kucing yang sudah dioles margarin.",
+            timer: "15 Menit",
+            note: "Jangan terlalu penuh agar tidak meluber keluar parit cetakan."
+          },
+          {
+            category: "Tahap 4: Pemanggangan Cepat",
+            title: "Panggang Garing Pinggiran Cokelat",
+            desc: "Panggang 150°C selama 15-20 menit hingga bagian tepinya kecokelatan dan bagian tengahnya matang kering.",
+            timer: "20 Menit",
+            note: "Segera topleskan saat uap hilang agar tetap garing renyah."
+          }
+        ]
+      },
+      {
+        name: "Sagu Keju Pandan Sangrai",
+        shortDesc: "Lumer seketika wangi daun pandan",
+        fullDesc: "Kue sagu keju klasik dengan tepung sagu tani yang disangrai daun pandan hingga kering ringan dan keju parut kering.",
+        time: "65 Menit",
+        temp: "140°C",
+        baseJars: 4,
+        ingredients: [
+          { name: "Tepung Sagu Tani Asli", baseQty: 450, unit: "gram", checked: false },
+          { name: "Daun Pandan Segar (Potong)", baseQty: 3, unit: "lembar", checked: false },
+          { name: "Margarin & Butter Campur", baseQty: 200, unit: "gram", checked: false },
+          { name: "Gula Halus", baseQty: 150, unit: "gram", checked: false },
+          { name: "Kuning Telur", baseQty: 2, unit: "butir", checked: false },
+          { name: "Keju Cheddar Tua (Kering)", baseQty: 150, unit: "gram", checked: false },
+          { name: "Santan Kental Instan", baseQty: 65, unit: "ml", checked: false }
+        ],
+        steps: [
+          {
+            category: "Tahap 1: Sangrai Sagu",
+            title: "Sangrai Sagu Bersama Pandan",
+            desc: "Sangrai tepung sagu tani bersama daun pandan dengan api kecil hingga daun layu mengering dan tepung berbobot sangat enteng.",
+            timer: "20 Menit",
+            note: "Dinginkan semalaman atau minimal 3 jam sebelum digunakan."
+          },
+          {
+            category: "Tahap 2: Pengocokan Mentega",
+            title: "Kocok Butter & Gula Halus",
+            desc: "Kocok mentega dan gula halus selama 2 menit. Masukkan kuning telur dan santan kental, aduk cepat.",
+            timer: "8 Menit",
+            note: "Jangan overmix agar adonan tidak berat saat dispuit."
+          },
+          {
+            category: "Tahap 3: Spuit Bunga Mawar",
+            title: "Spuit Bunga Menggunakan Spuit Bintang",
+            desc: "Campur tepung sagu dan keju ke adonan mentega. Masukkan ke piping bag dengan spuit bunga bintang, semprotkan melingkar cantik ke loyang.",
+            timer: "20 Menit",
+            note: "Jika adonan agak keras, tambahkan 1 sdt santan."
+          },
+          {
+            category: "Tahap 4: Pemanggangan Lembut",
+            title: "Panggang Suhu Rendah",
+            desc: "Panggang di rak tengah suhu 140°C selama 25 menit hingga dasar kue kering dan bagian atas tetap pucat bersih.",
+            timer: "25 Menit",
+            note: "Biarkan dingin di loyang agar kue tidak remuk."
+          }
+        ]
+      }
+    ];
+
+    // Initialize UI
+    function init() {
+      renderRecipeCards();
+      renderRecipeDetails();
+      updateRoleUI();
+    }
+
+    // Role switching
+    function setRole(role) {
+      userRole = role;
+      updateRoleUI();
+    }
+
+    function updateRoleUI() {
+      const staffBtn = document.getElementById('roleStaffBtn');
+      const ownerBtn = document.getElementById('roleOwnerBtn');
+      const staffBanner = document.getElementById('staffNoticeBanner');
+      const editBtn = document.getElementById('editFormulaBtn');
+
+      if (userRole === 'Staff') {
+        staffBtn.className = "px-3 py-1 text-label-sm font-label-sm rounded-lg transition-all bg-primary text-on-primary shadow-xs font-semibold";
+        ownerBtn.className = "px-3 py-1 text-label-sm font-label-sm rounded-lg transition-all text-on-surface-variant hover:text-on-surface";
+        staffBanner.classList.remove('hidden');
+        editBtn.classList.add('opacity-40', 'cursor-not-allowed');
+        editBtn.onclick = () => alert("Akses Terkunci: Hanya akun Pemilik (Owner) yang memiliki izin mengubah formulasi baku resep.");
+      } else {
+        ownerBtn.className = "px-3 py-1 text-label-sm font-label-sm rounded-lg transition-all bg-primary text-on-primary shadow-xs font-semibold";
+        staffBtn.className = "px-3 py-1 text-label-sm font-label-sm rounded-lg transition-all text-on-surface-variant hover:text-on-surface";
+        staffBanner.classList.add('hidden');
+        editBtn.classList.remove('opacity-40', 'cursor-not-allowed');
+        editBtn.onclick = () => alert("Mode Formulasi Owner Terbuka: Anda dapat menyesuaikan standar gramatur bahan.");
+      }
+    }
+
+    // Render Recipe List Cards
+    function renderRecipeCards() {
+      for (let i = 0; i < 5; i++) {
+        const card = document.getElementById(`card-recipe-${i}`);
+        if (!card) continue;
+        if (i === selectedRecipeIndex) {
+          card.classList.remove('border-[#E8DFCC]');
+          card.classList.add('border-primary', 'ring-2', 'ring-primary/20');
+        } else {
+          card.classList.remove('border-primary', 'ring-2', 'ring-primary/20');
+          card.classList.add('border-[#E8DFCC]');
+        }
+      }
+    }
+
+    function selectRecipe(index) {
+      selectedRecipeIndex = index;
+      renderRecipeCards();
+      renderRecipeDetails();
+    }
+
+    // Multiplier Management
+    function setMultiplier(val) {
+      currentMultiplier = val;
+      updateMultiplierUI();
+      renderIngredients();
+    }
+
+    function adjustMultiplier(delta) {
+      const next = currentMultiplier + delta;
+      if (next >= 1 && next <= 20) {
+        currentMultiplier = next;
+        updateMultiplierUI();
+        renderIngredients();
+      }
+    }
+
+    function updateMultiplierUI() {
+      document.getElementById('currentMultiplierDisplay').innerText = `${currentMultiplier}x`;
+      
+      const r = recipes[selectedRecipeIndex];
+      const jars = r.baseJars * currentMultiplier;
+      document.getElementById('targetJarCount').innerText = `${jars} toples (${(jars * 0.5).toFixed(1)} kg)`;
+
+      // Update button highlights
+      [1, 2, 3, 5].forEach(val => {
+        const btn = document.getElementById(`btn-scale-${val}`);
+        if (btn) {
+          if (currentMultiplier === val) {
+            btn.className = "h-12 rounded-xl font-label-md text-label-md border flex flex-col items-center justify-center transition-all bg-primary text-on-primary border-primary";
+            btn.children[1].className = "text-[10px] opacity-80 leading-none";
+          } else {
+            btn.className = "h-12 rounded-xl font-label-md text-label-md border flex flex-col items-center justify-center transition-all bg-surface border-[#E8DFCC] text-on-surface hover:bg-surface-container-low";
+            btn.children[1].className = "text-[10px] text-on-surface-variant leading-none";
+          }
+        }
+      });
+    }
+
+    // Render Recipe Details
+    function renderRecipeDetails() {
+      const r = recipes[selectedRecipeIndex];
+      document.getElementById('recipeTitleDisplay').innerText = r.name;
+      document.getElementById('recipeDescDisplay').innerText = r.fullDesc;
+      document.getElementById('recipeTimeDisplay').innerText = r.time;
+      document.getElementById('recipeTempDisplay').innerText = r.temp;
+
+      updateMultiplierUI();
+      renderIngredients();
+      renderSteps();
+    }
+
+    // Render Scaled Ingredients
+    function renderIngredients() {
+      const r = recipes[selectedRecipeIndex];
+      const container = document.getElementById('ingredientListContainer');
+      container.innerHTML = '';
+
+      let checkedCount = 0;
+
+      r.ingredients.forEach((ing, idx) => {
+        const scaledQty = ing.baseQty * currentMultiplier;
+        if (ing.checked) checkedCount++;
+
+        const li = document.createElement('li');
+        li.className = "py-3 flex items-center justify-between";
+        li.innerHTML = `
+          <label class="flex items-center gap-3 cursor-pointer select-none">
+            <input 
+              type="checkbox" 
+              ${ing.checked ? 'checked' : ''} 
+              onchange="toggleIngredientCheck(${idx})"
+              class="w-5 h-5 rounded border-[#E8DFCC] text-primary focus:ring-primary focus:ring-offset-0"
+            >
+            <span class="text-body-md font-body-md ${ing.checked ? 'line-through text-outline' : 'text-on-surface font-medium'}">
+              ${ing.name}
+            </span>
+          </label>
+          <div class="text-right">
+            <span class="font-headline-sm text-headline-sm ${ing.checked ? 'text-outline line-through' : 'text-primary font-semibold'}">
+              ${scaledQty.toLocaleString('id-ID')}
+            </span>
+            <span class="text-xs text-on-surface-variant ml-1">${ing.unit}</span>
+          </div>
+        `;
+        container.appendChild(li);
+      });
+
+      document.getElementById('ingredientWeighedCount').innerText = `${checkedCount} dari ${r.ingredients.length} bahan siap`;
+    }
+
+    function toggleIngredientCheck(idx) {
+      recipes[selectedRecipeIndex].ingredients[idx].checked = !recipes[selectedRecipeIndex].ingredients[idx].checked;
+      renderIngredients();
+    }
+
+    function resetIngredientChecks() {
+      recipes[selectedRecipeIndex].ingredients.forEach(i => i.checked = false);
+      renderIngredients();
+    }
+
+    // Render Steps
+    function renderSteps() {
+      const r = recipes[selectedRecipeIndex];
+      const container = document.getElementById('stepsListContainer');
+      container.innerHTML = '';
+
+      r.steps.forEach((step, idx) => {
+        const stepCard = document.createElement('div');
+        stepCard.className = "p-4 rounded-xl border border-[#E8DFCC] bg-background hover:bg-surface-container-low/40 transition-colors flex gap-4 items-start";
+        stepCard.innerHTML = `
+          <div class="w-8 h-8 rounded-lg bg-primary-container text-on-primary-container font-headline-sm text-headline-sm flex items-center justify-center shrink-0">
+            ${idx + 1}
+          </div>
+          <div class="flex-1">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1">
+              <h4 class="font-headline-sm text-headline-sm text-on-surface">${step.title}</h4>
+              <span class="text-xs font-semibold px-2 py-0.5 rounded bg-surface-container text-primary w-fit">${step.timer}</span>
+            </div>
+            <p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+              ${step.desc}
+            </p>
+            <div class="mt-2 text-xs text-secondary font-medium flex items-center gap-1">
+              <span class="material-symbols-outlined text-sm" data-icon="lightbulb">lightbulb</span>
+              <span>Kiat: ${step.note}</span>
+            </div>
+          </div>
+        `;
+        container.appendChild(stepCard);
+      });
+    }
+
+    // Fullscreen Cooking Mode
+    function openCookingMode() {
+      activeCookingStepIndex = 0;
+      const overlay = document.getElementById('cookingModeOverlay');
+      overlay.classList.remove('hidden');
+      overlay.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+
+      const r = recipes[selectedRecipeIndex];
+      document.getElementById('modalRecipeName').innerText = r.name;
+      document.getElementById('modalBatchMultiplier').innerText = `${currentMultiplier}x (${r.baseJars * currentMultiplier} toples)`;
+
+      renderCookingStep();
+    }
+
+    function closeCookingMode() {
+      const overlay = document.getElementById('cookingModeOverlay');
+      overlay.classList.add('hidden');
+      overlay.classList.remove('flex');
+      document.body.style.overflow = 'auto';
+    }
+
+    function renderCookingStep() {
+      const r = recipes[selectedRecipeIndex];
+      const step = r.steps[activeCookingStepIndex];
+      const totalSteps = r.steps.length;
+
+      document.getElementById('modalStepCountLabel').innerText = `Langkah ${activeCookingStepIndex + 1} dari ${totalSteps}`;
+      const pct = Math.round(((activeCookingStepIndex + 1) / totalSteps) * 100);
+      document.getElementById('modalStepPercentage').innerText = `${pct}% Selesai`;
+      document.getElementById('modalProgressBar').style.width = `${pct}%`;
+
+      document.getElementById('modalStepCategory').innerText = step.category;
+      document.getElementById('modalStepTitle').innerText = step.title;
+      document.getElementById('modalStepDescription').innerText = step.desc;
+      document.getElementById('modalStepTimer').innerText = step.timer;
+      document.getElementById('modalStepCheckNote').innerText = step.note;
+
+      // Prev Button State
+      const prevBtn = document.getElementById('modalPrevBtn');
+      prevBtn.disabled = activeCookingStepIndex === 0;
+
+      // Next Button text
+      const nextBtnText = document.getElementById('modalNextBtnText');
+      if (activeCookingStepIndex === totalSteps - 1) {
+        nextBtnText.innerText = "Selesaikan Produksi";
+      } else {
+        nextBtnText.innerText = "Langkah Berikutnya";
+      }
+    }
+
+    function prevStep() {
+      if (activeCookingStepIndex > 0) {
+        activeCookingStepIndex--;
+        renderCookingStep();
+      }
+    }
+
+    function nextStep() {
+      const totalSteps = recipes[selectedRecipeIndex].steps.length;
+      if (activeCookingStepIndex < totalSteps - 1) {
+        activeCookingStepIndex++;
+        renderCookingStep();
+      } else {
+        alert("Selamat! Seluruh tahapan produksi resep telah berhasil diselesaikan sesuai standar Dapur Lebaran.");
+        closeCookingMode();
+      }
+    }
+
+    // Keyboard navigation for fullscreen mode
+    window.addEventListener('keydown', (e) => {
+      const overlay = document.getElementById('cookingModeOverlay');
+      if (!overlay.classList.contains('hidden')) {
+        if (e.key === 'ArrowRight' || e.key === ' ') {
+          nextStep();
+        } else if (e.key === 'ArrowLeft') {
+          prevStep();
+        } else if (e.key === 'Escape') {
+          closeCookingMode();
+        }
+      }
+    });
+
+    // Run on mount
+    init();
+  </script>
+</body></html>

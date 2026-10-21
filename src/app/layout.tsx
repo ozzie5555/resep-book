@@ -69,7 +69,29 @@ export default function RootLayout({
             __html: `
               if ('serviceWorker' in navigator) {
                 window.addEventListener('load', function() {
-                  navigator.serviceWorker.register('/sw.js');
+                  var isLocalhost = Boolean(
+                    window.location.hostname === 'localhost' ||
+                    window.location.hostname === '[::1]' ||
+                    window.location.hostname.match(/^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/)
+                  );
+
+                  if (isLocalhost) {
+                    // On localhost, unregister any active service worker and clear cache to prevent stale layout
+                    navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                      for (var i = 0; i < registrations.length; i++) {
+                        registrations[i].unregister();
+                      }
+                    });
+                    if ('caches' in window) {
+                      caches.keys().then(function(names) {
+                        for (var i = 0; i < names.length; i++) {
+                          caches.delete(names[i]);
+                        }
+                      });
+                    }
+                  } else {
+                    navigator.serviceWorker.register('/sw.js');
+                  }
                 });
               }
             `,
